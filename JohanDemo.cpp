@@ -1,6 +1,7 @@
 #include <GL/glew.h>
 
 #include <VrLib/Kernel.h>
+#include <VrLib/math/Ray.h>
 #include "JohanDemo.h"
 
 #include "ParticleDemo.h"
@@ -68,7 +69,7 @@ void JohanDemo::contextInit()
 
 void JohanDemo::preFrame()
 {
-	if(Kernel::getInstance()->isMaster())
+	if(vrlib::Kernel::getInstance()->isMaster())
 		demos[currentDemo]->isLocal = true;
 	if(panel)
 	{
@@ -80,23 +81,23 @@ void JohanDemo::preFrame()
 		glm::vec4 point = mat * glm::vec4(0,0,-1,1);
 		glm::vec4 diff = point - origin;
 
-		panel->setSelector(Ray(glm::vec3(origin[0], origin[1], origin[2]), glm::vec3(diff[0], diff[1], diff[2])));
+		panel->setSelector(vrlib::math::Ray(glm::vec3(origin[0], origin[1], origin[2]), glm::vec3(diff[0], diff[1], diff[2])));
 
-		DigitalState data = mLeftButton.getData();
+		vrlib::DigitalState data = mLeftButton.getData();
 		demos[currentDemo]->leftButton = data;
 		demos[currentDemo]->rightButton = mRightButton.getData();
 		demos[currentDemo]->pagedownButton = mPageDownButton.getData();
 		demos[currentDemo]->pageupButton = mPageUpButton.getData();
 
-		if(data == TOGGLE_ON)
+		if(data == vrlib::TOGGLE_ON)
 		{
 			panel->mouseDown();
 		}
-		else if(data == TOGGLE_OFF)
+		else if(data == vrlib::TOGGLE_OFF)
 		{
 			panel->mouseUp();
 		}
-		else if (data == ON)
+		else if (data == vrlib::ON)
 		{
 		}
 	}

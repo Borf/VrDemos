@@ -128,7 +128,7 @@ public:
 	virtual float minHeight()	{	return 0.3f; }
 };
 
-Panel* ParticleDemo::getPanel()
+vrlib::gui::components::Panel* ParticleDemo::getPanel()
 {
 	vrlib::gui::components::Panel* p = new ParticlePanel(new vrlib::gui::layoutmanagers::TableLayout(2));
 	p->add(new vrlib::gui::components::Label("Amount"));

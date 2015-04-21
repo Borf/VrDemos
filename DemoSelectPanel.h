@@ -1,17 +1,17 @@
 #pragma once
 
-#include <cavelib/GUIPanel.h>
-#include <cavelib/Components/Button.h>
-#include <cavelib/Components/CheckBox.h>
+#include <vrlib/gui/Window.h>
+#include <vrlib/gui/Components/Button.h>
+#include <vrlib/gui/Components/CheckBox.h>
 
+namespace vrlib { namespace gui { class Window; namespace components { class Panel; } }
 class Demo;
-class Panel;
 class SelectDemoButton;
 class JohanDemo;
 
-class DemoSelectPanel : public GUIPanel
+class DemoSelectPanel : public vrlib::gui::Window
 {
-	Panel* demoPanel;
+	vrlib::gui::components::Panel* demoPanel;
 
 	SelectDemoButton* selectDemoButton;
 public:
