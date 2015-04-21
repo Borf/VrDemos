@@ -19,11 +19,11 @@ JohanDemo::JohanDemo(void)
 	currentDemo = 0;
 
 //	demos.push_back(new LoLDemo());
-	demos.push_back(new BodyDemo());
+//	demos.push_back(new BodyDemo());
 //	demos.push_back(new ParticleModelDemo());
 //	demos.push_back(new RoDemo());
 //	demos.push_back(new VolumeDemo());
-//	demos.push_back(new TunnelDemo());
+	demos.push_back(new TunnelDemo());
 //	demos.push_back(new ParticleDemo());
 
 #ifndef NOKINECT

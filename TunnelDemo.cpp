@@ -85,7 +85,7 @@ void TunnelDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 	glDisable(GL_CULL_FACE);
 	glEnable(GL_TEXTURE_2D);
 	glDisable(GL_LIGHTING);
-	glBindTexture(GL_TEXTURE_2D, texture->texid);
+	texture->bind();
 	vbo->bind();
 	vbo->setPointer();
 	glDrawArrays(GL_TRIANGLES, 0, vbo->getLength());
