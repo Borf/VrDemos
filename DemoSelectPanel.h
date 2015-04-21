@@ -4,7 +4,7 @@
 #include <vrlib/gui/Components/Button.h>
 #include <vrlib/gui/Components/CheckBox.h>
 
-namespace vrlib { namespace gui { class Window; namespace components { class Panel; } }
+namespace vrlib { namespace gui { class Window; namespace components { class Panel; } } }
 class Demo;
 class SelectDemoButton;
 class JohanDemo;

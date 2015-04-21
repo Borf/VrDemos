@@ -1,19 +1,19 @@
 #include "DemoSelectPanel.h"
 #include "JohanDemo.h"
 
-#include <cavelib/LayoutManagers/TableLayout.h>
-#include <cavelib/LayoutManagers/FlowLayout.h>
-#include <cavelib/Components/Panel.h>
-#include <cavelib/Components/Label.h>
+#include <VrLib/gui/layoutmanagers/TableLayout.h>
+#include <VrLib/gui/layoutmanagers/FlowLayout.h>
+#include <VrLib/gui/Components/Panel.h>
+#include <VrLib/gui/Components/Label.h>
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include "demo.h"
 
-class TopPanel : public Panel
+class TopPanel : public vrlib::gui::components::Panel
 {
 public:
-	TopPanel() : Panel(new TableLayoutManager(2)) {}
+	TopPanel() : vrlib::gui::components::Panel(new vrlib::gui::layoutmanagers::TableLayout(2)) {}
 	virtual float minWidth() 
 	{
 		return 0.6f;
@@ -25,11 +25,11 @@ public:
 };
 
 
-class SelectDemoButton : public Button
+class SelectDemoButton : public vrlib::gui::components::Button
 {
 	JohanDemo* demo;
 public:
-	SelectDemoButton(JohanDemo* demo, std::string name) : Button(name, fastdelegate::MakeDelegate(this, &SelectDemoButton::click))
+	SelectDemoButton(JohanDemo* demo, std::string name) : vrlib::gui::components::Button(name, [this]() { this->click(); })
 	{
 		this->demo = demo;
 	}
@@ -45,22 +45,22 @@ public:
 
 
 
-DemoSelectPanel::DemoSelectPanel(JohanDemo* demo) : GUIPanel("")
+DemoSelectPanel::DemoSelectPanel(JohanDemo* demo) : vrlib::gui::Window("")
 {
 	demoPanel = NULL;
-	rootPanel = new Panel(new FlowLayoutManager());
+	rootPanel = new vrlib::gui::components::Panel(new vrlib::gui::layoutmanagers::FlowLayout());
 
-	Panel* p = new TopPanel();
+	vrlib::gui::components::Panel* p = new TopPanel();
 
 	rootPanel->add(p);
 
-	p->add(new Label("Demo"));
+	p->add(new vrlib::gui::components::Label("Demo"));
 	p->add(selectDemoButton = new SelectDemoButton(demo, "Particle"));
-	p->add(new Label("Reset"));
-	p->add(new Button("Reset", fastdelegate::MakeDelegate(demo, &JohanDemo::resetDemo)));
+	p->add(new vrlib::gui::components::Label("Reset"));
+	p->add(new vrlib::gui::components::Button("Reset", [demo]() { demo->resetDemo(); }));
 
-	rootPanel->setFont(font);
-	rootPanel->reposition(0,0,0.6f,0.9f);
+	//rootPanel->setFont(font);
+	//rootPanel->reposition(0,0,0.6f,0.9f);
 
 	renderMatrix = glm::mat4();
 	renderMatrix = glm::translate(renderMatrix, glm::vec3(-1.5,-0.6f,-0));
@@ -82,6 +82,6 @@ void DemoSelectPanel::setDemoPanel( Demo* demo )
 	selectDemoButton->setText(demo->name);
 	if(demoPanel != NULL)
 		rootPanel->add(demoPanel);
-	rootPanel->setFont(font);
-	rootPanel->reposition(0,0,0.6f,0.9f);
+//	rootPanel->setFont(font);
+//	rootPanel->reposition(0,0,0.6f,0.9f);
 }

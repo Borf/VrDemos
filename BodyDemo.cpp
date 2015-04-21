@@ -6,6 +6,10 @@
 
 #include <VrLib/VrLib.h>
 #include <vrlib/Log.h>
+#include <VrLib/gui/components/Panel.h>
+#include <VrLib/gui/components/CheckBox.h>
+#include <VrLib/gui/components/Slider.h>
+#include <VrLib/gui/layoutmanagers/TableLayout.h>
 
 #include <glm/gtc/matrix_transform.hpp>
 
@@ -70,7 +74,8 @@ BodyDemo::Node* BodyDemo::readModel(std::string dir, std::string jsonfile)
 		std::string fileName = it.key();
 		vrlib::json::Value &val = it.value();
 
-		FILE* pFile = fopen((dir+fileName).c_str(), "rb");
+		FILE* pFile = NULL;
+		fopen_s(&pFile, (dir + fileName).c_str(), "rb");
 		fseek(pFile, 0, SEEK_END);
 		int len = ftell(pFile);
 		fseek(pFile, 0, SEEK_SET);
@@ -151,7 +156,7 @@ BodyDemo::Node* BodyDemo::readModel(std::string dir, std::string jsonfile)
 	}
 
 
-	vrlib::json::Value metadata = vrlib::json::readJson(dir + "entity_metadata.json");
+	vrlib::json::Value metadata = vrlib::json::readJson(std::ifstream(dir + "entity_metadata.json"));
 
 	std::map<int, Node*> nodes;
 	for(size_t i = 0; i < metadata["leafs"].size(); i++)
@@ -202,7 +207,7 @@ void BodyDemo::init()
 	rootMale = readModel("data/JohanDemo/zygote/adult_male/", "data/JohanDemo/zygote/adult_male/adult_male.json");
 	vrlib::logger << "Reading female body" << vrlib::Log::newline;
 	rootFemale = readModel("data/JohanDemo/zygote/adult_female/", "data/JohanDemo/zygote/adult_female/adult_female.json");
-	walls = new vrlib::Model("cavewall.shape");
+	walls = vrlib::Model::getModel("cavewall.shape");
 	wallTexture = new vrlib::Texture("data/CubeMaps/Marble/total.jpg");
 	stand = vrlib::Model::getModel("cube.shape");// , new ModelLoadOptions(1.0f));
 
@@ -257,7 +262,7 @@ void BodyDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 	glEnable(GL_TEXTURE_2D);
 	glPushMatrix();
 	if(wallTexture != NULL)
-		glBindTexture(GL_TEXTURE_2D, wallTexture->tid());
+		glBindTexture(GL_TEXTURE_2D, wallTexture->texid);
 	walls->draw(NULL);
 	glPopMatrix();
 
@@ -398,7 +403,7 @@ void BodyDemo::Node::draw(float alpha, std::set<Node*> &drawn, vrlib::gl::Shader
 			shader->setUniform(BodyUniforms::colorMult, glm::vec4(1,1,1, alpha));
 			glColor4f(1,1,1, alpha);
 			glEnable(GL_TEXTURE_2D);
-			glBindTexture(GL_TEXTURE_2D, subMesh->mesh->texture->tid());
+			glBindTexture(GL_TEXTURE_2D, subMesh->mesh->texture->texid);
 		}
 		else
 		{
@@ -421,7 +426,7 @@ void BodyDemo::Node::draw(float alpha, std::set<Node*> &drawn, vrlib::gl::Shader
 
 void BodyDemo::update()
 {
-	if(rightButton == TOGGLE_ON)
+	if(rightButton == vrlib::TOGGLE_ON)
 	{
 		cut = !cut;
 		if(!cut)
@@ -447,31 +452,31 @@ void BodyDemo::update()
 
 
 
-class BodyPanel : public Panel
+class BodyPanel : public vrlib::gui::components::Panel
 {
 public:
-	BodyPanel(LayoutManager* manager) : Panel(manager){};
+	BodyPanel(vrlib::gui::layoutmanagers::LayoutManager* manager) : vrlib::gui::components::Panel(manager){};
 	virtual float minWidth() 	{	return 0.55f; }
 	virtual float minHeight()	{	return 0.6f; }
 };
 
-class BodySlider : public Slider
+class BodySlider : public vrlib::gui::components::Slider
 {
 	BodyDemo* demo;
 public:
-	BodySlider(BodyDemo* demo) : Slider(0,100000,0) { this->demo = demo; }
+	BodySlider(BodyDemo* demo) : vrlib::gui::components::Slider(0, 100000, 0) { this->demo = demo; }
 	void drag(glm::vec3 intersect)
 	{
-		Slider::drag(intersect);
+		vrlib::gui::components::Slider::drag(intersect);
 		demo->layer = -0.5f + (value/max) * 8;
 	}
 };
 
-Panel* BodyDemo::getPanel()
+vrlib::gui::components::Panel* BodyDemo::getPanel()
 {
-	Panel* p = new BodyPanel(new TableLayoutManager(1));
+	vrlib::gui::components::Panel* p = new BodyPanel(new vrlib::gui::layoutmanagers::TableLayout(1));
 	p->add(new BodySlider(this));
-	p->add(new CheckBox(true, fastdelegate::MakeDelegate(this, &BodyDemo::switchBody)));
+	p->add(new vrlib::gui::components::CheckBox(true, [this]() { this->switchBody(); }));
 	return p;
 }
 

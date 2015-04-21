@@ -5,7 +5,6 @@
 #include <VrLib/Device.h>
 
 namespace vrlib { namespace gui { namespace components { class Panel;  } } }
-class Panel;
 
 class Demo
 {
