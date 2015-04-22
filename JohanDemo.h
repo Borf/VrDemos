@@ -7,7 +7,9 @@
 #include <vector>
 using namespace std;
 
-
+namespace vrlib {
+	namespace gl { class ShaderProgram; }
+}
 class Demo;
 class DemoSelectPanel;
 
@@ -26,6 +28,9 @@ private:
 	vrlib::DigitalDevice	  mPageUpButton;
 
 	DemoSelectPanel* panel;
+
+	vrlib::gl::ShaderProgram* basicShader;
+
 public:
 	JohanDemo(void);
 	~JohanDemo(void);

@@ -36,16 +36,16 @@ void ParticleDemo::start()
 }
 void ParticleDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 {
-	glPushMatrix();
-	glUseProgram(0);
-	glColor4f(1,1,1,1);
-	glDisable(GL_CULL_FACE);
-
-	glDisable(GL_LIGHTING);
-	glEnable(GL_TEXTURE_2D);
-	glBindTexture(GL_TEXTURE_2D, wallTexture->texid);
+	glEnable(GL_CULL_FACE);
+	basicShader->use();
+	basicShader->setUniformMatrix4("projectionmatrix", projectionMatrix);
+	basicShader->setUniformMatrix4("cameraMatrix", modelviewMatrix);
+	basicShader->setUniformMatrix4("modelMatrix", glm::mat4());
+	wallTexture->bind();
 	walls->draw(NULL);
 
+
+	return;
 
 	glEnable(GL_LIGHTING);
 	glEnable(GL_LIGHT0);

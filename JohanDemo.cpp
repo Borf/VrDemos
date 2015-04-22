@@ -63,6 +63,18 @@ void JohanDemo::contextInit()
 
 	panel = new DemoSelectPanel(this);
 
+	basicShader = new vrlib::gl::ShaderProgram("data/JohanDemo/BasicShader.vert", "data/JohanDemo/BasicShader.frag");
+	basicShader->bindAttributeLocation("a_position", 0);
+	basicShader->bindAttributeLocation("a_normal", 1);
+	basicShader->bindAttributeLocation("a_texcoord", 2);
+	basicShader->link();
+	basicShader->use();
+	
+	basicShader->setUniformInt("s_texture", 0);
+	basicShader->setUniformMatrix4("projectionmatrix", glm::mat4());
+	basicShader->setUniformMatrix4("cameraMatrix", glm::mat4());
+	basicShader->setUniformMatrix4("modelMatrix", glm::mat4());
+
 	setDemo(currentDemo);
 }
 
@@ -143,6 +155,7 @@ void JohanDemo::draw(const glm::mat4 &projectionMatrix, const glm::mat4 &modelvi
 void JohanDemo::setDemo( int id )
 {
 	currentDemo = id;
+	demos[id]->basicShader = basicShader;
 	demos[id]->start();
 	panel->setDemoPanel(demos[id]);
 }

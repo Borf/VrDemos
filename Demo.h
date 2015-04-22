@@ -4,7 +4,10 @@
 #include <glm/glm.hpp>
 #include <VrLib/Device.h>
 
-namespace vrlib { namespace gui { namespace components { class Panel;  } } }
+namespace vrlib { 
+	namespace gui { namespace components { class Panel;  } } 
+	namespace gl { class ShaderProgram; }
+}
 
 class Demo
 {
@@ -12,6 +15,8 @@ public:
 	std::string name;
 	glm::vec3 backgroundColor;
 	bool isLocal;
+
+	vrlib::gl::ShaderProgram* basicShader;
 
 	Demo(std::string name);
 	~Demo(void);
