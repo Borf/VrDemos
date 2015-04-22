@@ -7,6 +7,7 @@
 #include <vrlib/gui/Components/Slider.h>
 #include <vrlib/Model.h>
 #include <vrlib/texture.h>
+#include <vrlib/gl/Vertex.h>
 
 ParticleDemo::ParticleDemo(void) : Demo("Particles")
 {
@@ -20,8 +21,8 @@ ParticleDemo::~ParticleDemo(void)
 
 void ParticleDemo::init()
 {
-	model = vrlib::Model::getModel("sphere.16.16.shape", vrlib::ModelLoadOptions(0.02f));
-	walls = vrlib::Model::getModel("cavewall.shape", vrlib::ModelLoadOptions(3.0f));
+	model = vrlib::Model::getModel<vrlib::gl::VertexP3N3>("sphere.16.16.shape", vrlib::ModelLoadOptions(0.02f));
+	walls = vrlib::Model::getModel<vrlib::gl::VertexP3N3T2>("cavewall.shape", vrlib::ModelLoadOptions(3.0f));
 	wallTexture = new vrlib::Texture("data/CubeMaps/Brick/total.png");
 }
 

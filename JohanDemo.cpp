@@ -23,8 +23,8 @@ JohanDemo::JohanDemo(void)
 //	demos.push_back(new ParticleModelDemo());
 //	demos.push_back(new RoDemo());
 //	demos.push_back(new VolumeDemo());
+	demos.push_back(new ParticleDemo());
 	demos.push_back(new TunnelDemo());
-//	demos.push_back(new ParticleDemo());
 
 #ifndef NOKINECT
 	demos.push_back(new KinectDemo());

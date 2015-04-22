@@ -15,6 +15,7 @@
 #include <vrlib/gui/Components/Slider.h>
 #include <vrlib/gui/layoutmanagers/TableLayout.h>
 #include <vrlib/math/Ray.h>
+#include <vrlib/gl/Vertex.h>
 
 #include <glm/gtc/matrix_transform.hpp>
 
@@ -95,7 +96,7 @@ LoLDemo::~LoLDemo(void)
 
 void LoLDemo::init()
 {
-	walls = vrlib::Model::getModel("cavewall.1.2.2.shape", vrlib::ModelLoadOptions(6.0f));
+	walls = vrlib::Model::getModel<vrlib::gl::VertexP3N3T2>("cavewall.1.2.2.shape", vrlib::ModelLoadOptions(6.0f));
 	wallTexture = new vrlib::Texture("data/CubeMaps/Brick/total.png");
 
 	models = vrlib::json::readJson(std::ifstream("data/models/lol/models.json"));
@@ -121,7 +122,7 @@ void LoLDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 		if(texture)
 			delete texture;
 		printf("Loading %s\n", models[modelIndex]["dir"].asString().c_str());
-		model = vrlib::Model::getModel("data/models/LoL/" + models[modelIndex]["dir"].asString() + "/" + models[modelIndex]["models"][skinIndex]["model"].asString());
+		model = vrlib::Model::getModel<vrlib::gl::VertexP3N3T2>("data/models/LoL/" + models[modelIndex]["dir"].asString() + "/" + models[modelIndex]["models"][skinIndex]["model"].asString());
 		texture = new vrlib::Texture("data/models/LoL/" + models[modelIndex]["dir"].asString() + "/" + models[modelIndex]["models"][skinIndex]["texture"].asString());
 		reload = false;
 	}

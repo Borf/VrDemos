@@ -207,9 +207,9 @@ void BodyDemo::init()
 	rootMale = readModel("data/JohanDemo/zygote/adult_male/", "data/JohanDemo/zygote/adult_male/adult_male.json");
 	vrlib::logger << "Reading female body" << vrlib::Log::newline;
 	rootFemale = readModel("data/JohanDemo/zygote/adult_female/", "data/JohanDemo/zygote/adult_female/adult_female.json");
-	walls = vrlib::Model::getModel("cavewall.shape");
+	walls = vrlib::Model::getModel<vrlib::gl::VertexP3N3T2>("cavewall.shape");
 	wallTexture = new vrlib::Texture("data/CubeMaps/Marble/total.jpg");
-	stand = vrlib::Model::getModel("cube.shape");// , new ModelLoadOptions(1.0f));
+	stand = vrlib::Model::getModel<vrlib::gl::VertexP3N3T2>("cube.shape");// , new ModelLoadOptions(1.0f));
 
 	shader = new vrlib::gl::Shader<BodyUniforms>("data/JohanDemo/zygote/shader.vert", "data/JohanDemo/zygote/shader.frag");
 	shader->link();

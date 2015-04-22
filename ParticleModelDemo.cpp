@@ -6,6 +6,7 @@
 #include "ParticleModelDemo.h"
 #include <VrLib/texture.h>
 #include <VrLib/model.h>
+#include <VrLib/gl/Vertex.h>
 
 #include <VrLib/gui/Components/Button.h>
 #include <VrLib/gui/Components/Panel.h>
@@ -23,8 +24,8 @@ ParticleModelDemo::~ParticleModelDemo(void)
 
 void ParticleModelDemo::init()
 {
-	model = vrlib::Model::getModel("sphere.7.7.shape", vrlib::ModelLoadOptions(0.025f));
-	walls = vrlib::Model::getModel("cavewall.shape", vrlib::ModelLoadOptions(3.0f));
+	model = vrlib::Model::getModel<vrlib::gl::VertexP3N3>("sphere.7.7.shape", vrlib::ModelLoadOptions(0.025f));
+	walls = vrlib::Model::getModel<vrlib::gl::VertexP3N3T2>("cavewall.shape", vrlib::ModelLoadOptions(3.0f));
 	wallTexture = new vrlib::Texture("data/CubeMaps/Brick/total.png");
 
 	char* files[] = { 
@@ -37,7 +38,7 @@ void ParticleModelDemo::init()
 
 	for(int i = 0; i < sizeof(files) / sizeof(char*); i++)
 	{
-		vrlib::Model* model = vrlib::Model::getModel(files[i], vrlib::ModelLoadOptions(0.75f, false));
+		vrlib::Model* model = vrlib::Model::getModel<vrlib::gl::VertexP3>(files[i], vrlib::ModelLoadOptions(0.75f, false));
 		vertexPositions.push_back(model->getVertices(200));
 		for(size_t ii = 0; ii < vertexPositions.back().size(); ii++)
 		{
