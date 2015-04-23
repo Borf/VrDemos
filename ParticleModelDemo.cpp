@@ -2,6 +2,7 @@
 #include <windows.h>
 #include <gl/glew.h>
 #include <gl/GL.h>
+#include <glm/gtc/matrix_transform.hpp>
 
 #include "ParticleModelDemo.h"
 #include <VrLib/texture.h>
@@ -24,21 +25,25 @@ ParticleModelDemo::~ParticleModelDemo(void)
 
 void ParticleModelDemo::init()
 {
-	model = vrlib::Model::getModel<vrlib::gl::VertexP3N3>("sphere.7.7.shape", vrlib::ModelLoadOptions(0.025f));
+	model = vrlib::Model::getModel<vrlib::gl::VertexP3N3T2>("sphere.7.7.shape", vrlib::ModelLoadOptions(0.025f));
 	walls = vrlib::Model::getModel<vrlib::gl::VertexP3N3T2>("cavewall.shape", vrlib::ModelLoadOptions(3.0f));
 	wallTexture = new vrlib::Texture("data/CubeMaps/Brick/total.png");
 
 	char* files[] = { 
-		"data/models/mier/formica rufa 17384.3ds", 
-		"data/models/l2/cutie_cat.obj", 
 		"sphere.20.20.shape", 
-		"sphere.16.16.shape"};
+		"sphere.16.16.shape",
+		"data/models/mier/formica rufa 17384.3ds",
+		"data/models/l2/cutie_cat.obj",
+
+	};
 	
 	unsigned int maxVerts = 0;
 
 	for(int i = 0; i < sizeof(files) / sizeof(char*); i++)
 	{
 		vrlib::Model* model = vrlib::Model::getModel<vrlib::gl::VertexP3>(files[i], vrlib::ModelLoadOptions(0.75f, false));
+		if (!model)
+			continue;
 		vertexPositions.push_back(model->getVertices(200));
 		for(size_t ii = 0; ii < vertexPositions.back().size(); ii++)
 		{
@@ -102,39 +107,18 @@ void ParticleModelDemo::next()
 
 void ParticleModelDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 {
-	glPushMatrix();
-	glUseProgram(0);
-	glColor4f(1,1,1,1);
-	glDisable(GL_CULL_FACE);
-
-	glDisable(GL_LIGHTING);
-	glEnable(GL_TEXTURE_2D);
-	glBindTexture(GL_TEXTURE_2D, wallTexture->texid);
+	glEnable(GL_CULL_FACE);
+	basicShader->use();
+	basicShader->setUniformMatrix4("modelMatrix", glm::mat4());
+	wallTexture->bind();
 	walls->draw(NULL);
 
 
-	glEnable(GL_LIGHTING);
-	glEnable(GL_LIGHT0);
-	glEnable(GL_COLOR_MATERIAL);
-	glEnable(GL_NORMALIZE);
-
-	float pos[] = { -50.0, -50.0, 50.0, 1.0 }; glLightfv(GL_LIGHT0, GL_POSITION, pos);
-
-	glDisable(GL_TEXTURE_2D);
-	glColor4f(1,1,1,1);
-	//glPointSize(16);
-	//glBegin(GL_POINTS);
 	for(size_t i = 0; i < particles.size(); i++)
 	{
-		glPushMatrix();
-		glTranslatef(particles[i]->position[0], particles[i]->position[1], particles[i]->position[2]);
+		basicShader->setUniformMatrix4("modelMatrix", glm::scale(glm::translate(glm::mat4(), particles[i]->position), glm::vec3(0.1f, 0.1f, 0.1f)));
 		model->draw(NULL);
-		glPopMatrix();
-		//glVertex3f(particles[i]->position[0], particles[i]->position[1], particles[i]->position[2]);
 	}
-	//glEnd();
-
-	glPopMatrix();
 }
 
 void ParticleModelDemo::update()

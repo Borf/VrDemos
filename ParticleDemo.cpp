@@ -38,8 +38,6 @@ void ParticleDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 {
 	glEnable(GL_CULL_FACE);
 	basicShader->use();
-	basicShader->setUniformMatrix4("projectionmatrix", projectionMatrix);
-	basicShader->setUniformMatrix4("cameraMatrix", modelviewMatrix);
 	basicShader->setUniformMatrix4("modelMatrix", glm::mat4());
 	wallTexture->bind();
 	walls->draw(NULL);

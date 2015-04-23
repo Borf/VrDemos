@@ -20,7 +20,7 @@ JohanDemo::JohanDemo(void)
 
 //	demos.push_back(new LoLDemo());
 //	demos.push_back(new BodyDemo());
-//	demos.push_back(new ParticleModelDemo());
+	demos.push_back(new ParticleModelDemo());
 //	demos.push_back(new RoDemo());
 //	demos.push_back(new VolumeDemo());
 	demos.push_back(new ParticleDemo());
@@ -147,6 +147,9 @@ void JohanDemo::draw(const glm::mat4 &projectionMatrix, const glm::mat4 &modelvi
 
 	glUseProgram(0);
 
+	basicShader->use();
+	basicShader->setUniformMatrix4("projectionmatrix", projectionMatrix);
+	basicShader->setUniformMatrix4("cameraMatrix", modelviewMatrix);
 	demos[currentDemo]->draw(projectionMatrix, modelviewMatrix);
 
 
