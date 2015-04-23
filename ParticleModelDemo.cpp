@@ -25,12 +25,13 @@ ParticleModelDemo::~ParticleModelDemo(void)
 
 void ParticleModelDemo::init()
 {
-	model = vrlib::Model::getModel<vrlib::gl::VertexP3N3T2>("sphere.7.7.shape", vrlib::ModelLoadOptions(0.025f));
+	model = vrlib::Model::getModel<vrlib::gl::VertexP3N3T2>("sphere.16.16.shape", vrlib::ModelLoadOptions(0.025f));
 	walls = vrlib::Model::getModel<vrlib::gl::VertexP3N3T2>("cavewall.shape", vrlib::ModelLoadOptions(3.0f));
 	wallTexture = new vrlib::Texture("data/CubeMaps/Brick/total.png");
+	sphereTexture = new vrlib::Texture("data/johandemo/marble.jpg");
 
 	char* files[] = { 
-		"sphere.20.20.shape", 
+		"sphere.32.32.shape", 
 		"sphere.16.16.shape",
 		"data/models/mier/formica rufa 17384.3ds",
 		"data/models/l2/cutie_cat.obj",
@@ -113,10 +114,10 @@ void ParticleModelDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatr
 	wallTexture->bind();
 	walls->draw(NULL);
 
-
+	sphereTexture->bind();
 	for(size_t i = 0; i < particles.size(); i++)
 	{
-		basicShader->setUniformMatrix4("modelMatrix", glm::scale(glm::translate(glm::mat4(), particles[i]->position), glm::vec3(0.1f, 0.1f, 0.1f)));
+		basicShader->setUniformMatrix4("modelMatrix", glm::scale(glm::translate(glm::mat4(), particles[i]->position), glm::vec3(0.025f, 0.025f, 0.025f)));
 		model->draw(NULL);
 	}
 }

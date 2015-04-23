@@ -27,6 +27,7 @@ public:
 	vrlib::Model* model;
 	vrlib::Model* walls;
 	vrlib::Texture* wallTexture;
+	vrlib::Texture* sphereTexture;
 	std::vector<Particle*> particles;
 
 	std::vector<std::vector<glm::vec3> > vertexPositions;
