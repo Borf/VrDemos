@@ -8,6 +8,7 @@
 #include <VrLib/texture.h>
 #include <VrLib/model.h>
 #include <VrLib/gl/Vertex.h>
+#include <VrLib/gl/shader.h>
 
 #include <VrLib/gui/Components/Button.h>
 #include <VrLib/gui/Components/Panel.h>
@@ -31,9 +32,9 @@ void ParticleModelDemo::init()
 	sphereTexture = new vrlib::Texture("data/johandemo/marble.jpg");
 
 	char* files[] = { 
-		"sphere.32.32.shape", 
-		"sphere.16.16.shape",
 		"data/models/mier/formica rufa 17384.3ds",
+		"sphere.8.8.shape",
+		"sphere.16.16.shape",
 		"data/models/l2/cutie_cat.obj",
 
 	};
@@ -112,13 +113,13 @@ void ParticleModelDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatr
 	basicShader->use();
 	basicShader->setUniformMatrix4("modelMatrix", glm::mat4());
 	wallTexture->bind();
-	walls->draw(NULL);
+	walls->draw();
 
 	sphereTexture->bind();
 	for(size_t i = 0; i < particles.size(); i++)
 	{
 		basicShader->setUniformMatrix4("modelMatrix", glm::scale(glm::translate(glm::mat4(), particles[i]->position), glm::vec3(0.025f, 0.025f, 0.025f)));
-		model->draw(NULL);
+		model->draw();
 	}
 }
 

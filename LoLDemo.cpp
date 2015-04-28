@@ -136,7 +136,7 @@ void LoLDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 		glBindTexture(GL_TEXTURE_2D, texture->texid);
 	glDisable(GL_CULL_FACE);
 	if(model)
-		model->draw(NULL);
+		model->draw();
 
 	glPopMatrix();
 
@@ -146,7 +146,7 @@ void LoLDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 	glEnable(GL_TEXTURE_2D);
 	if (wallTexture != NULL)
 		wallTexture->bind();
-	walls->draw(NULL);
+	walls->draw();
 
 	glPopMatrix();
 	glPushMatrix();

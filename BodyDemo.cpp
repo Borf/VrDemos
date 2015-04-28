@@ -263,7 +263,7 @@ void BodyDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 	glPushMatrix();
 	if(wallTexture != NULL)
 		glBindTexture(GL_TEXTURE_2D, wallTexture->texid);
-	walls->draw(NULL);
+	walls->draw();
 	glPopMatrix();
 
 	glDisable(GL_LIGHTING);
@@ -273,7 +273,7 @@ void BodyDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 	glTranslatef(0,-1.1f,-0.5f);
 	glColor3f(0.1f, 0.1f, 0.1f);
 	glScalef(0.5, 1, 2);
-	stand->draw(NULL);
+	stand->draw();
 	glPopMatrix();
 
 	glEnable(GL_BLEND);

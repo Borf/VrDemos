@@ -8,6 +8,7 @@
 #include <vrlib/Model.h>
 #include <vrlib/texture.h>
 #include <vrlib/gl/Vertex.h>
+#include <vrlib/gl/shader.h>
 
 ParticleDemo::ParticleDemo(void) : Demo("Particles")
 {
@@ -40,7 +41,7 @@ void ParticleDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 	basicShader->use();
 	basicShader->setUniformMatrix4("modelMatrix", glm::mat4());
 	wallTexture->bind();
-	walls->draw(NULL);
+	walls->draw();
 
 
 	return;
@@ -58,7 +59,7 @@ void ParticleDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 	{
 		glPushMatrix();
 		glTranslatef(particles[i]->position[0], particles[i]->position[1], particles[i]->position[2]);
-		model->draw(NULL);
+		model->draw();
 		glPopMatrix();
 	}
 
