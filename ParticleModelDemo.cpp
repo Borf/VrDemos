@@ -26,16 +26,16 @@ ParticleModelDemo::~ParticleModelDemo(void)
 
 void ParticleModelDemo::init()
 {
-	model = vrlib::Model::getModel<vrlib::gl::VertexP3N3T2>("sphere.16.16.shape", vrlib::ModelLoadOptions(0.025f));
-	walls = vrlib::Model::getModel<vrlib::gl::VertexP3N3T2>("cavewall.shape", vrlib::ModelLoadOptions(3.0f));
+	model = vrlib::Model::getModel<vrlib::gl::VertexP3N3T2>("sphere.16.16.shape");
+	walls = vrlib::Model::getModel<vrlib::gl::VertexP3N3T2>("cavewall.shape");
 	wallTexture = new vrlib::Texture("data/CubeMaps/Brick/total.png");
 	sphereTexture = new vrlib::Texture("data/johandemo/marble.jpg");
 
 	char* files[] = { 
 		"data/models/mier/formica rufa 17384.3ds",
+		"data/models/l2/anakim.obj",
 		"sphere.8.8.shape",
 		"sphere.16.16.shape",
-		"data/models/l2/cutie_cat.obj",
 
 	};
 	
@@ -43,13 +43,13 @@ void ParticleModelDemo::init()
 
 	for(int i = 0; i < sizeof(files) / sizeof(char*); i++)
 	{
-		vrlib::Model* model = vrlib::Model::getModel<vrlib::gl::VertexP3>(files[i], vrlib::ModelLoadOptions(0.75f, false));
+		vrlib::Model* model = vrlib::Model::getModel<vrlib::gl::VertexP3>(files[i], vrlib::ModelLoadOptions(2.25f, vrlib::ModelLoadOptions::RepositionToCenterBottom));
 		if (!model)
 			continue;
 		vertexPositions.push_back(model->getVertices(200));
 		for(size_t ii = 0; ii < vertexPositions.back().size(); ii++)
 		{
-			vertexPositions.back()[ii] += glm::vec3(0,-1.2f, -0.9f);
+			vertexPositions.back()[ii] += glm::vec3(0,-1.5f, -0.9f);
 		}
 		maxVerts = glm::max(vertexPositions.back().size(), maxVerts);
 	}
@@ -125,7 +125,10 @@ void ParticleModelDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatr
 
 void ParticleModelDemo::update()
 {
-	for(size_t i = 0; i < particles.size(); i++)
+	if (leftButton == vrlib::DigitalState::TOGGLE_ON)
+		next();
+		
+	for (size_t i = 0; i < particles.size(); i++)
 	{
 
 		glm::vec3 targetVec = particles[i]->target - particles[i]->position;
