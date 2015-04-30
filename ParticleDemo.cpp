@@ -1,4 +1,5 @@
 #include <gl/glew.h>
+#include <glm/gtc/matrix_transform.hpp>
 #include "ParticleDemo.h"
 
 #include <vrlib/gui/LayoutManagers/TableLayout.h>
@@ -25,6 +26,7 @@ void ParticleDemo::init()
 	model = vrlib::Model::getModel<vrlib::gl::VertexP3N3>("sphere.16.16.shape", vrlib::ModelLoadOptions(0.02f));
 	walls = vrlib::Model::getModel<vrlib::gl::VertexP3N3T2>("cavewall.shape", vrlib::ModelLoadOptions(3.0f));
 	wallTexture = new vrlib::Texture("data/CubeMaps/Brick/total.png");
+	sphereTexture = new vrlib::Texture("data/JohanDemo/marble.jpg");
 }
 
 void ParticleDemo::start()
@@ -43,27 +45,12 @@ void ParticleDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 	wallTexture->bind();
 	walls->draw();
 
-
-	return;
-
-	glEnable(GL_LIGHTING);
-	glEnable(GL_LIGHT0);
-	glEnable(GL_COLOR_MATERIAL);
-	glEnable(GL_NORMALIZE);
-
-	float pos[] = { 0.0, 0.0, 0.0, 1.0 }; glLightfv(GL_LIGHT0, GL_POSITION, pos);
-
-	glDisable(GL_TEXTURE_2D);
-	//this is a bad way :P
+	sphereTexture->bind();
 	for(size_t i = 0; i < particles.size(); i++)
 	{
-		glPushMatrix();
-		glTranslatef(particles[i]->position[0], particles[i]->position[1], particles[i]->position[2]);
+		basicShader->setUniformMatrix4("modelMatrix", glm::translate(glm::mat4(), particles[i]->position));
 		model->draw();
-		glPopMatrix();
 	}
-
-	glPopMatrix();
 }
 
 void ParticleDemo::update()
