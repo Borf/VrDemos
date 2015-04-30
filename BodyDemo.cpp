@@ -261,6 +261,7 @@ void BodyDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 	wallTexture->bind();
 	walls->draw();
 
+	standTexture->bind();
 	basicShader->setUniformMatrix4("modelMatrix", glm::scale(glm::translate(glm::mat4(), glm::vec3(0, -1.1f, -0.5f)), glm::vec3(0.5f, 1.0f, 2.0f)));
 	stand->draw();
 
