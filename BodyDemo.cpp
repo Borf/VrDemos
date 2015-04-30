@@ -209,12 +209,12 @@ void BodyDemo::init()
 	rootFemale = readModel("data/JohanDemo/zygote/adult_female/", "data/JohanDemo/zygote/adult_female/adult_female.json");
 	walls = vrlib::Model::getModel<vrlib::gl::VertexP3N3T2>("cavewall.shape");
 	wallTexture = new vrlib::Texture("data/CubeMaps/Marble/total.jpg");
-	stand = vrlib::Model::getModel<vrlib::gl::VertexP3N3T2>("cube.shape");// , new ModelLoadOptions(1.0f));
+	stand = vrlib::Model::getModel<vrlib::gl::VertexP3N3T2>("cube.shape", vrlib::ModelLoadOptions(1.0f));
+	standTexture = new vrlib::Texture("data/JohanDemo/marble.jpg");
 
 	shader = new vrlib::gl::Shader<BodyUniforms>("data/JohanDemo/zygote/shader.vert", "data/JohanDemo/zygote/shader.frag");
 	shader->link();
 	shader->registerUniform(BodyUniforms::cutNormal, "cutNormal");
-	shader->registerUniform(BodyUniforms::cutDist, "cutDist");
 	shader->registerUniform(BodyUniforms::tex, "tex");
 	shader->registerUniform(BodyUniforms::hasTexture, "hasTexture");
 	shader->registerUniform(BodyUniforms::colorMult, "colorMult");
@@ -231,8 +231,9 @@ void BodyDemo::start()
 	root = rootFemale;
 
 	shader->use();
-	shader->setUniform(BodyUniforms::cutDist, -100.0f);
-	shader->setUniform(BodyUniforms::cutNormal, glm::vec3(0,1,0));
+	shader->setUniform(BodyUniforms::cutNormal, glm::vec3(0,0,1));
+	shader->setUniform(BodyUniforms::cutPos, glm::vec3(0,0,-100));
+
 	glUseProgram(0);
 	cut = false;
 }
@@ -255,26 +256,13 @@ void BodyDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 		glGetFloatv(GL_MODELVIEW_MATRIX, modelview);
 		Sleep(0);
 	}
-
-	glDisable(GL_CULL_FACE);
-	//glTranslatef(0, 1.5f, 0);
-	glDisable(GL_LIGHTING);
-	glEnable(GL_TEXTURE_2D);
-	glPushMatrix();
-	if(wallTexture != NULL)
-		glBindTexture(GL_TEXTURE_2D, wallTexture->texid);
+	basicShader->use();
+	basicShader->setUniformMatrix4("modelMatrix", glm::mat4());
+	wallTexture->bind();
 	walls->draw();
-	glPopMatrix();
 
-	glDisable(GL_LIGHTING);
-	glEnable(GL_COLOR_MATERIAL);
-//	glDisable(GL_TEXTURE_2D);
-	glPushMatrix();
-	glTranslatef(0,-1.1f,-0.5f);
-	glColor3f(0.1f, 0.1f, 0.1f);
-	glScalef(0.5, 1, 2);
+	basicShader->setUniformMatrix4("modelMatrix", glm::scale(glm::translate(glm::mat4(), glm::vec3(0, -1.1f, -0.5f)), glm::vec3(0.5f, 1.0f, 2.0f)));
 	stand->draw();
-	glPopMatrix();
 
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -294,9 +282,6 @@ void BodyDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 	float rotAngle = glm::acos(glm::dot(glm::vec3(0,1,0), forward));
 	glm::mat4 rotMatrix = glm::rotate(glm::mat4(), rotAngle, rotAxis);
 
-	//printf("Pos:    %f\t%f\t%f\n", wandPos.x, wandPos.y, wandPos.z);
-	//printf("normal: %f\t%f\t%f\tDist: %f\n", forward.x, forward.y, forward.z, dist);
-
 
 	glColor3f(1,1,1);
 //	glEnable(GL_CULL_FACE);
@@ -305,15 +290,12 @@ void BodyDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 
 
 	shader->use();
-	shader->setUniform(BodyUniforms::cutPos, wandPos);
 	if (cut)
 	{
-		shader->setUniform(BodyUniforms::cutDist, dist);
+		shader->setUniform(BodyUniforms::cutPos, wandPos);
 		shader->setUniform(BodyUniforms::cutNormal, forward);
 	}
-
-
-
+	
 	glm::mat4 modelMatrix;
 	modelMatrix = glm::translate(modelMatrix, glm::vec3(0, -0.5f, 0.3f));
 	modelMatrix = glm::rotate(modelMatrix, glm::radians(-90.0f), glm::vec3(1, 0, 0));
@@ -324,7 +306,7 @@ void BodyDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 		glGetFloatv(GL_MODELVIEW_MATRIX, modelview);
 		Sleep(0);
 	}
-
+		
 	glPushMatrix();
 	glTranslatef(0.0f, -0.5f, 0.3f);
 	glRotatef(-90, 1, 0, 0);
@@ -362,7 +344,7 @@ void BodyDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 		glPushMatrix();
 
 		glDisable(GL_LIGHTING);
-		glColor4f(1,1,1,0.5f);
+		glColor4f(1,1,1,0.25f);
 		glBegin(GL_TRIANGLE_FAN);
 		for(float d = 0; d < 2 * M_PI; d += (float)(M_PI/10.0f))
 		{
@@ -403,7 +385,7 @@ void BodyDemo::Node::draw(float alpha, std::set<Node*> &drawn, vrlib::gl::Shader
 			shader->setUniform(BodyUniforms::colorMult, glm::vec4(1,1,1, alpha));
 			glColor4f(1,1,1, alpha);
 			glEnable(GL_TEXTURE_2D);
-			glBindTexture(GL_TEXTURE_2D, subMesh->mesh->texture->texid);
+			subMesh->mesh->texture->bind();
 		}
 		else
 		{
@@ -444,7 +426,6 @@ void BodyDemo::update()
 			glm::mat4 rotMatrix = glm::rotate(glm::mat4(), rotAngle, rotAxis);
 
 			shader->use();
-			shader->setUniform(BodyUniforms::cutDist, dist);
 			shader->setUniform(BodyUniforms::cutNormal, forward);
 		}
 	}

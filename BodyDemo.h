@@ -24,7 +24,6 @@ public:
 	enum class BodyUniforms
 	{
 		cutNormal,
-		cutDist,
 		tex,
 		hasTexture,
 		colorMult,
@@ -81,6 +80,7 @@ public:
 	vrlib::Model* walls;
 	vrlib::Model* stand;
 	vrlib::Texture* wallTexture;
+	vrlib::Texture* standTexture;
 
 
 
