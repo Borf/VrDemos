@@ -138,9 +138,7 @@ void JohanDemo::draw(const glm::mat4 &projectionMatrix, const glm::mat4 &modelvi
 	float ambl[] = { 0.5f, 0.5f, 0.5f, 1.0f }; glLightfv(GL_LIGHT0, GL_AMBIENT, ambl);
 	float difl[] = { 0.5f, 0.5f, 0.5f, 1.0f }; glLightfv(GL_LIGHT0, GL_DIFFUSE, difl);
 	float spel[] = { 0.5f, 0.5f, 0.5f, 1.0f }; glLightfv(GL_LIGHT0, GL_SPECULAR, spel);
-	glPushMatrix();
-	panel->draw();
-	glPopMatrix();
+	panel->draw(projectionMatrix, modelviewMatrix);
 	glEnable(GL_LIGHTING);
 	glEnable(GL_LIGHT0);
 	//glLoadIdentity();

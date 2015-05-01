@@ -6,14 +6,13 @@
 
 namespace vrlib { namespace gui { class Window; namespace components { class Panel; } } }
 class Demo;
-class SelectDemoButton;
 class JohanDemo;
 
 class DemoSelectPanel : public vrlib::gui::Window
 {
 	vrlib::gui::components::Panel* demoPanel;
 
-	SelectDemoButton* selectDemoButton;
+	vrlib::gui::components::Button* selectDemoButton;
 public:
 	DemoSelectPanel(JohanDemo* demo);
 	~DemoSelectPanel(void);

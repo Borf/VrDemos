@@ -167,7 +167,7 @@ void TunnelDemo::update()
 class TunnelPanel : public vrlib::gui::components::Panel
 {
 public:
-	TunnelPanel(vrlib::gui::layoutmanagers::LayoutManager* manager) : vrlib::gui::components::Panel(manager){};
+	TunnelPanel() {};
 	virtual float minWidth() 	{	return 1.8f; }
 	virtual float minHeight()	{	return 1.0f; }
 };

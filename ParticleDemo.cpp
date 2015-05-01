@@ -2,7 +2,6 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include "ParticleDemo.h"
 
-#include <vrlib/gui/LayoutManagers/TableLayout.h>
 #include <vrlib/gui/Components/Panel.h>
 #include <vrlib/gui/Components/Label.h>
 #include <vrlib/gui/Components/Slider.h>
@@ -43,13 +42,13 @@ void ParticleDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 	basicShader->use();
 	basicShader->setUniformMatrix4("modelMatrix", glm::mat4());
 	wallTexture->bind();
-	walls->draw();
+	walls->draw([this](const glm::mat4 &mat) {basicShader->setUniformMatrix4("modelMatrix", mat); });
 
 	sphereTexture->bind();
 	for(size_t i = 0; i < particles.size(); i++)
 	{
 		basicShader->setUniformMatrix4("modelMatrix", glm::translate(glm::mat4(), particles[i]->position));
-		model->draw();
+		model->draw([this, &i](const glm::mat4 &mat) { basicShader->setUniformMatrix4("modelMatrix", glm::translate(mat, particles[i]->position)); });
 	}
 }
 
@@ -110,16 +109,16 @@ void ParticleDemo::update()
 class ParticlePanel : public vrlib::gui::components::Panel
 {
 public:
-	ParticlePanel(vrlib::gui::layoutmanagers::LayoutManager* manager) : vrlib::gui::components::Panel(manager){};
+	ParticlePanel() {};
 	virtual float minWidth() 	{	return 0.55f; }
 	virtual float minHeight()	{	return 0.3f; }
 };
 
 vrlib::gui::components::Panel* ParticleDemo::getPanel()
 {
-	vrlib::gui::components::Panel* p = new ParticlePanel(new vrlib::gui::layoutmanagers::TableLayout(2));
-	p->add(new vrlib::gui::components::Label("Amount"));
-	p->add(amount = new vrlib::gui::components::Label("10"));
-	p->add(slider = new vrlib::gui::components::Slider(0, 5000, 1500));
+	vrlib::gui::components::Panel* p = new ParticlePanel();
+	p->push_back(new vrlib::gui::components::Label("Amount"));
+	p->push_back(amount = new vrlib::gui::components::Label("10"));
+	p->push_back(slider = new vrlib::gui::components::Slider(0, 5000, 500));
 	return p;
 }

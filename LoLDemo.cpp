@@ -13,9 +13,9 @@
 #include <vrlib/gui/Components/Label.h>
 #include <vrlib/gui/Components/Button.h>
 #include <vrlib/gui/Components/Slider.h>
-#include <vrlib/gui/layoutmanagers/TableLayout.h>
 #include <vrlib/math/Ray.h>
 #include <vrlib/gl/Vertex.h>
+#include <VrLib/gl/shader.h>
 
 #include <glm/gtc/matrix_transform.hpp>
 
@@ -50,13 +50,13 @@ public:
 	ChampPanel(LoLDemo* demo) : vrlib::gui::Window("")
 	{
 		this->demo = demo;
-		rootPanel = new vrlib::gui::components::Panel(new vrlib::gui::layoutmanagers::TableLayout((int)sqrt(demo->models.size())));
+		rootPanel = new vrlib::gui::components::Panel();
 
 		for(size_t i = 0; i < demo->models.size(); i++)
 		{
 			std::string fileName = demo->models[i]["icon"].asString();
 			fileName = fileName.substr(0, fileName.length()-4) + ".png";
-			rootPanel->add(new ChampIcon(new vrlib::Texture("data/models/LoL/Icons/" + fileName), i, demo));
+			rootPanel->push_back(new ChampIcon(new vrlib::Texture("data/models/LoL/Icons/" + fileName), i, demo));
 		}
 
 		//rootPanel->setFont(font);
@@ -136,7 +136,7 @@ void LoLDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 		glBindTexture(GL_TEXTURE_2D, texture->texid);
 	glDisable(GL_CULL_FACE);
 	if(model)
-		model->draw();
+		model->draw([this](const glm::mat4 &mat) { basicShader->setUniformMatrix4("modelMatrix", mat); });
 
 	glPopMatrix();
 
@@ -146,11 +146,11 @@ void LoLDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 	glEnable(GL_TEXTURE_2D);
 	if (wallTexture != NULL)
 		wallTexture->bind();
-	walls->draw();
+	walls->draw([this](const glm::mat4 &mat) { basicShader->setUniformMatrix4("modelMatrix", mat); });
 
 	glPopMatrix();
 	glPushMatrix();
-	champPanel->draw();
+	champPanel->draw(projectionMatrix, modelviewMatrix);
 	glPopMatrix();
 }
 
@@ -204,14 +204,14 @@ class LoLDemoPanel : public vrlib::gui::components::Panel
 {
 
 public:
-	LoLDemoPanel(LoLDemo* demo) : vrlib::gui::components::Panel(new vrlib::gui::layoutmanagers::TableLayout(2))
+	LoLDemoPanel(LoLDemo* demo)
 	{
-		add(new vrlib::gui::components::Button("Next Model", [demo]() { demo->nextModel(); }));
-		add(new vrlib::gui::components::Button("Next Skin", [demo](){ demo->nextSkin(); }));
-		add(demo->rotationCheckbox = new vrlib::gui::components::CheckBox(true, [demo](){ demo->setRotation(); }));
-		add(demo->rotationSlider = new vrlib::gui::components::Slider(0, 360, 0));
-		add(new vrlib::gui::components::Label("Scale"));
-		add(demo->scaleSlider = new vrlib::gui::components::Slider(0.25, 2, 1));
+		push_back(new vrlib::gui::components::Button("Next Model", glm::vec2(0,0), [demo]() { demo->nextModel(); }));
+		push_back(new vrlib::gui::components::Button("Next Skin", glm::vec2(0, 0.5f), [demo](){ demo->nextSkin(); }));
+		push_back(demo->rotationCheckbox = new vrlib::gui::components::CheckBox(true, glm::vec2(0,0), [demo](){ demo->setRotation(); }));
+		push_back(demo->rotationSlider = new vrlib::gui::components::Slider(0, 360, 0));
+		push_back(new vrlib::gui::components::Label("Scale", glm::vec2(1,0)));
+		push_back(demo->scaleSlider = new vrlib::gui::components::Slider(0.25, 2, 1));
 	}
 
 	virtual float minWidth() 

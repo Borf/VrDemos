@@ -5,7 +5,6 @@
 #include <vrlib/gui/components/Panel.h>
 #include <vrlib/gui/components/Slider.h>
 #include <vrlib/gui/Components/Label.h>
-#include <vrlib/gui/LayoutManagers/TableLayout.h>
 
 unsigned char bytePow(unsigned char data, double power)
 {
@@ -106,7 +105,7 @@ void VolumeDemo::update()
 class VolumePanel : public vrlib::gui::components::Panel
 {
 public:
-	VolumePanel(vrlib::gui::layoutmanagers::LayoutManager* manager) : vrlib::gui::components::Panel(manager){};
+	VolumePanel() {};
 	virtual float minWidth() 	{	return 0.55f; }
 	virtual float minHeight()	{	return 0.3f; }
 };
@@ -126,8 +125,8 @@ public:
 
 vrlib::gui::components::Panel* VolumeDemo::getPanel()
 {
-	vrlib::gui::components::Panel* p = new VolumePanel(new vrlib::gui::layoutmanagers::TableLayout(1));
-	p->add(slider = new VolumeSlider(this));
+	vrlib::gui::components::Panel* p = new VolumePanel();
+	p->push_back(slider = new VolumeSlider(this));
 	return p;
 }
 

@@ -9,7 +9,6 @@
 #include <VrLib/gui/components/Panel.h>
 #include <VrLib/gui/components/CheckBox.h>
 #include <VrLib/gui/components/Slider.h>
-#include <VrLib/gui/layoutmanagers/TableLayout.h>
 
 #include <glm/gtc/matrix_transform.hpp>
 
@@ -257,13 +256,11 @@ void BodyDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 		Sleep(0);
 	}
 	basicShader->use();
-	basicShader->setUniformMatrix4("modelMatrix", glm::mat4());
 	wallTexture->bind();
-	walls->draw();
+	walls->draw([this](const glm::mat4 &mat) {basicShader->setUniformMatrix4("modelMatrix", mat); });
 
 	standTexture->bind();
-	basicShader->setUniformMatrix4("modelMatrix", glm::scale(glm::translate(glm::mat4(), glm::vec3(0, -1.1f, -0.5f)), glm::vec3(0.5f, 1.0f, 2.0f)));
-	stand->draw();
+	stand->draw([this](const glm::mat4 &mat) { basicShader->setUniformMatrix4("modelMatrix", glm::scale(glm::translate(mat, glm::vec3(0, -1.1f, -0.5f)), glm::vec3(0.5f, 1.0f, 2.0f))); });
 
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -437,7 +434,7 @@ void BodyDemo::update()
 class BodyPanel : public vrlib::gui::components::Panel
 {
 public:
-	BodyPanel(vrlib::gui::layoutmanagers::LayoutManager* manager) : vrlib::gui::components::Panel(manager){};
+	BodyPanel() {};
 	virtual float minWidth() 	{	return 0.55f; }
 	virtual float minHeight()	{	return 0.6f; }
 };
@@ -456,9 +453,9 @@ public:
 
 vrlib::gui::components::Panel* BodyDemo::getPanel()
 {
-	vrlib::gui::components::Panel* p = new BodyPanel(new vrlib::gui::layoutmanagers::TableLayout(1));
-	p->add(new BodySlider(this));
-	p->add(new vrlib::gui::components::CheckBox(true, [this]() { this->switchBody(); }));
+	vrlib::gui::components::Panel* p = new BodyPanel();
+	p->push_back(new BodySlider(this));
+	p->push_back(new vrlib::gui::components::CheckBox(true, glm::vec2(0,0), [this]() { this->switchBody(); }));
 	return p;
 }
 

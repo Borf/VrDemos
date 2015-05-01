@@ -12,7 +12,6 @@
 
 #include <VrLib/gui/Components/Button.h>
 #include <VrLib/gui/Components/Panel.h>
-#include <VrLib/gui/LayoutManagers/TableLayout.h>
 
 
 ParticleModelDemo::ParticleModelDemo(void) : Demo("ParticleModel")
@@ -111,15 +110,13 @@ void ParticleModelDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatr
 {
 	glEnable(GL_CULL_FACE);
 	basicShader->use();
-	basicShader->setUniformMatrix4("modelMatrix", glm::mat4());
 	wallTexture->bind();
-	walls->draw();
+	walls->draw([this](const glm::mat4 &mat) {basicShader->setUniformMatrix4("modelMatrix", mat); });
 
 	sphereTexture->bind();
 	for(size_t i = 0; i < particles.size(); i++)
 	{
-		basicShader->setUniformMatrix4("modelMatrix", glm::scale(glm::translate(glm::mat4(), particles[i]->position), glm::vec3(0.025f, 0.025f, 0.025f)));
-		model->draw();
+		model->draw([this, &i](const glm::mat4 &mat) {basicShader->setUniformMatrix4("modelMatrix", glm::scale(glm::translate(mat, particles[i]->position), glm::vec3(0.025f, 0.025f, 0.025f))); });
 	}
 }
 
@@ -149,9 +146,9 @@ void ParticleModelDemo::update()
 class ParticleModelDemoPanel : public vrlib::gui::components::Panel
 {
 public:
-	ParticleModelDemoPanel(ParticleModelDemo* demo) : vrlib::gui::components::Panel(new vrlib::gui::layoutmanagers::TableLayout(1))
+	ParticleModelDemoPanel(ParticleModelDemo* demo)
 	{
-		add(new vrlib::gui::components::Button("Next Model", [demo]() { demo->next(); } ));
+		push_back(new vrlib::gui::components::Button("Next Model", glm::vec2(0,0), [demo]() { demo->next(); } ));
 	}
 
 	virtual float minWidth() 
