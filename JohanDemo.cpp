@@ -2,6 +2,10 @@
 
 #include <VrLib/Kernel.h>
 #include <VrLib/math/Ray.h>
+#include <VrLib/gui/components/Panel.h>
+#include <VrLib/gui/components/Button.h>
+#include <VrLib/gui/Window.h>
+#include <glm/gtc/matrix_transform.hpp>
 #include "JohanDemo.h"
 
 #include "ParticleDemo.h"
@@ -39,7 +43,7 @@ JohanDemo::~JohanDemo(void)
 
 void JohanDemo::init()
 {
-	panel = NULL;
+	demoSelectWindow = NULL;
 	mWand.init("WandPosition");
 	mHead.init("MainUserHead");
 	mLeftButton.init("LeftButton");
@@ -61,7 +65,11 @@ void JohanDemo::contextInit()
 	for(size_t i  = 0; i < demos.size(); i++)
 		demos[i]->init();
 
-	panel = new DemoSelectPanel(this);
+	//demoSelectWindow = new DemoSelectPanel(this);
+	demoSelectWindow = new vrlib::gui::Window("Demo Select");
+	demoSelectWindow->renderMatrix	= glm::translate(demoSelectWindow->renderMatrix, glm::vec3(-1.5, -1.25f, 1.25));
+	demoSelectWindow->renderMatrix = glm::rotate(demoSelectWindow->renderMatrix, glm::radians(90.0f), glm::vec3(0, 1, 0));
+	demoSelectWindow->setRootPanel(new vrlib::gui::components::Panel("data/johandemo/mainpanel.json"));
 
 	basicShader = new vrlib::gl::ShaderProgram("data/JohanDemo/BasicShader.vert", "data/JohanDemo/BasicShader.frag");
 	basicShader->bindAttributeLocation("a_position", 0);
@@ -83,7 +91,7 @@ void JohanDemo::preFrame()
 {
 	if(vrlib::Kernel::getInstance()->isMaster())
 		demos[currentDemo]->isLocal = true;
-	if(panel)
+	if(demoSelectWindow)
 	{
 		glm::mat4 mat = mWand.getData();
 
@@ -93,7 +101,7 @@ void JohanDemo::preFrame()
 		glm::vec4 point = mat * glm::vec4(0,0,-1,1);
 		glm::vec4 diff = point - origin;
 
-		panel->setSelector(vrlib::math::Ray(glm::vec3(origin[0], origin[1], origin[2]), glm::vec3(diff[0], diff[1], diff[2])));
+		demoSelectWindow->setSelector(vrlib::math::Ray(glm::vec3(origin[0], origin[1], origin[2]), glm::vec3(diff[0], diff[1], diff[2])));
 
 		vrlib::DigitalState data = mLeftButton.getData();
 		demos[currentDemo]->leftButton = data;
@@ -103,11 +111,11 @@ void JohanDemo::preFrame()
 
 		if(data == vrlib::TOGGLE_ON)
 		{
-			panel->mouseDown();
+			demoSelectWindow->mouseDown();
 		}
 		else if(data == vrlib::TOGGLE_OFF)
 		{
-			panel->mouseUp();
+			demoSelectWindow->mouseUp();
 		}
 		else if (data == vrlib::ON)
 		{
@@ -138,7 +146,7 @@ void JohanDemo::draw(const glm::mat4 &projectionMatrix, const glm::mat4 &modelvi
 	float ambl[] = { 0.5f, 0.5f, 0.5f, 1.0f }; glLightfv(GL_LIGHT0, GL_AMBIENT, ambl);
 	float difl[] = { 0.5f, 0.5f, 0.5f, 1.0f }; glLightfv(GL_LIGHT0, GL_DIFFUSE, difl);
 	float spel[] = { 0.5f, 0.5f, 0.5f, 1.0f }; glLightfv(GL_LIGHT0, GL_SPECULAR, spel);
-	panel->draw(projectionMatrix, modelviewMatrix);
+	demoSelectWindow->draw(projectionMatrix, modelviewMatrix);
 	glEnable(GL_LIGHTING);
 	glEnable(GL_LIGHT0);
 	//glLoadIdentity();
@@ -158,7 +166,7 @@ void JohanDemo::setDemo( int id )
 	currentDemo = id;
 	demos[id]->basicShader = basicShader;
 	demos[id]->start();
-	panel->setDemoPanel(demos[id]);
+	demoSelectWindow->getComponent<vrlib::gui::components::Button>("btnChangeDemo")->text = demos[id]->name;
 }
 
 std::string JohanDemo::nextDemo()

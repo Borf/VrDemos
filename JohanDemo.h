@@ -9,9 +9,9 @@ using namespace std;
 
 namespace vrlib {
 	namespace gl { class ShaderProgram; }
+	namespace gui { class Window;  }
 }
 class Demo;
-class DemoSelectPanel;
 
 class JohanDemo : public vrlib::Application
 {
@@ -27,7 +27,7 @@ private:
 	vrlib::DigitalDevice	  mPageDownButton;
 	vrlib::DigitalDevice	  mPageUpButton;
 
-	DemoSelectPanel* panel;
+	vrlib::gui::Window* demoSelectWindow;
 
 	vrlib::gl::ShaderProgram* basicShader;
 
