@@ -5,6 +5,7 @@
 #include <vrlib/gui/Components/Panel.h>
 #include <vrlib/gui/Components/CheckBox.h>
 #include <vrlib/gui/Components/Label.h>
+#include <VrLib/gl/shader.h>
 using namespace std;
 
 #define _USE_MATH_DEFINES
@@ -26,7 +27,7 @@ TunnelDemo::~TunnelDemo(void)
 void TunnelDemo::init()
 {
 	texture = new vrlib::Texture("data/johandemo/stone-tan.jpg");
-	std::vector<vrlib::gl::VertexPositionNormalTexture> vertices;
+	std::vector<vrlib::gl::VertexP3N3T2> vertices;
 
 	float inc = (float)(M_PI/10);
 	float tmult = (float)(4 / M_PI);
@@ -35,25 +36,25 @@ void TunnelDemo::init()
 	{
 		for(float r = 0; r < 2*M_PI; r+=inc)
 		{
-			vertices.push_back(vrlib::gl::VertexPositionNormalTexture(glm::vec3(1.5f*cos(r), 1.5f*sin(r), -i), glm::vec3(cos(r), sin(r), 0), glm::vec2(r*tmult, i / 1.5f)));
-			vertices.push_back(vrlib::gl::VertexPositionNormalTexture(glm::vec3(1.5f*cos(r + inc), 1.5f*sin(r + inc), -i), glm::vec3(cos(r + inc), sin(r + inc), 0), glm::vec2((r + inc)*tmult, i / 1.5f)));
-			vertices.push_back(vrlib::gl::VertexPositionNormalTexture(glm::vec3(1.5f*cos(r + inc), 1.5f*sin(r + inc), -i - 1), glm::vec3(cos(r + inc), sin(r + inc), 0), glm::vec2((r + inc)*tmult, (i + 1) / 1.5f)));
+			vertices.push_back(vrlib::gl::VertexP3N3T2(glm::vec3(1.5f*cos(r), 1.5f*sin(r), -i), glm::vec3(cos(r), sin(r), 0), glm::vec2(r*tmult, i / 1.5f)));
+			vertices.push_back(vrlib::gl::VertexP3N3T2(glm::vec3(1.5f*cos(r + inc), 1.5f*sin(r + inc), -i), glm::vec3(cos(r + inc), sin(r + inc), 0), glm::vec2((r + inc)*tmult, i / 1.5f)));
+			vertices.push_back(vrlib::gl::VertexP3N3T2(glm::vec3(1.5f*cos(r + inc), 1.5f*sin(r + inc), -i - 1), glm::vec3(cos(r + inc), sin(r + inc), 0), glm::vec2((r + inc)*tmult, (i + 1) / 1.5f)));
 
-			vertices.push_back(vrlib::gl::VertexPositionNormalTexture(glm::vec3(1.5f*cos(r + inc), 1.5f*sin(r + inc), -i - 1), glm::vec3(cos(r + inc), sin(r + inc), 0), glm::vec2((r + inc)*tmult, (i + 1) / 1.5f)));
-			vertices.push_back(vrlib::gl::VertexPositionNormalTexture(glm::vec3(1.5f*cos(r), 1.5f*sin(r), -i - 1), glm::vec3(cos(r), sin(r), 0), glm::vec2(r*tmult, (i + 1) / 1.5f)));
-			vertices.push_back(vrlib::gl::VertexPositionNormalTexture(glm::vec3(1.5f*cos(r), 1.5f*sin(r), -i), glm::vec3(cos(r), sin(r), 0), glm::vec2(r*tmult, i / 1.5f)));
+			vertices.push_back(vrlib::gl::VertexP3N3T2(glm::vec3(1.5f*cos(r + inc), 1.5f*sin(r + inc), -i - 1), glm::vec3(cos(r + inc), sin(r + inc), 0), glm::vec2((r + inc)*tmult, (i + 1) / 1.5f)));
+			vertices.push_back(vrlib::gl::VertexP3N3T2(glm::vec3(1.5f*cos(r), 1.5f*sin(r), -i - 1), glm::vec3(cos(r), sin(r), 0), glm::vec2(r*tmult, (i + 1) / 1.5f)));
+			vertices.push_back(vrlib::gl::VertexP3N3T2(glm::vec3(1.5f*cos(r), 1.5f*sin(r), -i), glm::vec3(cos(r), sin(r), 0), glm::vec2(r*tmult, i / 1.5f)));
 		}
 	}
 	for(float r = 0; r < 2*M_PI; r+=inc)
 	{
-		vertices.push_back(vrlib::gl::VertexPositionNormalTexture(glm::vec3(1.5f*cos(r), 1.5f*sin(r), -TUBELEN), glm::vec3(0, 0, 1), glm::vec2(0, 0)));
-		vertices.push_back(vrlib::gl::VertexPositionNormalTexture(glm::vec3(1.5f*cos(r + inc), 1.5f*sin(r + inc), -TUBELEN), glm::vec3(0, 0, 1), glm::vec2(0, 0)));
-		vertices.push_back(vrlib::gl::VertexPositionNormalTexture(glm::vec3(0, 0, -TUBELEN), glm::vec3(0, 0, 1), glm::vec2(0, 0)));
+		vertices.push_back(vrlib::gl::VertexP3N3T2(glm::vec3(1.5f*cos(r), 1.5f*sin(r), -TUBELEN), glm::vec3(0, 0, 1), glm::vec2(0, 0)));
+		vertices.push_back(vrlib::gl::VertexP3N3T2(glm::vec3(1.5f*cos(r + inc), 1.5f*sin(r + inc), -TUBELEN), glm::vec3(0, 0, 1), glm::vec2(0, 0)));
+		vertices.push_back(vrlib::gl::VertexP3N3T2(glm::vec3(0, 0, -TUBELEN), glm::vec3(0, 0, 1), glm::vec2(0, 0)));
 	}
 
 	
 
-	vbo = new vrlib::gl::VBO<vrlib::gl::VertexPositionNormalTexture>();
+	vbo = new vrlib::gl::VBO<vrlib::gl::VertexP3N3T2>();
 
 	vbo->bind();
 	vbo->setData(vertices.size(), &vertices[0], GL_DYNAMIC_DRAW);
@@ -74,26 +75,17 @@ void TunnelDemo::start()
 
 void TunnelDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 {
-	glEnable(GL_FOG);
-	glFogi(GL_FOG_MODE, GL_LINEAR);
-	float fogColor[] = { 0.8352f, 0.7568f, 0.6274f, 1.0f}; glFogfv(GL_FOG_COLOR, fogColor);
-	glFogf(GL_FOG_DENSITY, 0.35f);
-	glFogf(GL_FOG_START, 15.0f);             // Fog Start Depth
-	glFogf(GL_FOG_END, 40.0f);               // Fog End Depth
-
-
-	glDisable(GL_CULL_FACE);
-	glEnable(GL_TEXTURE_2D);
-	glDisable(GL_LIGHTING);
+	glEnable(GL_CULL_FACE);
+	basicShader->use();
+	basicShader->setUniformMatrix4("modelMatrix", glm::mat4());
 	texture->bind();
 	vbo->bind();
-	vbo->setPointer();
+	vbo->setAttributes();
 	glDrawArrays(GL_TRIANGLES, 0, vbo->getLength());
-	vbo->unsetPointer();
 	vbo->unBind();
-
-	glDisable(GL_FOG);
-
+	glDisableVertexAttribArray(0);
+	glDisableVertexAttribArray(1);
+	glDisableVertexAttribArray(2);
 
 	if(vbo)
 	{
@@ -115,13 +107,13 @@ void TunnelDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 
 			for(float r = 0; r < 2*M_PI; r+=inc)
 			{
-				(*vbo)[index++].position = glm::vec3(cx+1.5f*glm::cos(rot+r),cy+1.5f*glm::sin(rot+r),-i + dist);
-				(*vbo)[index++].position = glm::vec3(cx+1.5f*glm::cos(rot+r+inc),cy+1.5f*glm::sin(rot+r+inc),-i + dist);
-				(*vbo)[index++].position = glm::vec3(ncx+1.5f*glm::cos(rot+r+inc),ncy+1.5f*glm::sin(rot+r+inc),-i-1 + dist);
+				setP3((*vbo)[index++], glm::vec3(cx+1.5f*glm::cos(rot+r),cy+1.5f*glm::sin(rot+r),-i + dist));
+				setP3((*vbo)[index++], glm::vec3(cx + 1.5f*glm::cos(rot + r + inc), cy + 1.5f*glm::sin(rot + r + inc), -i + dist));
+				setP3((*vbo)[index++], glm::vec3(ncx + 1.5f*glm::cos(rot + r + inc), ncy + 1.5f*glm::sin(rot + r + inc), -i - 1 + dist));
 
-				(*vbo)[index++].position = glm::vec3(ncx+1.5f*glm::cos(rot+r+inc),ncy+1.5f*glm::sin(rot+r+inc),-i-1 + dist);
-				(*vbo)[index++].position = glm::vec3(ncx+1.5f*glm::cos(rot+r),ncy+1.5f*glm::sin(rot+r),-i-1 + dist);
-				(*vbo)[index++].position = glm::vec3(cx+1.5f*glm::cos(rot+r),cy+1.5f*glm::sin(rot+r),-i + dist);
+				setP3((*vbo)[index++], glm::vec3(ncx + 1.5f*glm::cos(rot + r + inc), ncy + 1.5f*glm::sin(rot + r + inc), -i - 1 + dist));
+				setP3((*vbo)[index++], glm::vec3(ncx + 1.5f*glm::cos(rot + r), ncy + 1.5f*glm::sin(rot + r), -i - 1 + dist));
+				setP3((*vbo)[index++], glm::vec3(cx + 1.5f*glm::cos(rot + r), cy + 1.5f*glm::sin(rot + r), -i + dist));
 			}
 
 			cx = ncx;
@@ -129,9 +121,9 @@ void TunnelDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 		}
 		for(float r = 0; r < 2*M_PI; r+=inc)
 		{
-			(*vbo)[index++].position = glm::vec3(cx+1.5f*glm::cos(rot+r),cy+1.5f*glm::sin(rot+r),-TUBELEN + dist);
-			(*vbo)[index++].position = glm::vec3(cx+1.5f*glm::cos(rot+r+inc),cy+1.5f*glm::sin(rot+r+inc),-TUBELEN + dist);
-			(*vbo)[index++].position = glm::vec3(cx+0,cy+0,-TUBELEN + dist);
+			setP3((*vbo)[index++], glm::vec3(cx + 1.5f*glm::cos(rot + r), cy + 1.5f*glm::sin(rot + r), -TUBELEN + dist));
+			setP3((*vbo)[index++], glm::vec3(cx + 1.5f*glm::cos(rot + r + inc), cy + 1.5f*glm::sin(rot + r + inc), -TUBELEN + dist));
+			setP3((*vbo)[index++], glm::vec3(cx + 0, cy + 0, -TUBELEN + dist));
 		}
 
 

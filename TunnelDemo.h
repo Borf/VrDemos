@@ -10,7 +10,7 @@
 
 class TunnelDemo : public Demo
 {
-	vrlib::gl::VBO<vrlib::gl::VertexPositionNormalTexture>* vbo;
+	vrlib::gl::VBO<vrlib::gl::VertexP3N3T2>* vbo;
 
 	vrlib::Texture* texture;
 	float rot;
