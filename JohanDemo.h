@@ -41,7 +41,7 @@ public:
 
 	virtual void init();
 	void setDemo( int id );
-	std::string nextDemo();
+	void nextDemo();
 	void resetDemo();
 };
 

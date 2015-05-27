@@ -11,7 +11,7 @@
                 "value": "Change Demo",
                 "position": [ 0.025, 0.025 ],
                 "size" :  [ 0.85, 0.2 ]
-            }/*,
+            },
             {
 
                 "type": "button",
@@ -19,7 +19,7 @@
                 "value": "reset",
                 "position": [ 0.025, 0.225 ],
                 "size" :  [ 0.85, 0.2 ]
-            }*/
+            }
         ]
     },
     {

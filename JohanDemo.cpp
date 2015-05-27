@@ -27,8 +27,8 @@ JohanDemo::JohanDemo(void)
 //	demos.push_back(new ParticleModelDemo());
 //	demos.push_back(new RoDemo());
 //	demos.push_back(new VolumeDemo());
-//	demos.push_back(new ParticleDemo());
-	demos.push_back(new TunnelDemo());
+	demos.push_back(new ParticleDemo());
+//	demos.push_back(new TunnelDemo());
 
 #ifndef NOKINECT
 	demos.push_back(new KinectDemo());
@@ -67,9 +67,12 @@ void JohanDemo::contextInit()
 
 	//demoSelectWindow = new DemoSelectPanel(this);
 	demoSelectWindow = new vrlib::gui::Window("Demo Select");
-	demoSelectWindow->renderMatrix	= glm::translate(demoSelectWindow->renderMatrix, glm::vec3(-1.5, -1.25f, 1.25));
+	demoSelectWindow->renderMatrix	= glm::translate(demoSelectWindow->renderMatrix, glm::vec3(-1.5, 1.25f, 1.25));
 	demoSelectWindow->renderMatrix = glm::rotate(demoSelectWindow->renderMatrix, glm::radians(90.0f), glm::vec3(0, 1, 0));
 	demoSelectWindow->setRootPanel(new vrlib::gui::components::Panel("data/johandemo/mainpanel.json"));
+	demoSelectWindow->getComponent<vrlib::gui::components::Component>("btnChangeDemo")->addClickHandler(std::bind(&JohanDemo::nextDemo, this));
+	demoSelectWindow->getComponent<vrlib::gui::components::Component>("btnReset")->addClickHandler(std::bind(&JohanDemo::resetDemo, this));
+
 
 	basicShader = new vrlib::gl::ShaderProgram("data/JohanDemo/BasicShader.vert", "data/JohanDemo/BasicShader.frag");
 	basicShader->bindAttributeLocation("a_position", 0);
@@ -169,10 +172,10 @@ void JohanDemo::setDemo( int id )
 	demoSelectWindow->getComponent<vrlib::gui::components::Button>("btnChangeDemo")->text = demos[id]->name;
 }
 
-std::string JohanDemo::nextDemo()
+void JohanDemo::nextDemo()
 {
 	setDemo((currentDemo+1) % demos.size());
-	return demos[currentDemo]->name;
+	//return demos[currentDemo]->name;
 }
 
 void JohanDemo::resetDemo()
