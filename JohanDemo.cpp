@@ -23,7 +23,7 @@ JohanDemo::JohanDemo(void)
 	currentDemo = 0;
 
 //	demos.push_back(new LoLDemo());
-//	demos.push_back(new BodyDemo());
+	demos.push_back(new BodyDemo());
 //	demos.push_back(new ParticleModelDemo());
 //	demos.push_back(new RoDemo());
 //	demos.push_back(new VolumeDemo());
@@ -71,7 +71,7 @@ void JohanDemo::contextInit()
 	demoSelectWindow->renderMatrix = glm::rotate(demoSelectWindow->renderMatrix, glm::radians(90.0f), glm::vec3(0, 1, 0));
 	demoSelectWindow->setRootPanel(new vrlib::gui::components::Panel("data/johandemo/mainpanel.json"));
 	demoSelectWindow->getComponent<vrlib::gui::components::Component>("btnChangeDemo")->addClickHandler(std::bind(&JohanDemo::nextDemo, this));
-	demoSelectWindow->getComponent<vrlib::gui::components::Component>("btnReset")->addClickHandler(std::bind(&JohanDemo::resetDemo, this));
+//	demoSelectWindow->getComponent<vrlib::gui::components::Component>("btnReset")->addClickHandler(std::bind(&JohanDemo::resetDemo, this));
 
 
 	basicShader = new vrlib::gl::ShaderProgram("data/JohanDemo/BasicShader.vert", "data/JohanDemo/BasicShader.frag");
