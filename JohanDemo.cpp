@@ -23,7 +23,7 @@ JohanDemo::JohanDemo(void)
 	currentDemo = 0;
 
 //	demos.push_back(new LoLDemo());
-	demos.push_back(new BodyDemo());
+//	demos.push_back(new BodyDemo());
 //	demos.push_back(new ParticleModelDemo());
 //	demos.push_back(new RoDemo());
 //	demos.push_back(new VolumeDemo());
@@ -170,6 +170,15 @@ void JohanDemo::setDemo( int id )
 	demos[id]->basicShader = basicShader;
 	demos[id]->start();
 	demoSelectWindow->getComponent<vrlib::gui::components::Button>("btnChangeDemo")->text = demos[id]->name;
+	glm::vec2 size = demoSelectWindow->getComponent<vrlib::gui::components::Component>("demopanel")->size;
+	glm::vec2 pos = demoSelectWindow->getComponent<vrlib::gui::components::Component>("demopanel")->position;
+
+	vrlib::gui::components::Component* panel = demos[id]->getPanel();
+	demoSelectWindow->setComponent("demopanel", panel);
+	panel->size = size;
+	panel->position = pos;
+	panel->name = "demopanel";
+
 }
 
 void JohanDemo::nextDemo()

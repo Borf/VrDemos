@@ -54,32 +54,29 @@ void ParticleDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 
 void ParticleDemo::update()
 {
-	if(slider)
+	char buf[100];
+	sprintf_s(buf, 100, "%i", (int)slider->value);
+	amount->text = buf;
+
+	if(particles.size() > (unsigned int)slider->value)
 	{
-		char buf[100];
-		sprintf_s(buf, 100, "%i", (int)slider->value);
-		amount->text = buf;
-
-		if(particles.size() > (unsigned int)slider->value)
+		for(size_t i = (unsigned int)slider->value; i < particles.size(); i++)
+			delete particles[i];
+		particles.resize((unsigned int)slider->value);
+	}
+	else if(particles.size() < (unsigned int)slider->value)
+	{
+		int spawn = rand()%10;
+		int i = 0;
+		while(particles.size() < (unsigned int)slider->value && i < spawn)
 		{
-			for(size_t i = (unsigned int)slider->value; i < particles.size(); i++)
-				delete particles[i];
-			particles.resize((unsigned int)slider->value);
-		}
-		else if(particles.size() < (unsigned int)slider->value)
-		{
-			int spawn = rand()%10;
-			int i = 0;
-			while(particles.size() < (unsigned int)slider->value && i < spawn)
-			{
-				float dir = ((rand()%10000) / 10000.0f) * 2 * 3.1415f;
+			float dir = ((rand()%10000) / 10000.0f) * 2 * 3.1415f;
 
-				float x = ((rand()%10000) / 10000.0f) * 3 - 1.5f;
-				float z = ((rand()%10000) / 10000.0f) * 3 - 1.5f;
+			float x = ((rand()%10000) / 10000.0f) * 3 - 1.5f;
+			float z = ((rand()%10000) / 10000.0f) * 3 - 1.5f;
 
-				particles.push_back(new Particle(glm::vec3(x,0.8f,z), glm::vec3(0.02*cos(dir), ((rand()%10000) / 1000000.0f), 0.02*sin(dir))));				
-				i++;
-			}
+			particles.push_back(new Particle(glm::vec3(x,0.8f,z), glm::vec3(0.02*cos(dir), ((rand()%10000) / 1000000.0f), 0.02*sin(dir))));				
+			i++;
 		}
 	}
 
@@ -105,20 +102,12 @@ void ParticleDemo::update()
 	}
 }
 
-
-class ParticlePanel : public vrlib::gui::components::Panel
-{
-public:
-	ParticlePanel() {};
-	virtual float minWidth() 	{	return 0.55f; }
-	virtual float minHeight()	{	return 0.3f; }
-};
-
 vrlib::gui::components::Panel* ParticleDemo::getPanel()
 {
-	vrlib::gui::components::Panel* p = new ParticlePanel();
-	p->push_back(new vrlib::gui::components::Label("Amount"));
-	p->push_back(amount = new vrlib::gui::components::Label("10"));
-	p->push_back(slider = new vrlib::gui::components::Slider(0, 5000, 500));
+
+	vrlib::gui::components::Panel* p = new vrlib::gui::components::Panel("data/JohanDemo/particledemopanel.json");
+
+	slider = p->getComponent<vrlib::gui::components::Slider>("amountSlider");
+	amount = p->getComponent<vrlib::gui::components::Label>("amountLabel");
 	return p;
 }

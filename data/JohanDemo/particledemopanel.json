@@ -1,0 +1,34 @@
+[
+    {
+
+        "type": "button",
+        "name": "btnChangeDemo",
+        "value": "asdasdasd",
+        "position": [ 0.025, 0.025 ],
+        "size" :  [ 0.85, 0.2 ]
+    },
+    {
+
+        "type": "button",
+        "name": "Reset",
+        "value": "sdfsdf",
+        "position": [ 0.025, 0.225 ],
+        "size" :  [ 0.85, 0.2 ]
+    },
+	{
+		"type" :  "slider",
+		"name" :  "amountSlider",
+		"min" :  1,
+		"max" :  1000,
+		"value" :  500,
+		"position" :  [ 0.025, 0.425 ],
+		"size" :  [ 0.85, 0.2 ]
+	},
+	{
+		"type" :  "label",
+		"name" :  "amountLabel",
+		"value" :  "500",
+		"position" :  [ 0.025, 0.625 ],
+		"size" :  [ 0.85, 0.2 ]
+	}
+]
