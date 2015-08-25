@@ -4,6 +4,8 @@ uniform sampler2D s_texture;
 in vec2 texCoord;
 in vec3 normal;
 
+out vec4 fragColor;
+
 void main()
 {
 	
@@ -15,6 +17,6 @@ void main()
 
 	vec4 tex = texture2D(s_texture, texCoord);
 
-	gl_FragColor.rgb = light * tex.rgb;
-	gl_FragColor.a = tex.a;
+	fragColor.rgb = light * tex.rgb;
+	fragColor.a = tex.a;
 }
