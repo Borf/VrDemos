@@ -23,7 +23,7 @@ JohanDemo::JohanDemo(void)
 	currentDemo = 0;
 
 //	demos.push_back(new LoLDemo());
-//	demos.push_back(new BodyDemo());
+	demos.push_back(new BodyDemo());
 //	demos.push_back(new ParticleModelDemo());
 //	demos.push_back(new RoDemo());
 //	demos.push_back(new VolumeDemo());
@@ -67,6 +67,7 @@ void JohanDemo::contextInit()
 
 	//demoSelectWindow = new DemoSelectPanel(this);
 	demoSelectWindow = new vrlib::gui::Window("Demo Select");
+	demoSelectWindow->setSize(glm::vec2(1, 2));
 	demoSelectWindow->renderMatrix	= glm::translate(demoSelectWindow->renderMatrix, glm::vec3(-1.5, 1.25f, 1.25));
 	demoSelectWindow->renderMatrix = glm::rotate(demoSelectWindow->renderMatrix, glm::radians(90.0f), glm::vec3(0, 1, 0));
 	demoSelectWindow->setRootPanel(new vrlib::gui::components::Panel("data/johandemo/mainpanel.json"));

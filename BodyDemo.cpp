@@ -406,6 +406,8 @@ void BodyDemo::Node::draw(float alpha, std::set<Node*> &drawn, vrlib::gl::Shader
 
 void BodyDemo::update()
 {
+	layer = -0.5f + (opacitySlider->value / opacitySlider->max) * 8;
+
 	if(rightButton == vrlib::TOGGLE_ON)
 	{
 		cut = !cut;
@@ -430,32 +432,10 @@ void BodyDemo::update()
 }
 
 
-
-class BodyPanel : public vrlib::gui::components::Panel
-{
-public:
-	BodyPanel() {};
-	virtual float minWidth() 	{	return 0.55f; }
-	virtual float minHeight()	{	return 0.6f; }
-};
-
-class BodySlider : public vrlib::gui::components::Slider
-{
-	BodyDemo* demo;
-public:
-	BodySlider(BodyDemo* demo) : vrlib::gui::components::Slider(0, 100000, 0) { this->demo = demo; }
-	void drag(glm::vec3 intersect)
-	{
-		vrlib::gui::components::Slider::drag(intersect);
-		demo->layer = -0.5f + (value/max) * 8;
-	}
-};
-
 vrlib::gui::components::Panel* BodyDemo::getPanel()
 {
-	vrlib::gui::components::Panel* p = new BodyPanel();
-	p->push_back(new BodySlider(this));
-	p->push_back(new vrlib::gui::components::CheckBox(true, glm::vec2(0,0), [this]() { this->switchBody(); }));
+	vrlib::gui::components::Panel* p = new vrlib::gui::components::Panel("data/JohanDemo/bodydemopanel.json");
+	opacitySlider = p->getComponent<vrlib::gui::components::Slider>("opacity");
 	return p;
 }
 

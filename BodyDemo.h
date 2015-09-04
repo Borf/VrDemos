@@ -16,6 +16,7 @@ namespace vrlib
 	namespace gl { class ShaderProgram; }
 	class Texture;
 	class Model;
+	namespace gui { namespace components { class Slider;  } }
 }
 
 class BodyDemo : public Demo
@@ -82,6 +83,7 @@ public:
 	vrlib::Texture* wallTexture;
 	vrlib::Texture* standTexture;
 
+	vrlib::gui::components::Slider* opacitySlider;
 
 
 	float layer;

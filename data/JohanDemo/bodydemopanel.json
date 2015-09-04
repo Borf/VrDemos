@@ -1,0 +1,25 @@
+[
+    {
+
+        "type": "label",
+        "name": "lblGender",
+        "value": "Gender",
+        "position": [ 0.025, 0.05 ],
+        "size" :  [ 0.55, 0.2 ]
+    },
+    {
+
+        "type": "checkbox",
+        "name": "gender",
+        "position": [ 0.65, 0.05 ]
+    },
+	{
+		"type" : "slider",
+		"name" : "opacity",
+		"min" :  0,
+		"max" :  100000,
+		"value" :  0,
+		"position" :  [ 0.025, 0.4 ],
+		"size" :  [ 0.95, 0.2 ]
+	}
+]
