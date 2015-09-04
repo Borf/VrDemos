@@ -24,7 +24,7 @@ public:
 	virtual void init() = 0;
 	virtual void start() = 0;
 	virtual void draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix) = 0;
-	virtual void update() = 0;
+	virtual void update(double elapsedTime) = 0;
 	virtual vrlib::gui::components::Panel* getPanel() = 0;
 
 

@@ -37,7 +37,7 @@ public:
 
 	virtual void draw(const glm::mat4 &projectionMatrix, const glm::mat4 &modelviewMatrix);
 	virtual void contextInit();
-	virtual void preFrame();
+	virtual void preFrame(double frameTime, double totalTime);
 
 	virtual void init();
 	void setDemo( int id );

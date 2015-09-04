@@ -52,7 +52,7 @@ void ParticleDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 	}
 }
 
-void ParticleDemo::update()
+void ParticleDemo::update(double elapsedTime)
 {
 	char buf[100];
 	sprintf_s(buf, 100, "%i", (int)slider->value);

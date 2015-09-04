@@ -96,7 +96,7 @@ LoLDemo::~LoLDemo(void)
 
 void LoLDemo::init()
 {
-	walls = vrlib::Model::getModel<vrlib::gl::VertexP3N3T2>("cavewall.1.2.2.shape", vrlib::ModelLoadOptions(6.0f));
+	walls = vrlib::Model::getModel<vrlib::gl::VertexP3N3T2>("cavewall.1.2.2.shape", vrlib::ModelLoadOptions(3.0f));
 	wallTexture = new vrlib::Texture("data/CubeMaps/Brick/total.png");
 
 	models = vrlib::json::readJson(std::ifstream("data/models/lol/models.json"));
@@ -126,19 +126,20 @@ void LoLDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 		texture = new vrlib::Texture("data/models/LoL/" + models[modelIndex]["dir"].asString() + "/" + models[modelIndex]["models"][skinIndex]["texture"].asString());
 		reload = false;
 	}
-	glPushMatrix();
-	glTranslatef(0, -1.5, -1);
-	glScalef(0.21f, 0.21f, 0.21f);
-	glScalef(scale, scale, scale);
-	glRotatef(rotation, 0, 1, 0);
+
+	glm::mat4 transform;
+	transform = glm::translate(transform, glm::vec3(0, -1.5, -1));
+	transform = glm::scale(transform, glm::vec3(0.01f, 0.01f, 0.01f));
+	transform = glm::scale(transform, glm::vec3(scale, scale, scale));
+	transform = glm::rotate(transform, rotation, glm::vec3(0, 1, 0));
+
+
 	glEnable(GL_TEXTURE_2D);
 	if(texture)
 		glBindTexture(GL_TEXTURE_2D, texture->texid);
 	glDisable(GL_CULL_FACE);
 	if(model)
-		model->draw([this](const glm::mat4 &mat) { basicShader->setUniformMatrix4("modelMatrix", mat); });
-
-	glPopMatrix();
+		model->draw([this, transform](const glm::mat4 &mat) { basicShader->setUniformMatrix4("modelMatrix", mat * transform); });
 
 	glPushMatrix();
 	glTranslatef(0, 1.5f, -1.5f);
@@ -154,13 +155,13 @@ void LoLDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 	glPopMatrix();
 }
 
-void LoLDemo::update()
+void LoLDemo::update(double elapsedTime)
 {
 	if(rotationSlider)
 		rotation = rotationSlider->value;
 
 	if(rotating)
-		rotation = rotation + 0.5f;
+		rotation = rotation + 0.1f * (elapsedTime / 1000.0f);
 	if(rotation > 360)
 		rotation -= 360;
 
@@ -228,7 +229,8 @@ public:
 
 vrlib::gui::components::Panel* LoLDemo::getPanel()
 {
-	return new LoLDemoPanel(this);
+	vrlib::gui::components::Panel* p = new vrlib::gui::components::Panel("data/JohanDemo/loldemopanel.json");
+	return p;
 }
 
 void LoLDemo::setRotation()

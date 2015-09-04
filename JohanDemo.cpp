@@ -22,8 +22,8 @@ JohanDemo::JohanDemo(void)
 {
 	currentDemo = 0;
 
-//	demos.push_back(new LoLDemo());
-	demos.push_back(new BodyDemo());
+	demos.push_back(new LoLDemo());
+//	demos.push_back(new BodyDemo());
 //	demos.push_back(new ParticleModelDemo());
 //	demos.push_back(new RoDemo());
 //	demos.push_back(new VolumeDemo());
@@ -91,7 +91,7 @@ void JohanDemo::contextInit()
 }
 
 
-void JohanDemo::preFrame()
+void JohanDemo::preFrame(double frameTime, double totalTime)
 {
 	if(vrlib::Kernel::getInstance()->isMaster())
 		demos[currentDemo]->isLocal = true;
@@ -126,7 +126,7 @@ void JohanDemo::preFrame()
 		}
 	}
 	clearColor = glm::vec4(demos[currentDemo]->backgroundColor,1);
-	demos[currentDemo]->update();
+	demos[currentDemo]->update(frameTime);
 }
 
 void JohanDemo::draw(const glm::mat4 &projectionMatrix, const glm::mat4 &modelviewMatrix)
