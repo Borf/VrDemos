@@ -131,7 +131,7 @@ void LoLDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 	transform = glm::translate(transform, glm::vec3(0, -1.5, -1));
 	transform = glm::scale(transform, glm::vec3(0.01f, 0.01f, 0.01f));
 	transform = glm::scale(transform, glm::vec3(scale, scale, scale));
-	transform = glm::rotate(transform, rotation, glm::vec3(0, 1, 0));
+	transform = glm::rotate(transform, glm::radians(rotation), glm::vec3(0, 1, 0));
 
 
 	glEnable(GL_TEXTURE_2D);
@@ -161,12 +161,12 @@ void LoLDemo::update(double elapsedTime)
 		rotation = rotationSlider->value;
 
 	if(rotating)
-		rotation = rotation + 0.1f * (elapsedTime / 1000.0f);
+		rotation = rotation + 0.01f * (float)elapsedTime;
 	if(rotation > 360)
 		rotation -= 360;
 
 	if(rotationSlider)
-		rotationSlider->value = rotation ;
+		rotationSlider->value = rotation;
 
 	if(scaleSlider)
 		scale = scaleSlider->value;
@@ -201,35 +201,16 @@ void LoLDemo::update(double elapsedTime)
 }
 
 
-class LoLDemoPanel : public vrlib::gui::components::Panel
-{
-
-public:
-	LoLDemoPanel(LoLDemo* demo)
-	{
-		push_back(new vrlib::gui::components::Button("Next Model", glm::vec2(0,0), [demo]() { demo->nextModel(); }));
-		push_back(new vrlib::gui::components::Button("Next Skin", glm::vec2(0, 0.5f), [demo](){ demo->nextSkin(); }));
-		push_back(demo->rotationCheckbox = new vrlib::gui::components::CheckBox(true, glm::vec2(0,0), [demo](){ demo->setRotation(); }));
-		push_back(demo->rotationSlider = new vrlib::gui::components::Slider(0, 360, 0));
-		push_back(new vrlib::gui::components::Label("Scale", glm::vec2(1,0)));
-		push_back(demo->scaleSlider = new vrlib::gui::components::Slider(0.25, 2, 1));
-	}
-
-	virtual float minWidth() 
-	{
-		return 0.6f;
-	}
-
-	virtual float minHeight() 
-	{
-		return 0.6f;
-	}
-
-};
-
 vrlib::gui::components::Panel* LoLDemo::getPanel()
 {
 	vrlib::gui::components::Panel* p = new vrlib::gui::components::Panel("data/JohanDemo/loldemopanel.json");
+
+	rotationSlider = p->getComponent<vrlib::gui::components::Slider>("rotationSlider");
+	scaleSlider = p->getComponent<vrlib::gui::components::Slider>("scaleSlider");
+
+	p->getComponent<vrlib::gui::components::Button>("btnChangeSkin")->addClickHandler([this]() { nextSkin(); });
+	p->getComponent<vrlib::gui::components::Button>("btnNextModel")->addClickHandler([this]() { nextModel(); });
+
 	return p;
 }
 

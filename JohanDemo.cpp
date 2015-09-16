@@ -27,7 +27,7 @@ JohanDemo::JohanDemo(void)
 //	demos.push_back(new ParticleModelDemo());
 //	demos.push_back(new RoDemo());
 //	demos.push_back(new VolumeDemo());
-	demos.push_back(new ParticleDemo());
+//	demos.push_back(new ParticleDemo());
 //	demos.push_back(new TunnelDemo());
 
 #ifndef NOKINECT
@@ -175,11 +175,13 @@ void JohanDemo::setDemo( int id )
 	glm::vec2 pos = demoSelectWindow->getComponent<vrlib::gui::components::Component>("demopanel")->position;
 
 	vrlib::gui::components::Component* panel = demos[id]->getPanel();
-	demoSelectWindow->setComponent("demopanel", panel);
+	if (panel)
+		demoSelectWindow->setComponent("demopanel", panel);
+	else
+		demoSelectWindow->setComponent("demopanel", new vrlib::gui::components::Panel());
 	panel->size = size;
 	panel->position = pos;
 	panel->name = "demopanel";
-
 }
 
 void JohanDemo::nextDemo()
