@@ -27,53 +27,44 @@
 class ChampPanel : public vrlib::gui::Window
 {
 	LoLDemo* demo;
-	class ChampIcon : public vrlib::gui::components::Image
-	{
-		LoLDemo* demo;
-		int i;
-	public:
-		ChampIcon(vrlib::Texture* tex, int i, LoLDemo* demo) : vrlib::gui::components::Image(tex)
-		{
-			this->demo = demo;
-			this->i = i;
-			this->addClickHandler([this]() { this->click(); });
-		}
-		void click()
-		{
-			demo->modelIndex = i;
-			demo->skinIndex = 0;
-			demo->scale = 1;
-			demo->reload = true;
-		}
-	};
 public:
 	ChampPanel(LoLDemo* demo) : vrlib::gui::Window("")
 	{
 		this->demo = demo;
+		setSize(glm::vec2(1, 2));
 		rootPanel = new vrlib::gui::components::Panel();
+		rootPanel->setBounds(glm::vec2(0, 0), glm::vec2(3, 3));
 
+		int cols = sqrt(demo->models.size());
+		int rows = ceil(sqrt(demo->models.size()));
+		glm::vec2 size(3.0f / max(cols, rows), 3.0f / max(cols, rows));
+		glm::vec2 pos(0, 0);
 		for(size_t i = 0; i < demo->models.size(); i++)
 		{
 			std::string fileName = demo->models[i]["icon"].asString();
-			fileName = fileName.substr(0, fileName.length()-4) + ".png";
-			rootPanel->push_back(new ChampIcon(new vrlib::Texture("data/models/LoL/Icons/" + fileName), i, demo));
+			fileName = fileName.substr(0, fileName.size()-4) + ".png";
+			vrlib::gui::components::Image* image = new vrlib::gui::components::Image(new vrlib::Texture("data/models/LoL/icons/" + fileName));
+			image->setBounds(pos, size);
+			pos.x += size.x;
+			if (pos.x >= 3)
+			{
+				pos.x = 0;
+				pos.y += size.y;
+			}
+			image->addClickHandler([demo, i]()
+			{
+				demo->modelIndex = i;
+				demo->reload = true;
+				demo->skinIndex = 0;
+			});
+			rootPanel->push_back(image);
 		}
 
 		//rootPanel->setFont(font);
 		//rootPanel->reposition(0,0,minWidth(),minHeight());
 		renderMatrix = glm::mat4();
-		renderMatrix = glm::translate(renderMatrix, glm::vec3(1.5,-1.5f,-1.5f));
-		renderMatrix = glm::rotate(renderMatrix, glm::radians(-90.0f), glm::vec3(0,1,0));
-	}
-
-	virtual float minWidth() 
-	{
-		return 3.0f;
-	}
-
-	virtual float minHeight() 
-	{
-		return 2.2f;
+		renderMatrix = glm::translate(renderMatrix, glm::vec3(1.5, 1.5f,- 1.5));
+		renderMatrix = glm::rotate(renderMatrix, glm::radians(-90.0f), glm::vec3(0, 1, 0));
 	}
 
 };
