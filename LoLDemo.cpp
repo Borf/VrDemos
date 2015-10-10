@@ -37,15 +37,13 @@ public:
 
 		int cols = sqrt(demo->models.size());
 		int rows = ceil(sqrt(demo->models.size()));
-		glm::vec2 size(3.0f / max(cols, rows), 3.0f / max(cols, rows));
+		glm::vec2 size(3.0f / glm::max(cols, rows), 3.0f / glm::max(cols, rows));
 		glm::vec2 pos(0, 0);
 		for(size_t i = 0; i < demo->models.size(); i++)
 		{
 			std::string fileName = demo->models[i]["icon"].asString();
 			fileName = fileName.substr(0, fileName.length()-4) + ".png";
-			rootPanel->push_back(new ChampIcon(vrlib::Texture::loadCached("data/models/LoL/Icons/" + fileName), i, demo));
-			fileName = fileName.substr(0, fileName.size()-4) + ".png";
-			vrlib::gui::components::Image* image = new vrlib::gui::components::Image(new vrlib::Texture("data/models/LoL/icons/" + fileName));
+			vrlib::gui::components::Image* image = new vrlib::gui::components::Image(vrlib::Texture::loadCached("data/models/LoL/icons/" + fileName));
 			image->setBounds(pos, size);
 			pos.x += size.x;
 			if (pos.x >= 3)
