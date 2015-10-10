@@ -56,7 +56,7 @@ public:
 		{
 			std::string fileName = demo->models[i]["icon"].asString();
 			fileName = fileName.substr(0, fileName.length()-4) + ".png";
-			rootPanel->push_back(new ChampIcon(new vrlib::Texture("data/models/LoL/Icons/" + fileName), i, demo));
+			rootPanel->push_back(new ChampIcon(vrlib::Texture::loadCached("data/models/LoL/Icons/" + fileName), i, demo));
 		}
 
 		//rootPanel->setFont(font);
@@ -97,7 +97,7 @@ LoLDemo::~LoLDemo(void)
 void LoLDemo::init()
 {
 	walls = vrlib::Model::getModel<vrlib::gl::VertexP3N3T2>("cavewall.1.2.2.shape", vrlib::ModelLoadOptions(3.0f));
-	wallTexture = new vrlib::Texture("data/CubeMaps/Brick/total.png");
+	wallTexture = vrlib::Texture::loadCached("data/CubeMaps/Brick/total.png");
 
 	models = vrlib::json::readJson(std::ifstream("data/models/lol/models.json"));
 	champPanel = new ChampPanel(this);
@@ -123,7 +123,7 @@ void LoLDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 			delete texture;
 		printf("Loading %s\n", models[modelIndex]["dir"].asString().c_str());
 		model = vrlib::Model::getModel<vrlib::gl::VertexP3N3T2>("data/models/LoL/" + models[modelIndex]["dir"].asString() + "/" + models[modelIndex]["models"][skinIndex]["model"].asString());
-		texture = new vrlib::Texture("data/models/LoL/" + models[modelIndex]["dir"].asString() + "/" + models[modelIndex]["models"][skinIndex]["texture"].asString());
+		texture = vrlib::Texture::loadCached("data/models/LoL/" + models[modelIndex]["dir"].asString() + "/" + models[modelIndex]["models"][skinIndex]["texture"].asString());
 		reload = false;
 	}
 
@@ -135,8 +135,8 @@ void LoLDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 
 
 	glEnable(GL_TEXTURE_2D);
-	if(texture)
-		glBindTexture(GL_TEXTURE_2D, texture->texid);
+	if (texture)
+		texture->bind();
 	glDisable(GL_CULL_FACE);
 	if(model)
 		model->draw([this, transform](const glm::mat4 &mat) { basicShader->setUniformMatrix4("modelMatrix", mat * transform); });

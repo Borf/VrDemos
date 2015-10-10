@@ -130,7 +130,7 @@ BodyDemo::Node* BodyDemo::readModel(std::string dir, std::string jsonfile)
 			mesh->texture = NULL;
 
 			if(newValue["materials"][config["material"].asString()].isMember("map_kd"))
-				mesh->texture = new vrlib::Texture(dir + newValue["materials"][config["material"].asString()]["map_kd"].asString());
+				mesh->texture = vrlib::Texture::loadCached(dir + newValue["materials"][config["material"].asString()]["map_kd"].asString());
 			if(newValue["materials"][config["material"].asString()].isMember("Kd"))
 				mesh->color = glm::vec3(newValue["materials"][config["material"].asString()]["Kd"][0u].asInt()/255.0f,
 				newValue["materials"][config["material"].asString()]["Kd"][1u].asInt()/255.0f,
@@ -207,9 +207,9 @@ void BodyDemo::init()
 	vrlib::logger << "Reading female body" << vrlib::Log::newline;
 	rootFemale = readModel("data/JohanDemo/zygote/adult_female/", "data/JohanDemo/zygote/adult_female/adult_female.json");
 	walls = vrlib::Model::getModel<vrlib::gl::VertexP3N3T2>("cavewall.shape");
-	wallTexture = new vrlib::Texture("data/CubeMaps/Marble/total.jpg");
+	wallTexture = vrlib::Texture::loadCached("data/CubeMaps/Marble/total.jpg");
 	stand = vrlib::Model::getModel<vrlib::gl::VertexP3N3T2>("cube.shape", vrlib::ModelLoadOptions(1.0f));
-	standTexture = new vrlib::Texture("data/JohanDemo/marble.jpg");
+	standTexture = vrlib::Texture::loadCached("data/JohanDemo/marble.jpg");
 
 	shader = new vrlib::gl::Shader<BodyUniforms>("data/JohanDemo/zygote/shader.vert", "data/JohanDemo/zygote/shader.frag");
 	shader->link();

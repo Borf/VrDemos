@@ -26,7 +26,7 @@ TunnelDemo::~TunnelDemo(void)
 
 void TunnelDemo::init()
 {
-	texture = new vrlib::Texture("data/johandemo/stone-tan.jpg");
+	texture = vrlib::Texture::loadCached("data/johandemo/stone-tan.jpg");
 	std::vector<vrlib::gl::VertexP3N3T2> vertices;
 
 	float inc = (float)(M_PI/10);

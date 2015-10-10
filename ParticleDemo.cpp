@@ -24,8 +24,8 @@ void ParticleDemo::init()
 {
 	model = vrlib::Model::getModel<vrlib::gl::VertexP3N3>("sphere.16.16.shape", vrlib::ModelLoadOptions(0.02f));
 	walls = vrlib::Model::getModel<vrlib::gl::VertexP3N3T2>("cavewall.shape", vrlib::ModelLoadOptions(3.0f));
-	wallTexture = new vrlib::Texture("data/CubeMaps/Brick/total.png");
-	sphereTexture = new vrlib::Texture("data/JohanDemo/marble.jpg");
+	wallTexture = vrlib::Texture::loadCached("data/CubeMaps/Brick/total.png");
+	sphereTexture = vrlib::Texture::loadCached("data/JohanDemo/marble.jpg");
 }
 
 void ParticleDemo::start()

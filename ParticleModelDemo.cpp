@@ -27,8 +27,8 @@ void ParticleModelDemo::init()
 {
 	model = vrlib::Model::getModel<vrlib::gl::VertexP3N3T2>("sphere.16.16.shape");
 	walls = vrlib::Model::getModel<vrlib::gl::VertexP3N3T2>("cavewall.shape");
-	wallTexture = new vrlib::Texture("data/CubeMaps/Brick/total.png");
-	sphereTexture = new vrlib::Texture("data/johandemo/marble.jpg");
+	wallTexture = vrlib::Texture::loadCached("data/CubeMaps/Brick/total.png");
+	sphereTexture = vrlib::Texture::loadCached("data/johandemo/marble.jpg");
 
 	char* files[] = { 
 		"data/models/mier/formica rufa 17384.3ds",
