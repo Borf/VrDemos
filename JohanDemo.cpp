@@ -23,12 +23,12 @@ JohanDemo::JohanDemo(void)
 	currentDemo = 0;
 
 	demos.push_back(new LoLDemo());
-//	demos.push_back(new BodyDemo());
+	demos.push_back(new BodyDemo());
 //	demos.push_back(new ParticleModelDemo());
 //	demos.push_back(new RoDemo());
 //	demos.push_back(new VolumeDemo());
-//	demos.push_back(new ParticleDemo());
-//	demos.push_back(new TunnelDemo());
+	demos.push_back(new ParticleDemo());
+	demos.push_back(new TunnelDemo());
 
 #ifndef NOKINECT
 	demos.push_back(new KinectDemo());
@@ -178,7 +178,7 @@ void JohanDemo::setDemo( int id )
 	if (panel)
 		demoSelectWindow->setComponent("demopanel", panel);
 	else
-		demoSelectWindow->setComponent("demopanel", new vrlib::gui::components::Panel());
+		demoSelectWindow->setComponent("demopanel", panel = new vrlib::gui::components::Panel());
 	panel->size = size;
 	panel->position = pos;
 	panel->name = "demopanel";

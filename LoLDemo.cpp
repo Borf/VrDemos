@@ -111,7 +111,7 @@ void LoLDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 		if(model)
 			delete model;
 		if(texture)
-			delete texture;
+			vrlib::Texture::unloadCached(texture);
 		printf("Loading %s\n", models[modelIndex]["dir"].asString().c_str());
 		model = vrlib::Model::getModel<vrlib::gl::VertexP3N3T2>("data/models/LoL/" + models[modelIndex]["dir"].asString() + "/" + models[modelIndex]["models"][skinIndex]["model"].asString());
 		texture = vrlib::Texture::loadCached("data/models/LoL/" + models[modelIndex]["dir"].asString() + "/" + models[modelIndex]["models"][skinIndex]["texture"].asString());
