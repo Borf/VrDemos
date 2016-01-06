@@ -215,7 +215,7 @@ void LoLDemo::nextModel()
 	modelIndex = (modelIndex+1) % models.size();
 	skinIndex = 0;
 	reload = true;
-	vrlib::logger<<"Loading model %i"<<modelIndex<<vrlib::Log::newline;
+	vrlib::logger<<"Loading model "<<modelIndex<<vrlib::Log::newline;
 }
 
 void LoLDemo::nextSkin()
