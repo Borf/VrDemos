@@ -110,6 +110,9 @@ BodyDemo::Node* BodyDemo::readModel(std::string dir, std::string jsonfile)
 				inputOffset = end;
 			}
 
+			for (int i = 0; i < attribsOut.size(); i += 8)
+				attribsOut[i + 4] = 1 - attribsOut[i + 4];
+
 			std::vector<unsigned short> indicesOut(numIndices);
 			decompressIndices( data, inputOffset, numIndices, indicesOut, 0 );
 
@@ -257,10 +260,10 @@ void BodyDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 	}
 	basicShader->use();
 	wallTexture->bind();
-	walls->draw([this](const glm::mat4 &mat) {basicShader->setUniformMatrix4("modelMatrix", mat); });
+	walls->draw([this](const glm::mat4 &mat) {basicShader->setUniformMatrix4("modelMatrix", glm::translate(mat, glm::vec3(0,1.5f,0))); });
 
 	standTexture->bind();
-	stand->draw([this](const glm::mat4 &mat) { basicShader->setUniformMatrix4("modelMatrix", glm::scale(glm::translate(mat, glm::vec3(0, -1.1f, -0.5f)), glm::vec3(0.5f, 1.0f, 2.0f))); });
+	stand->draw([this](const glm::mat4 &mat) { basicShader->setUniformMatrix4("modelMatrix", glm::scale(glm::translate(mat, glm::vec3(0, 0.4f, -0.5f)), glm::vec3(0.5f, 1.0f, 2.0f))); });
 
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -295,27 +298,15 @@ void BodyDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 	}
 	
 	glm::mat4 modelMatrix;
-	modelMatrix = glm::translate(modelMatrix, glm::vec3(0, -0.5f, 0.3f));
+	modelMatrix = glm::translate(modelMatrix, glm::vec3(0, 1.0f, 0.3f));
 	modelMatrix = glm::rotate(modelMatrix, glm::radians(-90.0f), glm::vec3(1, 0, 0));
 	modelMatrix = glm::scale(modelMatrix, glm::vec3(0.01f, 0.01f, 0.01f));
 	shader->setUniform(BodyUniforms::modelMatrix, modelMatrix);
-	{
-		float modelview[16];
-		glGetFloatv(GL_MODELVIEW_MATRIX, modelview);
-		Sleep(0);
-	}
 		
 	glPushMatrix();
-	glTranslatef(0.0f, -0.5f, 0.3f);
+	glTranslatef(0.0f, 1.0f, 0.3f);
 	glRotatef(-90, 1, 0, 0);
 	glScalef(0.01f, 0.01f, 0.01f);
-
-	{
-		float modelview[16];
-		glGetFloatv(GL_MODELVIEW_MATRIX, modelview);
-		Sleep(0);
-	}
-
 
 
 	std::set<Node*> drawn;
@@ -436,6 +427,10 @@ vrlib::gui::components::Panel* BodyDemo::getPanel()
 {
 	vrlib::gui::components::Panel* p = new vrlib::gui::components::Panel("data/JohanDemo/bodydemopanel.json");
 	opacitySlider = p->getComponent<vrlib::gui::components::Slider>("opacity");
+	p->getComponent<vrlib::gui::components::CheckBox>("gender")->addClickHandler([this]()
+	{
+		switchBody();
+	});
 	return p;
 }
 

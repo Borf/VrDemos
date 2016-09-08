@@ -63,7 +63,7 @@ public:
 		//rootPanel->setFont(font);
 		//rootPanel->reposition(0,0,minWidth(),minHeight());
 		renderMatrix = glm::mat4();
-		renderMatrix = glm::translate(renderMatrix, glm::vec3(1.5, 1.5f,- 1.5));
+		renderMatrix = glm::translate(renderMatrix, glm::vec3(1.5, 3,- 1.5));
 		renderMatrix = glm::rotate(renderMatrix, glm::radians(-90.0f), glm::vec3(0, 1, 0));
 	}
 
@@ -119,7 +119,7 @@ void LoLDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 	}
 
 	glm::mat4 transform;
-	transform = glm::translate(transform, glm::vec3(0, -1.5, -1));
+	transform = glm::translate(transform, glm::vec3(0, 0, -1));
 	transform = glm::scale(transform, glm::vec3(0.01f, 0.01f, 0.01f));
 	transform = glm::scale(transform, glm::vec3(scale, scale, scale));
 	transform = glm::rotate(transform, glm::radians(rotation), glm::vec3(0, 1, 0));
@@ -133,12 +133,12 @@ void LoLDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 		model->draw([this, transform](const glm::mat4 &mat) { basicShader->setUniformMatrix4("modelMatrix", mat * transform); });
 
 	glPushMatrix();
-	glTranslatef(0, 1.5f, -1.5f);
+	glTranslatef(0, 0, -1.5f);
 	glDisable(GL_LIGHTING);
 	glEnable(GL_TEXTURE_2D);
 	if (wallTexture != NULL)
 		wallTexture->bind();
-	walls->draw([this](const glm::mat4 &mat) { basicShader->setUniformMatrix4("modelMatrix", mat); });
+	walls->draw([this](const glm::mat4 &mat) { basicShader->setUniformMatrix4("modelMatrix", glm::translate(mat,glm::vec3(0,1.5f,0))); });
 
 	glPopMatrix();
 	glPushMatrix();

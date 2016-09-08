@@ -24,7 +24,7 @@ JohanDemo::JohanDemo(void)
 
 	demos.push_back(new LoLDemo());
 	demos.push_back(new BodyDemo());
-//	demos.push_back(new ParticleModelDemo());
+	demos.push_back(new ParticleModelDemo());
 //	demos.push_back(new RoDemo());
 //	demos.push_back(new VolumeDemo());
 	demos.push_back(new ParticleDemo());
@@ -50,6 +50,17 @@ void JohanDemo::init()
 	mRightButton.init("RightButton");
 	mPageDownButton.init("KeyPageDown");
 	mPageUpButton.init("KeyPageUp");
+
+	if (!mPageDownButton.isInitialized())
+	{
+		mLeftButton.init("buttonRightTrigger");
+		//mButton1.init("buttonRightTrigger");
+		mRightButton.init("buttonRightTouch");
+
+		mPageDownButton.init("buttonLeftGrip");
+		mPageUpButton.init("buttonRightGrip");
+	}
+
 	contextInit();
 }
 
@@ -68,7 +79,7 @@ void JohanDemo::contextInit()
 	//demoSelectWindow = new DemoSelectPanel(this);
 	demoSelectWindow = new vrlib::gui::Window("Demo Select");
 	demoSelectWindow->setSize(glm::vec2(1, 2));
-	demoSelectWindow->renderMatrix	= glm::translate(demoSelectWindow->renderMatrix, glm::vec3(-1.5, 1.25f, 1.25));
+	demoSelectWindow->renderMatrix	= glm::translate(demoSelectWindow->renderMatrix, glm::vec3(-1.5, 2.75f, 1.25));
 	demoSelectWindow->renderMatrix = glm::rotate(demoSelectWindow->renderMatrix, glm::radians(90.0f), glm::vec3(0, 1, 0));
 	demoSelectWindow->setRootPanel(new vrlib::gui::components::Panel("data/johandemo/mainpanel.json"));
 	demoSelectWindow->getComponent<vrlib::gui::components::Component>("btnChangeDemo")->addClickHandler(std::bind(&JohanDemo::nextDemo, this));

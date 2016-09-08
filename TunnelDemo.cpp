@@ -6,6 +6,7 @@
 #include <vrlib/gui/Components/CheckBox.h>
 #include <vrlib/gui/Components/Label.h>
 #include <VrLib/gl/shader.h>
+#include <glm/gtc/matrix_transform.hpp>
 using namespace std;
 
 #define _USE_MATH_DEFINES
@@ -77,7 +78,7 @@ void TunnelDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 {
 	glEnable(GL_CULL_FACE);
 	basicShader->use();
-	basicShader->setUniformMatrix4("modelMatrix", glm::mat4());
+	basicShader->setUniformMatrix4("modelMatrix", glm::translate(glm::mat4(), glm::vec3(0,1.5f,0)));
 	texture->bind();
 	vbo->bind();
 	vbo->setAttributes();

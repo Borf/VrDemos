@@ -42,7 +42,7 @@ void ParticleDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 	basicShader->use();
 	basicShader->setUniformMatrix4("modelMatrix", glm::mat4());
 	wallTexture->bind();
-	walls->draw([this](const glm::mat4 &mat) {basicShader->setUniformMatrix4("modelMatrix", mat); });
+	walls->draw([this](const glm::mat4 &mat) {basicShader->setUniformMatrix4("modelMatrix", glm::translate(mat, glm::vec3(0,1.5,0))); });
 
 	sphereTexture->bind();
 	for(size_t i = 0; i < particles.size(); i++)
@@ -75,7 +75,7 @@ void ParticleDemo::update(double elapsedTime)
 			float x = ((rand()%10000) / 10000.0f) * 3 - 1.5f;
 			float z = ((rand()%10000) / 10000.0f) * 3 - 1.5f;
 
-			particles.push_back(new Particle(glm::vec3(x,0.8f,z), glm::vec3(0.02*cos(dir), ((rand()%10000) / 1000000.0f), 0.02*sin(dir))));				
+			particles.push_back(new Particle(glm::vec3(x,2.8f,z), glm::vec3(0.02*cos(dir), ((rand()%10000) / 1000000.0f), 0.02*sin(dir))));				
 			i++;
 		}
 	}
@@ -87,7 +87,7 @@ void ParticleDemo::update(double elapsedTime)
 		particles[i]->dir[2] *= 0.985f;
 		particles[i]->dir[1] -= 0.0005f;
 
-		if(particles[i]->position[1] < -1.5f)
+		if(particles[i]->position[1] < 0)
 		{
 			particles[i]->dir[1] = -0.15f * particles[i]->dir[1];
 			if(abs(particles[i]->dir[1]) < 0.01)
@@ -96,7 +96,7 @@ void ParticleDemo::update(double elapsedTime)
 				float dir = ((rand()%10000) / 10000.0f) * 2 * 3.1415f;
 				float x = ((rand()%10000) / 10000.0f) * 3 - 1.5f;
 				float z = ((rand()%10000) / 10000.0f) * 3 - 1.5f;
-				particles[i] = new Particle(glm::vec3(x,0.8f,z), glm::vec3(0.02*cos(dir), ((rand()%10000) / 1000000.0f), 0.02*sin(dir)));
+				particles[i] = new Particle(glm::vec3(x,2.8f,z), glm::vec3(0.02*cos(dir), ((rand()%10000) / 1000000.0f), 0.02*sin(dir)));
 			}
 		}
 	}
