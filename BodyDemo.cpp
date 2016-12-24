@@ -110,7 +110,7 @@ BodyDemo::Node* BodyDemo::readModel(std::string dir, std::string jsonfile)
 				inputOffset = end;
 			}
 
-			for (int i = 0; i < attribsOut.size(); i += 8)
+			for (size_t i = 0; i < attribsOut.size(); i += 8)
 				attribsOut[i + 4] = 1 - attribsOut[i + 4];
 
 			std::vector<unsigned short> indicesOut(numIndices);
