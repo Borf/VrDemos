@@ -31,13 +31,13 @@ public:
 	ChampPanel(LoLDemo* demo) : vrlib::gui::Window("")
 	{
 		this->demo = demo;
-		setSize(glm::vec2(1, 2));
+		setSize(glm::vec2(1, 1));
 		rootPanel = new vrlib::gui::components::Panel();
-		rootPanel->setBounds(glm::vec2(0, 0), glm::vec2(3, 3));
+		rootPanel->setBounds(glm::vec2(0, 0), glm::vec2(3.0, 2.25));
 
 		int cols = sqrt(demo->models.size());
 		int rows = ceil(sqrt(demo->models.size()));
-		glm::vec2 size(3.0f / glm::max(cols, rows), 3.0f / glm::max(cols, rows));
+		glm::vec2 size(3.0f / glm::max(cols, rows), 2.25f / glm::max(cols, rows));
 		glm::vec2 pos(0, 0);
 		for(size_t i = 0; i < demo->models.size(); i++)
 		{
@@ -63,7 +63,7 @@ public:
 		//rootPanel->setFont(font);
 		//rootPanel->reposition(0,0,minWidth(),minHeight());
 		renderMatrix = glm::mat4();
-		renderMatrix = glm::translate(renderMatrix, glm::vec3(1.5, 3,- 1.5));
+		renderMatrix = glm::translate(renderMatrix, glm::vec3(1.5, 2.25,-1.5));
 		renderMatrix = glm::rotate(renderMatrix, glm::radians(-90.0f), glm::vec3(0, 1, 0));
 	}
 
@@ -125,13 +125,7 @@ void LoLDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 	transform = glm::rotate(transform, glm::radians(rotation), glm::vec3(0, 1, 0));
 
 
-	glEnable(GL_TEXTURE_2D);
-	if (texture)
-		texture->bind();
 	glDisable(GL_CULL_FACE);
-	if(model)
-		model->draw([this, transform](const glm::mat4 &mat) { basicShader->setUniformMatrix4("modelMatrix", mat * transform); });
-
 	glPushMatrix();
 	glTranslatef(0, 0, -1.5f);
 	glDisable(GL_LIGHTING);
@@ -144,6 +138,16 @@ void LoLDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 	glPushMatrix();
 	champPanel->draw(projectionMatrix, modelviewMatrix);
 	glPopMatrix();
+
+
+	basicShader->use();
+	glEnable(GL_TEXTURE_2D);
+	if (texture)
+		texture->bind();
+	if (model)
+		model->draw([this, transform](const glm::mat4 &mat) { basicShader->setUniformMatrix4("modelMatrix", mat * transform); });
+	basicShader->use();
+
 }
 
 void LoLDemo::update(double elapsedTime)

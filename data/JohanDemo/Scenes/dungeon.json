@@ -1,0 +1,2402 @@
+{"meshes" : []
+, "scene" : {"children" : [{"children" : [{"components" : [{"position" : [0.000000, 0.388829, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"color" : [1.000000, 0.600000, 0.466667, 1.000000]
+, "intensity" : 50.000000
+, "lighttype" : "point"
+, "range" : 3.000000
+, "shadow" : "none"
+, "type" : "light"
+}]
+, "name" : "Lampie"
+, "uuid" : "b2e10526-bf2d-4552-8f7b-407a51579b92"
+}, {"components" : [{"position" : [0.000000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "5211bd82-c9d3-4dcb-bdff-ad14d92a5cd6"
+}, {"components" : [{"position" : [0.000000, 0.000000, -0.500000]
+, "rotation" : [0.000000, -0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "1efa997d-a6f5-45e3-a792-4af6d5c76800"
+}, {"components" : [{"position" : [-0.500000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/arch_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "c7510814-05b2-4a65-8390-940aacb7bf1d"
+}, {"components" : [{"position" : [0.000000, 1.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "3b98ae6f-f107-47f8-8825-688772c6e1c0"
+}, {"components" : [{"position" : [0.500000, 0.000000, 0.000000]
+, "rotation" : [-0.000000, 1.000000, -0.000000, 0.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/arch_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/arch_1"
+, "uuid" : "7cd19d42-21cc-4c66-a1f7-c6a0ea7aa3c8"
+}]
+, "components" : [{"position" : [0.000000, 0.000000, -3.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [3.000000, 2.500000, 3.000000]
+, "type" : "transform"
+}]
+, "name" : "room 1"
+, "uuid" : "9ecf1483-7779-4ea2-b483-3f82c24bd261"
+}, {"children" : [{"components" : [{"position" : [0.000000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "039dce39-2d33-4f08-95a3-9d40771856af"
+}, {"components" : [{"position" : [0.000000, 0.000000, -0.500000]
+, "rotation" : [0.000000, 0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/Models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/arch_1"
+, "uuid" : "4434c756-c9dd-4a11-a241-7bca71dc6a7f"
+}, {"components" : [{"position" : [0.000000, 1.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "35993984-b816-4eeb-9329-748d3a36c067"
+}, {"components" : [{"position" : [0.500000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "660fb8f3-e889-49a1-996e-010294056af1"
+}]
+, "components" : [{"position" : [3.000000, 0.000000, -12.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [3.000000, 2.500000, 3.000000]
+, "type" : "transform"
+}]
+, "name" : "room 10"
+, "uuid" : "6cdbdbdc-8bdb-4070-8bc7-0f72fd69b8a8"
+}, {"children" : [{"components" : [{"position" : [0.000000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "87c85bd1-ce11-4e20-a108-c23b63230c3e"
+}, {"components" : [{"position" : [-0.500000, 0.000000, 0.000000]
+, "rotation" : [-0.000000, 1.000000, -0.000000, 0.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/arch_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/arch_1"
+, "uuid" : "95edb5f8-41a3-4eb6-8cea-f8851233a387"
+}, {"components" : [{"position" : [0.000000, 1.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "4abee86c-d2bc-491c-896a-7b054ad61c25"
+}, {"components" : [{"position" : [0.500000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "7272fe0c-109f-4912-bf64-b96674028cec"
+}, {"components" : [{"position" : [0.000000, 0.000000, 0.500000]
+, "rotation" : [0.000000, -0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "ac1dab83-690e-4c63-8183-07e05694b44a"
+}]
+, "components" : [{"position" : [-15.000000, 0.000000, -9.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [3.000000, 2.500000, 3.000000]
+, "type" : "transform"
+}]
+, "name" : "room 2"
+, "uuid" : "2e6f89a8-3a0f-4015-8cdb-4df805958dd5"
+}, {"children" : [{"components" : [{"position" : [-0.500000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "05ce5022-4221-4c81-b341-aed71b0b1711"
+}, {"components" : [{"position" : [0.000000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "189ec9c8-c1c9-4d07-ad21-7975237001ce"
+}, {"components" : [{"position" : [0.000000, 0.000000, -0.500000]
+, "rotation" : [0.000000, 0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/Models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/arch_1"
+, "uuid" : "006682bb-8041-4d9a-9621-1f58aa7b4bef"
+}, {"components" : [{"position" : [0.000000, 1.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "18c5175d-fad3-46cc-b091-67e5b009c2f2"
+}, {"components" : [{"position" : [0.000000, 0.000000, 0.500000]
+, "rotation" : [0.000000, -0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "639bd125-d42d-4388-9c0e-7ee7f8071472"
+}]
+, "components" : [{"position" : [-18.000000, 0.000000, -9.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [3.000000, 2.500000, 3.000000]
+, "type" : "transform"
+}]
+, "name" : "room 2"
+, "uuid" : "e2e9b6a4-6ae3-4865-983d-bf6a5b4e7143"
+}, {"children" : [{"components" : [{"position" : [-0.500000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "ab165dd1-4836-475a-9236-1ee72f1a7bfa"
+}, {"components" : [{"position" : [0.000000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "137ade3d-6a6e-4aec-870a-1c3497e52019"
+}, {"components" : [{"position" : [0.000000, 0.000000, -0.500000]
+, "rotation" : [0.000000, 0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/Models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/arch_1"
+, "uuid" : "bc6a87d8-4b51-438a-9109-d12d39201020"
+}, {"components" : [{"position" : [0.000000, 1.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "1c95ea29-a16f-48c4-a600-8ee735de8dc0"
+}, {"components" : [{"position" : [0.500000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "11beebcd-b865-49aa-8e93-137de00255e2"
+}]
+, "components" : [{"position" : [-15.000000, 0.000000, -15.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [3.000000, 2.500000, 3.000000]
+, "type" : "transform"
+}]
+, "name" : "room 2"
+, "uuid" : "982f81d8-0c1f-408f-94bc-785e4b4d310c"
+}, {"children" : [{"components" : [{"position" : [0.000000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "000cebf4-d4a2-4dc3-8d06-1e9f482f4d91"
+}, {"components" : [{"position" : [0.000000, 0.000000, -0.500000]
+, "rotation" : [0.000000, 0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/arch_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/arch_1"
+, "uuid" : "843b3db5-68fb-4595-9817-cec9102ef37b"
+}, {"components" : [{"position" : [0.000000, 1.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "2fded119-dfd4-40af-87c7-9be30aca76fa"
+}, {"components" : [{"position" : [0.000000, 0.000000, 0.500000]
+, "rotation" : [0.000000, -0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "9abd3031-0770-409c-a696-33d36595e63c"
+}]
+, "components" : [{"position" : [-3.000000, 0.000000, -3.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [3.000000, 2.500000, 3.000000]
+, "type" : "transform"
+}]
+, "name" : "room 2"
+, "uuid" : "d423b685-0834-4d0b-9b4b-de20ff53a5e9"
+}, {"children" : [{"components" : [{"position" : [0.000000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "a16e9bed-f73e-4fd0-966a-1399c40a6355"
+}, {"components" : [{"position" : [0.000000, 0.000000, -0.500000]
+, "rotation" : [0.000000, 0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/arch_1"
+, "uuid" : "adcb5e27-efe8-4f10-bb19-2ccc9363261a"
+}, {"components" : [{"position" : [0.000000, 1.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "1c938362-8e73-4ef9-a537-44f6b9559423"
+}, {"components" : [{"position" : [0.000000, 0.000000, 0.500000]
+, "rotation" : [0.000000, -0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "24acf73a-04d6-445a-b2a9-a532fee7bd98"
+}]
+, "components" : [{"position" : [-3.000000, 0.000000, 6.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [3.000000, 2.500000, 3.000000]
+, "type" : "transform"
+}]
+, "name" : "room 2"
+, "uuid" : "db2b94c6-2c37-4b93-b9d8-3bc61a11ee23"
+}, {"children" : [{"components" : [{"position" : [-0.500000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "8ea0ed7a-7f74-4e84-be8d-5a190fea6066"
+}, {"components" : [{"position" : [0.000000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "1280fd8d-2086-405c-bf2d-445cde6f624c"
+}, {"components" : [{"position" : [0.000000, 0.000000, -0.500000]
+, "rotation" : [0.000000, 0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/arch_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/arch_1"
+, "uuid" : "d6a6c91b-6861-4608-b757-ca3bce6c47e9"
+}, {"components" : [{"position" : [0.000000, 1.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "1b8b38bd-1cee-4d0d-9288-db2b8d637b27"
+}, {"components" : [{"position" : [0.500000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "6319bd22-8111-41c3-a389-a61d794c6790"
+}]
+, "components" : [{"position" : [3.000000, 0.000000, 9.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [3.000000, 2.500000, 3.000000]
+, "type" : "transform"
+}]
+, "name" : "room 2"
+, "uuid" : "cce374fc-065b-4b51-abca-99c3a70a64e7"
+}, {"children" : [{"components" : [{"position" : [-0.500000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "14f893bf-53d5-4fb7-8c3f-8201796ec90e"
+}, {"components" : [{"position" : [0.000000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "72b16d9f-6677-436b-a37b-746d58157f8d"
+}, {"components" : [{"position" : [0.000000, 0.000000, -0.500000]
+, "rotation" : [0.000000, 0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/Models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/arch_1"
+, "uuid" : "39e453f3-9bea-4619-bc83-9a8c3dbdfae4"
+}, {"components" : [{"position" : [0.000000, 1.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "732a637f-1f08-403b-bc39-ec925e9ed401"
+}, {"components" : [{"position" : [0.000000, 0.000000, 0.500000]
+, "rotation" : [0.000000, -0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "f6e175ef-0c5d-424c-92f7-28d85c6476a4"
+}]
+, "components" : [{"position" : [0.000000, 0.000000, 12.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [3.000000, 2.500000, 3.000000]
+, "type" : "transform"
+}]
+, "name" : "room 2"
+, "uuid" : "dd976f6b-0d51-4f36-8c3d-ebc512d81579"
+}, {"children" : [{"components" : [{"position" : [-0.500000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "0fecb0e4-dbf5-4651-a1c4-2ed906215b1c"
+}, {"components" : [{"position" : [0.000000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "8abc750e-7018-43f5-9ee6-e1b2c3d2f97e"
+}, {"components" : [{"position" : [0.000000, 0.000000, -0.500000]
+, "rotation" : [0.000000, 0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/arch_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/arch_1"
+, "uuid" : "d05d6d35-7ea7-4a71-84ca-c002997a750a"
+}, {"components" : [{"position" : [0.000000, 1.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "9c7a07f2-926e-4b84-8e8d-07867f361916"
+}, {"components" : [{"position" : [0.000000, 0.000000, 0.500000]
+, "rotation" : [0.000000, -0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "1b18f32c-eb73-4865-9d3a-c98de373a1c4"
+}]
+, "components" : [{"position" : [-6.000000, 0.000000, 9.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [3.000000, 2.500000, 3.000000]
+, "type" : "transform"
+}]
+, "name" : "room 2"
+, "uuid" : "55ce0e0f-f315-4f9c-a22b-2e08bb3f3ced"
+}, {"children" : [{"components" : [{"position" : [0.000000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "f45c8f94-3149-4efa-ab37-5b643efa4de1"
+}, {"components" : [{"position" : [0.000000, 0.000000, -0.500000]
+, "rotation" : [0.000000, 0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/arch_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/arch_1"
+, "uuid" : "b115ff79-e391-4972-a324-9336ad442d09"
+}, {"components" : [{"position" : [0.000000, 1.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "591f3e75-b660-4c77-9d92-d56101fd9af3"
+}, {"components" : [{"position" : [0.500000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "465412aa-31bf-4f2e-841f-fac20c5318cd"
+}, {"components" : [{"position" : [0.000000, 0.000000, 0.500000]
+, "rotation" : [0.000000, 0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "952888d0-9e8f-4837-89f4-1b1b7cd3f597"
+}]
+, "components" : [{"position" : [-3.000000, 0.000000, 9.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [3.000000, 2.500000, 3.000000]
+, "type" : "transform"
+}]
+, "name" : "room 2"
+, "uuid" : "6fe3984d-288d-45ba-88a6-e74deeebfb0c"
+}, {"children" : [{"components" : [{"position" : [0.000000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "d7ae4424-deb8-443c-8d21-26071aca745b"
+}, {"components" : [{"position" : [0.000000, 0.000000, -0.500000]
+, "rotation" : [0.000000, 0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/Models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/arch_1"
+, "uuid" : "01ddfba0-ff1a-47c5-829e-dce9d01eac45"
+}, {"components" : [{"position" : [0.000000, 1.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "107a684f-50a5-4ab7-90e4-97c69940f3a8"
+}]
+, "components" : [{"position" : [6.000000, 0.000000, -3.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [3.000000, 2.500000, 3.000000]
+, "type" : "transform"
+}]
+, "name" : "room 2"
+, "uuid" : "1f0435aa-3a0f-44bc-a9ba-377c0c693551"
+}, {"children" : [{"components" : [{"position" : [-0.500000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "de5b4fe1-7267-42a2-bca4-a27eb7957c81"
+}, {"components" : [{"position" : [0.000000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "f58a4ce6-4ae9-44f1-b23a-cf934ea88433"
+}, {"components" : [{"position" : [0.000000, 1.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "5ed36b28-cc3d-4f68-8f81-aadca7004711"
+}, {"components" : [{"position" : [0.000000, 0.000000, -0.500000]
+, "rotation" : [0.000000, 0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/arch_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/arch_1"
+, "uuid" : "efd186fb-d30e-41f3-b426-0c271887f318"
+}]
+, "components" : [{"position" : [-6.000000, 0.000000, 6.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [3.000000, 2.500000, 3.000000]
+, "type" : "transform"
+}]
+, "name" : "room 2"
+, "uuid" : "2113fc55-6789-47b3-8f9c-4c7e9b2aef32"
+}, {"children" : [{"components" : [{"position" : [0.000000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "e73d809b-28ab-4532-9712-6520d61adf64"
+}, {"components" : [{"position" : [0.000000, 0.000000, -0.500000]
+, "rotation" : [0.000000, 0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/Models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/arch_1"
+, "uuid" : "76e66493-e91e-46f1-9491-142357fef24b"
+}, {"components" : [{"position" : [0.000000, 1.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "638b607e-392b-446d-8079-305a05928ce2"
+}, {"components" : [{"position" : [0.000000, 0.000000, 0.500000]
+, "rotation" : [0.000000, -0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "db58ab8d-1e19-4128-b591-0521a849801e"
+}]
+, "components" : [{"position" : [0.000000, 0.000000, -12.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [3.000000, 2.500000, 3.000000]
+, "type" : "transform"
+}]
+, "name" : "room 2"
+, "uuid" : "a0af4687-1639-4caa-8f08-8e253d869769"
+}, {"children" : [{"components" : [{"position" : [0.000000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "25048b4c-aa4c-4e93-b4ab-7ab68476ed26"
+}, {"components" : [{"position" : [0.000000, 0.000000, -0.500000]
+, "rotation" : [0.000000, 0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/Models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/arch_1"
+, "uuid" : "c5845884-0671-40d2-b4f0-c64c2418d9c5"
+}, {"components" : [{"position" : [0.000000, 1.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "747c35a7-d446-46ed-a90d-7843e8dd0bfc"
+}]
+, "components" : [{"position" : [-3.000000, 0.000000, -12.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [3.000000, 2.500000, 3.000000]
+, "type" : "transform"
+}]
+, "name" : "room 2"
+, "uuid" : "37e60237-47d1-48a7-883c-3b700064617b"
+}, {"children" : [{"components" : [{"position" : [-0.500000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "44fc9d86-3c57-43dd-8166-84e1d77872ec"
+}, {"components" : [{"position" : [0.000000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "169c2e83-4c14-4aa0-8b6d-5773d05b0c85"
+}, {"components" : [{"position" : [0.500000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/arch_1"
+, "uuid" : "142c7ddd-a025-46e4-aa5a-45e18586486d"
+}, {"components" : [{"position" : [0.000000, 1.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "93cbe447-7196-4a11-a816-58a231058460"
+}]
+, "components" : [{"position" : [-3.000000, 0.000000, -6.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [3.000000, 2.500000, 3.000000]
+, "type" : "transform"
+}]
+, "name" : "room 2"
+, "uuid" : "125227d5-1f44-49c3-896d-26b105d172b8"
+}, {"children" : [{"components" : [{"position" : [-0.500000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "761386a2-7e61-4855-b440-ac4bec852d8d"
+}, {"components" : [{"position" : [0.000000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "d146cef8-8318-4b17-8b6e-0ea767f1ba90"
+}, {"components" : [{"position" : [0.000000, 0.000000, -0.500000]
+, "rotation" : [0.000000, 0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/arch_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/arch_1"
+, "uuid" : "d196b6da-c5d2-478b-b91b-ee7db24285b0"
+}, {"components" : [{"position" : [0.000000, 1.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "67bfaa15-3a1a-4bed-af5e-156703f1400d"
+}, {"components" : [{"position" : [0.500000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "d3d0832a-6510-454a-88bd-0aa18abcff96"
+}]
+, "components" : [{"position" : [-3.000000, 0.000000, -9.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [3.000000, 2.500000, 3.000000]
+, "type" : "transform"
+}]
+, "name" : "room 2"
+, "uuid" : "4ab3d143-a081-45cd-bcf9-b4e06c172eaa"
+}, {"children" : [{"components" : [{"position" : [-0.500000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "31ba5989-4ea7-4803-83c0-d7d39f90b28e"
+}, {"components" : [{"position" : [0.000000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "7b6f2995-e23d-40ac-aaea-838abe44a1a0"
+}, {"components" : [{"position" : [0.000000, 0.000000, -0.500000]
+, "rotation" : [0.000000, 0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/arch_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/arch_1"
+, "uuid" : "586835fb-3866-4d18-9a04-aee3bdd5012e"
+}, {"components" : [{"position" : [0.000000, 1.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "d509fbf9-bd33-451e-a842-c98e20f3aef3"
+}, {"components" : [{"position" : [0.500000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "df29f601-722e-49b1-9db1-62f781378869"
+}]
+, "components" : [{"position" : [6.000000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [3.000000, 2.500000, 3.000000]
+, "type" : "transform"
+}]
+, "name" : "room 2"
+, "uuid" : "fbe20174-bb2d-439d-a52f-f2467ed43b67"
+}, {"children" : [{"components" : [{"position" : [-0.500000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "36c2f3ff-8b78-49e9-b9cd-c348c7b3fc6c"
+}, {"components" : [{"position" : [0.000000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "8fbbfc8e-0713-4fa7-9748-bd6242b44c96"
+}, {"components" : [{"position" : [0.000000, 1.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "fe7394af-cfd7-48cb-b05d-810f0a783451"
+}, {"components" : [{"position" : [0.500000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "e7ec20e6-52e5-4dde-9255-af84e2382c21"
+}]
+, "components" : [{"position" : [6.000000, 0.000000, 3.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [3.000000, 2.500000, 3.000000]
+, "type" : "transform"
+}]
+, "name" : "room 2"
+, "uuid" : "17f4425e-f154-4818-8966-a4749d049a49"
+}, {"children" : [{"components" : [{"position" : [0.000000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "ae127ad4-4352-44d0-b030-3f2ea234c9a6"
+}, {"components" : [{"position" : [0.000000, 0.000000, -0.500000]
+, "rotation" : [0.000000, 0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/arch_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/arch_1"
+, "uuid" : "8a4b6294-b91f-40e6-9fba-3396b9208d66"
+}, {"components" : [{"position" : [0.000000, 1.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "dd4b612a-1ece-44d9-bdf2-27e02b520223"
+}, {"components" : [{"position" : [0.000000, 0.000000, 0.500000]
+, "rotation" : [0.000000, -0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "3524a957-d35c-42aa-aee4-7a7c79252b70"
+}, {"components" : [{"position" : [0.500000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "f09b9984-ef18-4e19-a148-a183abd12961"
+}]
+, "components" : [{"position" : [6.000000, 0.000000, 6.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [3.000000, 2.500000, 3.000000]
+, "type" : "transform"
+}]
+, "name" : "room 2"
+, "uuid" : "594cacf7-232c-498d-82ff-19f07a281164"
+}, {"children" : [{"components" : [{"position" : [0.000000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "e994bb56-381f-4242-88e3-b24b83f562dd"
+}, {"components" : [{"position" : [0.000000, 0.000000, -0.500000]
+, "rotation" : [0.000000, 0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/arch_1"
+, "uuid" : "0cf12e0d-e47b-4e67-80af-d000140192d4"
+}, {"components" : [{"position" : [0.000000, 1.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "c277a2a0-dc71-486a-859d-8c637e856bb9"
+}]
+, "components" : [{"position" : [3.000000, 0.000000, 6.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [3.000000, 2.500000, 3.000000]
+, "type" : "transform"
+}]
+, "name" : "room 2"
+, "uuid" : "09381418-54c7-42e5-ac2f-2f66d6357612"
+}, {"children" : [{"components" : [{"position" : [0.000000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "a69884c4-21e9-4b5d-98f4-e2c8e60a9215"
+}, {"components" : [{"position" : [0.000000, 0.000000, -0.500000]
+, "rotation" : [0.000000, 0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/arch_1"
+, "uuid" : "7767cd9d-33c5-48e6-b65e-eb1643d36278"
+}, {"components" : [{"position" : [0.000000, 1.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "5dcb62a3-d914-402b-92a4-7827edecfef7"
+}, {"components" : [{"position" : [0.000000, 0.000000, 0.500000]
+, "rotation" : [0.000000, -0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "f89f9530-2f37-4c74-9b3e-97beb7941ff9"
+}]
+, "components" : [{"position" : [0.000000, 0.000000, 6.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [3.000000, 2.500000, 3.000000]
+, "type" : "transform"
+}]
+, "name" : "room 2"
+, "uuid" : "94ede9bd-1b3a-448f-b924-3d65271af980"
+}, {"children" : [{"components" : [{"position" : [0.000000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "4bcbaa34-4a2d-4951-b2dc-6a36f235932c"
+}, {"components" : [{"position" : [0.000000, 0.000000, -0.500000]
+, "rotation" : [0.000000, 0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/arch_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/arch_1"
+, "uuid" : "8db1384d-7b22-4ff3-9ffb-061f291c10c2"
+}, {"components" : [{"position" : [0.000000, 1.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "b7ec7a20-1802-4661-82f5-1af300eae12f"
+}, {"components" : [{"position" : [0.000000, 0.000000, 0.500000]
+, "rotation" : [0.000000, -0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "d9a700ea-f852-4064-90ef-d2c36f8531d5"
+}, {"components" : [{"position" : [0.500000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "a1f4e236-ba66-4a72-8ce3-746f79f9bbf7"
+}]
+, "components" : [{"position" : [3.000000, 0.000000, 12.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [3.000000, 2.500000, 3.000000]
+, "type" : "transform"
+}]
+, "name" : "room 2"
+, "uuid" : "d68a261a-d334-4a2f-a324-34f48b95e541"
+}, {"children" : [{"components" : [{"position" : [-0.500000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "b8a39789-b5de-4258-b899-05b416f716a4"
+}, {"components" : [{"position" : [0.000000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "845effb0-b691-4727-9919-6174db4c271a"
+}, {"components" : [{"position" : [0.000000, 1.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "f44de6bb-14f6-4cdb-940a-56b01a57b515"
+}, {"components" : [{"position" : [0.500000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "ccaa66c8-6306-4f56-bcd4-1f0efaca9fc8"
+}]
+, "components" : [{"position" : [-6.000000, 0.000000, 3.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [3.000000, 2.500000, 3.000000]
+, "type" : "transform"
+}]
+, "name" : "room 2"
+, "uuid" : "3de45412-cc2d-4c7e-9d50-4b08f9eeec4a"
+}, {"children" : [{"components" : [{"position" : [-0.500000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "6529566b-c0e5-4ea0-9fee-65e3ceacb47a"
+}, {"components" : [{"position" : [0.000000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "9627fd0b-b1c4-46bf-9734-cff71b4481be"
+}, {"components" : [{"position" : [0.000000, 0.000000, -0.500000]
+, "rotation" : [0.000000, 0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/arch_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/arch_1"
+, "uuid" : "0e206f1a-e81a-4a91-96af-c18f432f611f"
+}, {"components" : [{"position" : [0.000000, 1.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "9d3b5f05-18c6-4ec2-98bf-9c90ce166629"
+}, {"components" : [{"position" : [0.500000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "8a656188-4703-4308-a178-5b29447f0774"
+}]
+, "components" : [{"position" : [-6.000000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [3.000000, 2.500000, 3.000000]
+, "type" : "transform"
+}]
+, "name" : "room 2"
+, "uuid" : "01af2439-6aaf-4352-ba2b-577584afd458"
+}, {"children" : [{"components" : [{"position" : [0.000000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "1ce790da-2d80-447f-a15a-0adae02b1c2a"
+}, {"components" : [{"position" : [0.000000, 0.000000, -0.500000]
+, "rotation" : [0.000000, 0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/arch_1"
+, "uuid" : "8adb691a-9c21-4052-8929-9aa51be79508"
+}, {"components" : [{"position" : [0.000000, 1.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "11ae055d-24aa-4fa4-b59e-d313b230675f"
+}]
+, "components" : [{"position" : [-6.000000, 0.000000, -3.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [3.000000, 2.500000, 3.000000]
+, "type" : "transform"
+}]
+, "name" : "room 2"
+, "uuid" : "af4ec6bb-2903-4d09-9134-1db2ca7dfb5d"
+}, {"children" : [{"components" : [{"position" : [0.000000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "4e522f98-a6e0-479d-a768-9fab96384569"
+}, {"components" : [{"position" : [0.000000, 0.000000, -0.500000]
+, "rotation" : [0.000000, 0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/Models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/arch_1"
+, "uuid" : "daa07661-4040-4f45-8852-95359ef9c01a"
+}, {"components" : [{"position" : [0.000000, 1.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "dd464b33-213b-49db-b909-4ad8e1035e2d"
+}, {"components" : [{"position" : [0.000000, 0.000000, 0.500000]
+, "rotation" : [0.000000, -0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "9cdba901-86a9-4d8b-af98-ded975ea4638"
+}]
+, "components" : [{"position" : [-6.000000, 0.000000, -12.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [3.000000, 2.500000, 3.000000]
+, "type" : "transform"
+}]
+, "name" : "room 2"
+, "uuid" : "8f62a28a-1f5e-40e3-8caa-740d0e85035c"
+}, {"children" : [{"components" : [{"position" : [0.000000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "8c1ef843-fa18-4ff1-a91c-8258c91fcf14"
+}, {"components" : [{"position" : [0.000000, 0.000000, -0.500000]
+, "rotation" : [0.000000, 0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/arch_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/arch_1"
+, "uuid" : "d3b41207-d727-4eb8-916a-7da242db8991"
+}, {"components" : [{"position" : [0.000000, 1.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "c33d70a1-8c53-4ce9-9d4b-31d165abdd49"
+}]
+, "components" : [{"position" : [-9.000000, 0.000000, -12.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [3.000000, 2.500000, 3.000000]
+, "type" : "transform"
+}]
+, "name" : "room 2"
+, "uuid" : "4cdb2fe0-34ec-49c4-88ba-51189f277004"
+}, {"children" : [{"components" : [{"position" : [-0.500000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "0580c193-3bfd-4e22-85a6-9e89b834993b"
+}, {"components" : [{"position" : [0.000000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "0128713b-1a21-483e-9dd4-34fb87a52a57"
+}, {"components" : [{"position" : [0.000000, 0.000000, -0.500000]
+, "rotation" : [0.000000, 0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/Models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/arch_1"
+, "uuid" : "6d73e6e0-9f5b-4df2-a406-51d8f1376ed2"
+}, {"components" : [{"position" : [0.000000, 1.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "d2ce6339-eb5c-4f66-a218-87209f115f42"
+}, {"components" : [{"position" : [0.500000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "26d0b2ed-1f3e-47e0-9212-4d0bca4fbcd9"
+}]
+, "components" : [{"position" : [-9.000000, 0.000000, -15.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [3.000000, 2.500000, 3.000000]
+, "type" : "transform"
+}]
+, "name" : "room 2"
+, "uuid" : "f1cef76e-b661-492a-8cb4-20a031b9ef73"
+}, {"children" : [{"components" : [{"position" : [-0.500000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "5cd929fe-875b-49d1-8b4b-527511bb3a0f"
+}, {"components" : [{"position" : [0.000000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "e8a13dfd-2620-4389-a6af-8580b63beae4"
+}, {"components" : [{"position" : [0.000000, 0.000000, -0.500000]
+, "rotation" : [0.000000, 0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/arch_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/arch_1"
+, "uuid" : "6ceb6e72-2415-4035-b561-0f5b86cfa686"
+}, {"components" : [{"position" : [0.000000, 1.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "2374e8ab-839e-4889-8a35-40d03ed9819a"
+}, {"components" : [{"position" : [0.500000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "ad7e3934-14bd-4827-abc4-cb81c7086f7e"
+}]
+, "components" : [{"position" : [-9.000000, 0.000000, -9.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [3.000000, 2.500000, 3.000000]
+, "type" : "transform"
+}]
+, "name" : "room 2"
+, "uuid" : "3ceb6552-4bf3-44f5-a0ca-f30b9ac2cbd0"
+}, {"children" : [{"components" : [{"position" : [-0.500000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "2b4d1e41-79a2-4e55-bda1-b1ca6e1bc67d"
+}, {"components" : [{"position" : [0.000000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "97782a35-3b10-4c41-8b6b-410f4d4177f2"
+}, {"components" : [{"position" : [0.000000, 1.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "e4b89396-962a-4789-a6e7-dd6046fd0845"
+}, {"components" : [{"position" : [0.500000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "fa800328-7373-487f-bf25-188d56731178"
+}]
+, "components" : [{"position" : [-9.000000, 0.000000, -6.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [3.000000, 2.500000, 3.000000]
+, "type" : "transform"
+}]
+, "name" : "room 2"
+, "uuid" : "a1076d2e-88fe-40ac-9d1e-2537f6207375"
+}, {"children" : [{"components" : [{"position" : [-0.500000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "efcb8622-501a-4321-b66a-a1994a1e0c15"
+}, {"components" : [{"position" : [0.000000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "fe3cc687-e766-439a-9be5-47a3d3e9d32a"
+}, {"components" : [{"position" : [0.000000, 0.000000, -0.500000]
+, "rotation" : [0.000000, 0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/arch_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/arch_1"
+, "uuid" : "7473f2d4-a446-4780-b2f1-29eb1c80c23e"
+}, {"components" : [{"position" : [0.000000, 1.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "637d8743-e0e0-4b59-b8d0-5a812388b28b"
+}, {"components" : [{"position" : [0.000000, 0.000000, 0.500000]
+, "rotation" : [0.000000, -0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "dfb54dea-7e53-4c1d-86d8-694422e412ea"
+}]
+, "components" : [{"position" : [-9.000000, 0.000000, -3.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [3.000000, 2.500000, 3.000000]
+, "type" : "transform"
+}]
+, "name" : "room 2"
+, "uuid" : "555a0680-3b4c-4b50-b7c8-775017c674ba"
+}, {"children" : [{"components" : [{"position" : [0.000000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "ef38ad9d-5648-45a0-aad2-da37ed9205c8"
+}, {"components" : [{"position" : [0.000000, 0.000000, -0.500000]
+, "rotation" : [0.000000, 0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/Models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/arch_1"
+, "uuid" : "bbdbc7d1-fc7a-4725-991a-80cb75e8616b"
+}, {"components" : [{"position" : [0.000000, 1.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "9230b919-e0c8-477d-aed9-ca419afc7323"
+}, {"components" : [{"position" : [0.000000, 0.000000, 0.500000]
+, "rotation" : [0.000000, -0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "f2a34df8-3b77-4f96-a65f-6f698862803e"
+}]
+, "components" : [{"position" : [-12.000000, 0.000000, -12.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [3.000000, 2.500000, 3.000000]
+, "type" : "transform"
+}]
+, "name" : "room 2"
+, "uuid" : "1872c687-bbec-49f7-a845-cdf4d004b020"
+}, {"children" : [{"components" : [{"position" : [-0.500000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "68ca6df5-1b92-4c27-aed4-c6425a1f8433"
+}, {"components" : [{"position" : [0.000000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "b4a23c1e-5eeb-43bd-9d2c-5236cddbcd7d"
+}, {"components" : [{"position" : [0.000000, 0.000000, -0.500000]
+, "rotation" : [0.000000, 0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/arch_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/arch_1"
+, "uuid" : "e35bfe7f-1a6d-4582-a56f-f2b9aacf9131"
+}, {"components" : [{"position" : [0.000000, 1.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "a59a5bfe-ff8c-4bf5-8236-b5ad0965f976"
+}]
+, "components" : [{"position" : [-15.000000, 0.000000, -12.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [3.000000, 2.500000, 3.000000]
+, "type" : "transform"
+}]
+, "name" : "room 2"
+, "uuid" : "d424778a-81f6-4f66-8a11-1d3ea9183e3b"
+}, {"children" : [{"components" : [{"position" : [-0.500000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/Models/Dungeon/arch_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "198f2c2f-46a9-4d47-b97b-abee6d3a4862"
+}, {"components" : [{"position" : [0.000000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "a99bd5f6-09eb-4f74-9309-636255a257b8"
+}, {"components" : [{"position" : [0.000000, 0.000000, -0.500000]
+, "rotation" : [0.000000, 0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/Models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/arch_1"
+, "uuid" : "4ac2bcbe-8655-49aa-b2a8-0166ec780018"
+}, {"components" : [{"position" : [0.000000, 0.000000, 0.500000]
+, "rotation" : [0.000000, -0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "c3d71c0e-3d6c-46fe-9506-ef875c17c1bc"
+}, {"components" : [{"position" : [0.000000, 1.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "73e95d2a-2568-4878-9981-cfb2f965fc2a"
+}]
+, "components" : [{"position" : [3.000000, 0.000000, -3.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [3.000000, 2.500000, 3.000000]
+, "type" : "transform"
+}]
+, "name" : "room 3"
+, "uuid" : "d74b8286-66cd-4f6e-8cc9-9ab904989062"
+}, {"children" : [{"components" : [{"position" : [0.000000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "2864cbe4-5366-4c55-84b7-cbde3378a0ad"
+}, {"components" : [{"position" : [0.000000, 0.000000, -0.500000]
+, "rotation" : [0.000000, 0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/arch_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/arch_1"
+, "uuid" : "38277d4b-dab7-4d31-b39d-2f3b73d46ec4"
+}, {"components" : [{"position" : [0.000000, 1.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "31afe02a-b47d-4c31-989e-f47dcc8a20e3"
+}, {"components" : [{"position" : [0.500000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "9b930552-e495-4b71-be85-4ffa765fcfdb"
+}, {"components" : [{"position" : [0.000000, 0.000000, 0.500000]
+, "rotation" : [0.000000, -0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "5433432b-985e-4180-a635-2746c68afc1e"
+}]
+, "components" : [{"position" : [9.000000, 0.000000, -3.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [3.000000, 2.500000, 3.000000]
+, "type" : "transform"
+}]
+, "name" : "room 4"
+, "uuid" : "31965ba9-df3a-4fe1-bf41-df4c5afed31e"
+}, {"children" : [{"components" : [{"position" : [-0.500000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "2eee3f28-cd27-4682-9451-c57960fc2539"
+}, {"components" : [{"position" : [0.000000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "053ff4b4-391f-41cb-8ea5-5372ba8fa6e4"
+}, {"components" : [{"position" : [0.000000, 1.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "c815d417-2316-41fe-a203-ebff21aa0f2d"
+}, {"components" : [{"position" : [0.500000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "fbad1982-6983-40a9-ba33-8e825286285c"
+}]
+, "components" : [{"position" : [9.000000, 0.000000, -6.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [3.000000, 2.500000, 3.000000]
+, "type" : "transform"
+}]
+, "name" : "room 5"
+, "uuid" : "ddcf2523-31c3-4991-9138-44ad8e95325b"
+}, {"children" : [{"components" : [{"position" : [0.000000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "be9194b0-5832-4fe8-9b14-c11cc7fcd86f"
+}, {"components" : [{"position" : [-0.500000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/arch_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/arch_1"
+, "uuid" : "e5a64405-98f8-4118-badf-41b6c5ee1beb"
+}, {"components" : [{"position" : [0.000000, 1.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "2d3fe8e6-4fcc-435a-a5e0-67118e1314db"
+}, {"components" : [{"position" : [0.500000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "e9f73227-f5b9-4721-8305-5be09e95f9e6"
+}]
+, "components" : [{"position" : [9.000000, 0.000000, -9.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [3.000000, 2.500000, 3.000000]
+, "type" : "transform"
+}]
+, "name" : "room 6"
+, "uuid" : "699c0506-b8a9-4f6d-b867-93e195ce15b4"
+}, {"children" : [{"components" : [{"position" : [0.000000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "969ffc2e-f28d-47f7-94d1-3f3952c9791e"
+}, {"components" : [{"position" : [0.000000, 0.000000, -0.500000]
+, "rotation" : [0.000000, 0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/Models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/arch_1"
+, "uuid" : "ccaff123-eb7f-46a8-b8c6-065621427f1b"
+}, {"components" : [{"position" : [0.000000, 1.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "b993d5d1-8619-420b-b752-a5b5b898186a"
+}, {"components" : [{"position" : [0.000000, 0.000000, 0.500000]
+, "rotation" : [0.000000, -0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "fab557d7-b056-4013-8fe3-fcb4f0aa63d5"
+}]
+, "components" : [{"position" : [6.000000, 0.000000, -9.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [3.000000, 2.500000, 3.000000]
+, "type" : "transform"
+}]
+, "name" : "room 7"
+, "uuid" : "07981ee4-8d39-47fd-8c99-ccbdeeecd550"
+}, {"children" : [{"components" : [{"position" : [0.000000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "a3d3a3a2-8a76-489d-95a7-0ee004831662"
+}, {"components" : [{"position" : [0.000000, 0.000000, -0.500000]
+, "rotation" : [0.000000, 0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/Models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/arch_1"
+, "uuid" : "4e9ef508-9d91-4dec-8211-601ce4b124a2"
+}, {"components" : [{"position" : [0.000000, 1.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "4518c253-c651-4ba6-8126-8aa77cb5d302"
+}, {"components" : [{"position" : [-0.500000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "fe6c79a6-a9a3-4cd0-97e8-37a28579d40c"
+}, {"components" : [{"position" : [0.500000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "1e9f4894-1a4b-437e-8759-2bae29fc5079"
+}]
+, "components" : [{"position" : [9.000000, 0.000000, -12.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [3.000000, 2.500000, 3.000000]
+, "type" : "transform"
+}]
+, "name" : "room 8"
+, "uuid" : "734805d8-be04-452c-a073-93c2cfc91ead"
+}, {"children" : [{"components" : [{"position" : [-0.500000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "53018fbe-3f1d-4d66-80d4-dba217fe9af4"
+}, {"components" : [{"position" : [0.000000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "98ae6e5a-7db6-4b0e-8bfa-e63e24b89ce6"
+}, {"components" : [{"position" : [0.000000, 0.000000, -0.500000]
+, "rotation" : [0.000000, 0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/arch_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/arch_1"
+, "uuid" : "86a47feb-7464-439c-a8a6-d97873a4dd58"
+}, {"components" : [{"position" : [0.000000, 1.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "519e9a1d-7276-4b42-a51e-629095f575d6"
+}, {"components" : [{"position" : [0.000000, 0.000000, 0.500000]
+, "rotation" : [0.000000, -0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "57561946-802e-4fd3-9439-687fcc78f9bc"
+}]
+, "components" : [{"position" : [3.000000, 0.000000, -9.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [3.000000, 2.500000, 3.000000]
+, "type" : "transform"
+}]
+, "name" : "room 9"
+, "uuid" : "fb383553-eb93-48d4-a1ac-058602bf5426"
+}, {"children" : [{"components" : [{"position" : [0.500000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "57ece8d3-98a5-4eba-bfaf-fa26c69c55db"
+}, {"components" : [{"position" : [-0.500000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "d38a16bd-e959-41b1-bb9f-7b18b04de7b9"
+}, {"components" : [{"position" : [0.000000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "96ae7288-2cf8-424d-af7f-64e40ea76bfe"
+}, {"components" : [{"position" : [0.000000, 0.000000, -0.500000]
+, "rotation" : [0.000000, 0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/arch_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/arch_1"
+, "uuid" : "a41e9696-2732-41dd-9665-f7ebd118300c"
+}, {"components" : [{"position" : [0.000000, 1.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/floor_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/floor_1"
+, "uuid" : "165ea5e9-50ea-4ca1-8a72-cc7101146e78"
+}, {"components" : [{"position" : [0.000000, 0.000000, 0.500000]
+, "rotation" : [0.000000, -0.707107, 0.000000, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"castShadow" : true
+, "cullBackFaces" : true
+, "file" : "./data/models/Dungeon/wall_1.fbx"
+, "type" : "modelrenderer"
+}]
+, "name" : "/wall_1"
+, "uuid" : "4764d3b3-00d6-4c29-961d-76c63e82a4d4"
+}]
+, "components" : [{"position" : [0.000000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [3.000000, 2.500000, 3.000000]
+, "type" : "transform"
+}]
+, "name" : "start"
+, "uuid" : "7cf90a50-eb68-4c94-a0fe-26ff7a136030"
+}, {"components" : [{"position" : [0.000000, 0.000000, 0.000000]
+, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"type" : "camera"
+, "useFbo" : false
+}, {"light" : ""
+, "timeOfDay" : 14.000000
+, "type" : "dynamicskybox"
+}]
+, "name" : "Camera"
+, "uuid" : "7195d525-130f-4920-ae07-dfdbcc56a591"
+}]
+, "name" : "Root"
+, "uuid" : "2b913ea6-1366-4b4d-a1c1-d59266931f02"
+}
+}
