@@ -8,8 +8,13 @@ class TienDemo : public Demo
 {
 public:
 	vrlib::tien::Tien tien;
+	vrlib::PositionalDevice& wandDevice;
+	float time = 0;
 
-	TienDemo();
+
+	vrlib::tien::Node* lightNode;
+
+	TienDemo(vrlib::PositionalDevice& wand);
 	virtual void init() override;
 	virtual void start() override;
 	virtual void draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix) override;

@@ -22,19 +22,6 @@
 JohanDemo::JohanDemo(void)
 {
 	currentDemo = 0;
-	demos.push_back(new TienDemo());
-	//demos.push_back(new LoLDemo());
-	//demos.push_back(new BodyDemo());
-	demos.push_back(new ParticleModelDemo());
-//	demos.push_back(new RoDemo());
-//	demos.push_back(new VolumeDemo());
-	//demos.push_back(new ParticleDemo());
-	//demos.push_back(new TunnelDemo());
-
-#ifndef NOKINECT
-	demos.push_back(new KinectDemo());
-#endif
-	//demos.push_back(new HeightDemo());
 }
 
 
@@ -61,6 +48,19 @@ void JohanDemo::init()
 		mPageDownButton.init("buttonLeftGrip");
 		mPageUpButton.init("buttonRightGrip");
 	}
+	demos.push_back(new TienDemo(mWand));
+	//demos.push_back(new LoLDemo());
+	//demos.push_back(new BodyDemo());
+	demos.push_back(new ParticleModelDemo());
+	//	demos.push_back(new RoDemo());
+	//	demos.push_back(new VolumeDemo());
+	//demos.push_back(new ParticleDemo());
+	//demos.push_back(new TunnelDemo());
+
+#ifndef NOKINECT
+	demos.push_back(new KinectDemo());
+#endif
+	//demos.push_back(new HeightDemo());
 
 	contextInit();
 }
@@ -112,6 +112,7 @@ void JohanDemo::preFrame(double frameTime, double totalTime)
 		glm::mat4 mat = mWand.getData();
 
 		demos[currentDemo]->wandMat = mat;
+
 
 		glm::vec4 origin = mat * glm::vec4(0,0,0,1);
 		glm::vec4 point = mat * glm::vec4(0,0,-1,1);

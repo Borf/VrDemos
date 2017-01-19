@@ -28,7 +28,6 @@ public:
 	virtual void update() {};
 	virtual vrlib::gui::components::Panel* getPanel() = 0;
 
-
 	glm::mat4 wandMat;
 	glm::mat4 headMat;
 
