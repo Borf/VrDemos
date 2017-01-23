@@ -6,6 +6,13 @@
 
 class TienDemo : public Demo
 {
+
+	vrlib::tien::Node* handNode = nullptr;
+	vrlib::tien::Node* teleportTarget = nullptr;
+	vrlib::tien::Node* teleportLight = nullptr;
+	glm::vec3 teleportTargetPosition;
+	double lastTeleportTime = 0;
+
 public:
 	vrlib::tien::Tien tien;
 	vrlib::PositionalDevice& wandDevice;

@@ -1,20 +1,5 @@
 {"meshes" : []
-, "scene" : {"children" : [{"children" : [{"components" : [{"position" : [0.000000, 0.388829, 0.000000]
-, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
-, "scale" : [1.000000, 1.000000, 1.000000]
-, "type" : "transform"
-}, {"color" : [1.000000, 0.600000, 0.466667, 1.000000]
-, "directionalAmbient" : 0.000000
-, "intensity" : 50.000000
-, "lighttype" : "point"
-, "range" : 3.000000
-, "shadow" : "none"
-, "spotlightAngle" : 45.000000
-, "type" : "light"
-}]
-, "name" : "Lampie"
-, "uuid" : "b2e10526-bf2d-4552-8f7b-407a51579b92"
-}, {"components" : [{"position" : [0.000000, 0.000000, 0.000000]
+, "scene" : {"children" : [{"children" : [{"components" : [{"position" : [0.000000, 0.000000, 0.000000]
 , "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
 , "scale" : [1.000000, 1.000000, 1.000000]
 , "type" : "transform"
@@ -121,21 +106,6 @@
 }]
 , "name" : "/wall_1"
 , "uuid" : "660fb8f3-e889-49a1-996e-010294056af1"
-}, {"components" : [{"position" : [0.000000, 0.388829, 0.000000]
-, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
-, "scale" : [1.000000, 1.000000, 1.000000]
-, "type" : "transform"
-}, {"color" : [1.000000, 0.600000, 0.466667, 1.000000]
-, "directionalAmbient" : 0.000000
-, "intensity" : 50.000000
-, "lighttype" : "point"
-, "range" : 3.000000
-, "shadow" : "none"
-, "spotlightAngle" : 45.000000
-, "type" : "light"
-}]
-, "name" : "Lampie"
-, "uuid" : "2ee5dd56-6148-478b-bc5f-28daec1d2632"
 }]
 , "components" : [{"position" : [3.000000, 0.000000, -12.000000]
 , "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
@@ -199,21 +169,6 @@
 }]
 , "name" : "/wall_1"
 , "uuid" : "ac1dab83-690e-4c63-8183-07e05694b44a"
-}, {"components" : [{"position" : [0.000000, 0.388829, 0.000000]
-, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
-, "scale" : [1.000000, 1.000000, 1.000000]
-, "type" : "transform"
-}, {"color" : [1.000000, 0.600000, 0.466667, 1.000000]
-, "directionalAmbient" : 0.000000
-, "intensity" : 50.000000
-, "lighttype" : "point"
-, "range" : 3.000000
-, "shadow" : "none"
-, "spotlightAngle" : 45.000000
-, "type" : "light"
-}]
-, "name" : "Lampie"
-, "uuid" : "ca0770d1-d69c-4a7d-8af0-961bbbc3756c"
 }]
 , "components" : [{"position" : [-15.000000, 0.000000, -9.000000]
 , "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
@@ -277,21 +232,6 @@
 }]
 , "name" : "/wall_1"
 , "uuid" : "639bd125-d42d-4388-9c0e-7ee7f8071472"
-}, {"components" : [{"position" : [0.000000, 0.388829, 0.000000]
-, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
-, "scale" : [1.000000, 1.000000, 1.000000]
-, "type" : "transform"
-}, {"color" : [1.000000, 0.600000, 0.466667, 1.000000]
-, "directionalAmbient" : 0.000000
-, "intensity" : 50.000000
-, "lighttype" : "point"
-, "range" : 3.000000
-, "shadow" : "none"
-, "spotlightAngle" : 45.000000
-, "type" : "light"
-}]
-, "name" : "Lampie"
-, "uuid" : "c6064973-ceb3-45a7-b490-d05bab5ba17c"
 }]
 , "components" : [{"position" : [-18.000000, 0.000000, -9.000000]
 , "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
@@ -355,21 +295,6 @@
 }]
 , "name" : "/wall_1"
 , "uuid" : "11beebcd-b865-49aa-8e93-137de00255e2"
-}, {"components" : [{"position" : [0.000000, 0.388829, 0.000000]
-, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
-, "scale" : [1.000000, 1.000000, 1.000000]
-, "type" : "transform"
-}, {"color" : [1.000000, 0.600000, 0.466667, 1.000000]
-, "directionalAmbient" : 0.000000
-, "intensity" : 50.000000
-, "lighttype" : "point"
-, "range" : 3.000000
-, "shadow" : "none"
-, "spotlightAngle" : 45.000000
-, "type" : "light"
-}]
-, "name" : "Lampie"
-, "uuid" : "924e78ac-ecaf-42f6-a4dd-2d68b73034db"
 }]
 , "components" : [{"position" : [-15.000000, 0.000000, -15.000000]
 , "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
@@ -422,21 +347,6 @@
 }]
 , "name" : "/wall_1"
 , "uuid" : "9abd3031-0770-409c-a696-33d36595e63c"
-}, {"components" : [{"position" : [0.000000, 0.388829, 0.000000]
-, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
-, "scale" : [1.000000, 1.000000, 1.000000]
-, "type" : "transform"
-}, {"color" : [1.000000, 0.600000, 0.466667, 1.000000]
-, "directionalAmbient" : 0.000000
-, "intensity" : 50.000000
-, "lighttype" : "point"
-, "range" : 3.000000
-, "shadow" : "none"
-, "spotlightAngle" : 45.000000
-, "type" : "light"
-}]
-, "name" : "Lampie"
-, "uuid" : "bb3c06d9-f86d-4697-bfc5-f033246b2f81"
 }]
 , "components" : [{"position" : [-3.000000, 0.000000, -3.000000]
 , "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
@@ -489,21 +399,6 @@
 }]
 , "name" : "/wall_1"
 , "uuid" : "24acf73a-04d6-445a-b2a9-a532fee7bd98"
-}, {"components" : [{"position" : [0.000000, 0.388829, 0.000000]
-, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
-, "scale" : [1.000000, 1.000000, 1.000000]
-, "type" : "transform"
-}, {"color" : [1.000000, 0.600000, 0.466667, 1.000000]
-, "directionalAmbient" : 0.000000
-, "intensity" : 50.000000
-, "lighttype" : "point"
-, "range" : 3.000000
-, "shadow" : "none"
-, "spotlightAngle" : 45.000000
-, "type" : "light"
-}]
-, "name" : "Lampie"
-, "uuid" : "2a00ab8f-4d9e-4f0f-9d88-fc92cf7d1aec"
 }]
 , "components" : [{"position" : [-3.000000, 0.000000, 6.000000]
 , "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
@@ -567,21 +462,6 @@
 }]
 , "name" : "/wall_1"
 , "uuid" : "6319bd22-8111-41c3-a389-a61d794c6790"
-}, {"components" : [{"position" : [0.000000, 0.388829, 0.000000]
-, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
-, "scale" : [1.000000, 1.000000, 1.000000]
-, "type" : "transform"
-}, {"color" : [1.000000, 0.600000, 0.466667, 1.000000]
-, "directionalAmbient" : 0.000000
-, "intensity" : 50.000000
-, "lighttype" : "point"
-, "range" : 3.000000
-, "shadow" : "none"
-, "spotlightAngle" : 45.000000
-, "type" : "light"
-}]
-, "name" : "Lampie"
-, "uuid" : "1c7e9f6e-9ce3-4bf7-a706-2a3b9c5a8d7d"
 }]
 , "components" : [{"position" : [3.000000, 0.000000, 9.000000]
 , "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
@@ -645,21 +525,6 @@
 }]
 , "name" : "/wall_1"
 , "uuid" : "f6e175ef-0c5d-424c-92f7-28d85c6476a4"
-}, {"components" : [{"position" : [0.000000, 0.388829, 0.000000]
-, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
-, "scale" : [1.000000, 1.000000, 1.000000]
-, "type" : "transform"
-}, {"color" : [1.000000, 0.600000, 0.466667, 1.000000]
-, "directionalAmbient" : 0.000000
-, "intensity" : 50.000000
-, "lighttype" : "point"
-, "range" : 3.000000
-, "shadow" : "none"
-, "spotlightAngle" : 45.000000
-, "type" : "light"
-}]
-, "name" : "Lampie"
-, "uuid" : "464d56e9-658d-4188-98d8-8eb2e68c54d2"
 }]
 , "components" : [{"position" : [0.000000, 0.000000, 12.000000]
 , "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
@@ -723,21 +588,6 @@
 }]
 , "name" : "/wall_1"
 , "uuid" : "1b18f32c-eb73-4865-9d3a-c98de373a1c4"
-}, {"components" : [{"position" : [0.000000, 0.388829, 0.000000]
-, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
-, "scale" : [1.000000, 1.000000, 1.000000]
-, "type" : "transform"
-}, {"color" : [1.000000, 0.600000, 0.466667, 1.000000]
-, "directionalAmbient" : 0.000000
-, "intensity" : 50.000000
-, "lighttype" : "point"
-, "range" : 3.000000
-, "shadow" : "none"
-, "spotlightAngle" : 45.000000
-, "type" : "light"
-}]
-, "name" : "Lampie"
-, "uuid" : "2dc61597-e0b9-418b-a107-f541cfc19944"
 }]
 , "components" : [{"position" : [-6.000000, 0.000000, 9.000000]
 , "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
@@ -801,21 +651,6 @@
 }]
 , "name" : "/wall_1"
 , "uuid" : "952888d0-9e8f-4837-89f4-1b1b7cd3f597"
-}, {"components" : [{"position" : [0.000000, 0.388829, 0.000000]
-, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
-, "scale" : [1.000000, 1.000000, 1.000000]
-, "type" : "transform"
-}, {"color" : [1.000000, 0.600000, 0.466667, 1.000000]
-, "directionalAmbient" : 0.000000
-, "intensity" : 50.000000
-, "lighttype" : "point"
-, "range" : 3.000000
-, "shadow" : "none"
-, "spotlightAngle" : 45.000000
-, "type" : "light"
-}]
-, "name" : "Lampie"
-, "uuid" : "448ac85f-b8a5-4eca-ac67-ab74e646dea1"
 }]
 , "components" : [{"position" : [-3.000000, 0.000000, 9.000000]
 , "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
@@ -857,21 +692,6 @@
 }]
 , "name" : "/floor_1"
 , "uuid" : "107a684f-50a5-4ab7-90e4-97c69940f3a8"
-}, {"components" : [{"position" : [0.000000, 0.388829, 0.000000]
-, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
-, "scale" : [1.000000, 1.000000, 1.000000]
-, "type" : "transform"
-}, {"color" : [1.000000, 0.600000, 0.466667, 1.000000]
-, "directionalAmbient" : 0.000000
-, "intensity" : 50.000000
-, "lighttype" : "point"
-, "range" : 3.000000
-, "shadow" : "none"
-, "spotlightAngle" : 45.000000
-, "type" : "light"
-}]
-, "name" : "Lampie"
-, "uuid" : "9aad5a12-4fdb-4fd3-8e96-2255f995760a"
 }]
 , "components" : [{"position" : [6.000000, 0.000000, -3.000000]
 , "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
@@ -924,21 +744,6 @@
 }]
 , "name" : "/arch_1"
 , "uuid" : "efd186fb-d30e-41f3-b426-0c271887f318"
-}, {"components" : [{"position" : [0.000000, 0.388829, 0.000000]
-, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
-, "scale" : [1.000000, 1.000000, 1.000000]
-, "type" : "transform"
-}, {"color" : [1.000000, 0.600000, 0.466667, 1.000000]
-, "directionalAmbient" : 0.000000
-, "intensity" : 50.000000
-, "lighttype" : "point"
-, "range" : 3.000000
-, "shadow" : "none"
-, "spotlightAngle" : 45.000000
-, "type" : "light"
-}]
-, "name" : "Lampie"
-, "uuid" : "04aee550-15d3-43ef-9720-ba5025371b5f"
 }]
 , "components" : [{"position" : [-6.000000, 0.000000, 6.000000]
 , "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
@@ -991,21 +796,6 @@
 }]
 , "name" : "/wall_1"
 , "uuid" : "db58ab8d-1e19-4128-b591-0521a849801e"
-}, {"components" : [{"position" : [0.000000, 0.388829, 0.000000]
-, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
-, "scale" : [1.000000, 1.000000, 1.000000]
-, "type" : "transform"
-}, {"color" : [1.000000, 0.600000, 0.466667, 1.000000]
-, "directionalAmbient" : 0.000000
-, "intensity" : 50.000000
-, "lighttype" : "point"
-, "range" : 3.000000
-, "shadow" : "none"
-, "spotlightAngle" : 45.000000
-, "type" : "light"
-}]
-, "name" : "Lampie"
-, "uuid" : "37a91a84-ef7d-4c18-9740-f3bb88417098"
 }]
 , "components" : [{"position" : [0.000000, 0.000000, -12.000000]
 , "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
@@ -1047,21 +837,6 @@
 }]
 , "name" : "/floor_1"
 , "uuid" : "747c35a7-d446-46ed-a90d-7843e8dd0bfc"
-}, {"components" : [{"position" : [0.000000, 0.388829, 0.000000]
-, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
-, "scale" : [1.000000, 1.000000, 1.000000]
-, "type" : "transform"
-}, {"color" : [1.000000, 0.600000, 0.466667, 1.000000]
-, "directionalAmbient" : 0.000000
-, "intensity" : 50.000000
-, "lighttype" : "point"
-, "range" : 3.000000
-, "shadow" : "none"
-, "spotlightAngle" : 45.000000
-, "type" : "light"
-}]
-, "name" : "Lampie"
-, "uuid" : "093aa72f-b208-4e66-8dc5-2a4ca8c92944"
 }]
 , "components" : [{"position" : [-3.000000, 0.000000, -12.000000]
 , "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
@@ -1114,21 +889,6 @@
 }]
 , "name" : "/floor_1"
 , "uuid" : "93cbe447-7196-4a11-a816-58a231058460"
-}, {"components" : [{"position" : [0.000000, 0.388829, 0.000000]
-, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
-, "scale" : [1.000000, 1.000000, 1.000000]
-, "type" : "transform"
-}, {"color" : [1.000000, 0.600000, 0.466667, 1.000000]
-, "directionalAmbient" : 0.000000
-, "intensity" : 50.000000
-, "lighttype" : "point"
-, "range" : 3.000000
-, "shadow" : "none"
-, "spotlightAngle" : 45.000000
-, "type" : "light"
-}]
-, "name" : "Lampie"
-, "uuid" : "92311a3d-4351-42b6-83d8-0980aedb604e"
 }]
 , "components" : [{"position" : [-3.000000, 0.000000, -6.000000]
 , "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
@@ -1192,21 +952,6 @@
 }]
 , "name" : "/wall_1"
 , "uuid" : "d3d0832a-6510-454a-88bd-0aa18abcff96"
-}, {"components" : [{"position" : [0.000000, 0.388829, 0.000000]
-, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
-, "scale" : [1.000000, 1.000000, 1.000000]
-, "type" : "transform"
-}, {"color" : [1.000000, 0.600000, 0.466667, 1.000000]
-, "directionalAmbient" : 0.000000
-, "intensity" : 50.000000
-, "lighttype" : "point"
-, "range" : 3.000000
-, "shadow" : "none"
-, "spotlightAngle" : 45.000000
-, "type" : "light"
-}]
-, "name" : "Lampie"
-, "uuid" : "6d970e25-41ce-4bb9-a448-ae795e57e928"
 }]
 , "components" : [{"position" : [-3.000000, 0.000000, -9.000000]
 , "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
@@ -1270,21 +1015,6 @@
 }]
 , "name" : "/wall_1"
 , "uuid" : "df29f601-722e-49b1-9db1-62f781378869"
-}, {"components" : [{"position" : [0.000000, 0.388829, 0.000000]
-, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
-, "scale" : [1.000000, 1.000000, 1.000000]
-, "type" : "transform"
-}, {"color" : [1.000000, 0.600000, 0.466667, 1.000000]
-, "directionalAmbient" : 0.000000
-, "intensity" : 50.000000
-, "lighttype" : "point"
-, "range" : 3.000000
-, "shadow" : "none"
-, "spotlightAngle" : 45.000000
-, "type" : "light"
-}]
-, "name" : "Lampie"
-, "uuid" : "bdd2e254-df8f-4792-8472-8042cf384d13"
 }]
 , "components" : [{"position" : [6.000000, 0.000000, 0.000000]
 , "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
@@ -1337,21 +1067,6 @@
 }]
 , "name" : "/wall_1"
 , "uuid" : "e7ec20e6-52e5-4dde-9255-af84e2382c21"
-}, {"components" : [{"position" : [0.000000, 0.388829, 0.000000]
-, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
-, "scale" : [1.000000, 1.000000, 1.000000]
-, "type" : "transform"
-}, {"color" : [1.000000, 0.600000, 0.466667, 1.000000]
-, "directionalAmbient" : 0.000000
-, "intensity" : 50.000000
-, "lighttype" : "point"
-, "range" : 3.000000
-, "shadow" : "none"
-, "spotlightAngle" : 45.000000
-, "type" : "light"
-}]
-, "name" : "Lampie"
-, "uuid" : "1d105827-778b-4e2a-925b-63534626ca61"
 }]
 , "components" : [{"position" : [6.000000, 0.000000, 3.000000]
 , "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
@@ -1415,21 +1130,6 @@
 }]
 , "name" : "/wall_1"
 , "uuid" : "f09b9984-ef18-4e19-a148-a183abd12961"
-}, {"components" : [{"position" : [0.000000, 0.388829, 0.000000]
-, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
-, "scale" : [1.000000, 1.000000, 1.000000]
-, "type" : "transform"
-}, {"color" : [1.000000, 0.600000, 0.466667, 1.000000]
-, "directionalAmbient" : 0.000000
-, "intensity" : 50.000000
-, "lighttype" : "point"
-, "range" : 3.000000
-, "shadow" : "none"
-, "spotlightAngle" : 45.000000
-, "type" : "light"
-}]
-, "name" : "Lampie"
-, "uuid" : "441e1fb2-cf1c-4431-9379-818f3b98a818"
 }]
 , "components" : [{"position" : [6.000000, 0.000000, 6.000000]
 , "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
@@ -1471,21 +1171,6 @@
 }]
 , "name" : "/floor_1"
 , "uuid" : "c277a2a0-dc71-486a-859d-8c637e856bb9"
-}, {"components" : [{"position" : [0.000000, 0.388829, 0.000000]
-, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
-, "scale" : [1.000000, 1.000000, 1.000000]
-, "type" : "transform"
-}, {"color" : [1.000000, 0.600000, 0.466667, 1.000000]
-, "directionalAmbient" : 0.000000
-, "intensity" : 50.000000
-, "lighttype" : "point"
-, "range" : 3.000000
-, "shadow" : "none"
-, "spotlightAngle" : 45.000000
-, "type" : "light"
-}]
-, "name" : "Lampie"
-, "uuid" : "aa2e26a6-3e58-495b-9a97-f369c7a9bab8"
 }]
 , "components" : [{"position" : [3.000000, 0.000000, 6.000000]
 , "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
@@ -1538,21 +1223,6 @@
 }]
 , "name" : "/wall_1"
 , "uuid" : "f89f9530-2f37-4c74-9b3e-97beb7941ff9"
-}, {"components" : [{"position" : [0.000000, 0.388829, 0.000000]
-, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
-, "scale" : [1.000000, 1.000000, 1.000000]
-, "type" : "transform"
-}, {"color" : [1.000000, 0.600000, 0.466667, 1.000000]
-, "directionalAmbient" : 0.000000
-, "intensity" : 50.000000
-, "lighttype" : "point"
-, "range" : 3.000000
-, "shadow" : "none"
-, "spotlightAngle" : 45.000000
-, "type" : "light"
-}]
-, "name" : "Lampie"
-, "uuid" : "8794c6d2-9572-4cd9-94d7-2eb57a98fec4"
 }]
 , "components" : [{"position" : [0.000000, 0.000000, 6.000000]
 , "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
@@ -1616,21 +1286,6 @@
 }]
 , "name" : "/wall_1"
 , "uuid" : "a1f4e236-ba66-4a72-8ce3-746f79f9bbf7"
-}, {"components" : [{"position" : [0.000000, 0.388829, 0.000000]
-, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
-, "scale" : [1.000000, 1.000000, 1.000000]
-, "type" : "transform"
-}, {"color" : [1.000000, 0.600000, 0.466667, 1.000000]
-, "directionalAmbient" : 0.000000
-, "intensity" : 50.000000
-, "lighttype" : "point"
-, "range" : 3.000000
-, "shadow" : "none"
-, "spotlightAngle" : 45.000000
-, "type" : "light"
-}]
-, "name" : "Lampie"
-, "uuid" : "670e4f86-1c1f-4b18-ac56-ece98a1af688"
 }]
 , "components" : [{"position" : [3.000000, 0.000000, 12.000000]
 , "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
@@ -1683,21 +1338,6 @@
 }]
 , "name" : "/wall_1"
 , "uuid" : "ccaa66c8-6306-4f56-bcd4-1f0efaca9fc8"
-}, {"components" : [{"position" : [0.000000, 0.388829, 0.000000]
-, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
-, "scale" : [1.000000, 1.000000, 1.000000]
-, "type" : "transform"
-}, {"color" : [1.000000, 0.600000, 0.466667, 1.000000]
-, "directionalAmbient" : 0.000000
-, "intensity" : 50.000000
-, "lighttype" : "point"
-, "range" : 3.000000
-, "shadow" : "none"
-, "spotlightAngle" : 45.000000
-, "type" : "light"
-}]
-, "name" : "Lampie"
-, "uuid" : "0ca7173d-0824-48c0-be4b-889115f428e9"
 }]
 , "components" : [{"position" : [-6.000000, 0.000000, 3.000000]
 , "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
@@ -1761,21 +1401,6 @@
 }]
 , "name" : "/wall_1"
 , "uuid" : "8a656188-4703-4308-a178-5b29447f0774"
-}, {"components" : [{"position" : [0.000000, 0.388829, 0.000000]
-, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
-, "scale" : [1.000000, 1.000000, 1.000000]
-, "type" : "transform"
-}, {"color" : [1.000000, 0.600000, 0.466667, 1.000000]
-, "directionalAmbient" : 0.000000
-, "intensity" : 50.000000
-, "lighttype" : "point"
-, "range" : 3.000000
-, "shadow" : "none"
-, "spotlightAngle" : 45.000000
-, "type" : "light"
-}]
-, "name" : "Lampie"
-, "uuid" : "6f1d40a3-d588-4a5a-8337-5c4837a26935"
 }]
 , "components" : [{"position" : [-6.000000, 0.000000, 0.000000]
 , "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
@@ -1817,21 +1442,6 @@
 }]
 , "name" : "/floor_1"
 , "uuid" : "11ae055d-24aa-4fa4-b59e-d313b230675f"
-}, {"components" : [{"position" : [0.000000, 0.388829, 0.000000]
-, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
-, "scale" : [1.000000, 1.000000, 1.000000]
-, "type" : "transform"
-}, {"color" : [1.000000, 0.600000, 0.466667, 1.000000]
-, "directionalAmbient" : 0.000000
-, "intensity" : 50.000000
-, "lighttype" : "point"
-, "range" : 3.000000
-, "shadow" : "none"
-, "spotlightAngle" : 45.000000
-, "type" : "light"
-}]
-, "name" : "Lampie"
-, "uuid" : "5958ceb4-fb9e-446a-b3f5-54b7e23522c7"
 }]
 , "components" : [{"position" : [-6.000000, 0.000000, -3.000000]
 , "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
@@ -1884,21 +1494,6 @@
 }]
 , "name" : "/wall_1"
 , "uuid" : "9cdba901-86a9-4d8b-af98-ded975ea4638"
-}, {"components" : [{"position" : [0.000000, 0.388829, 0.000000]
-, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
-, "scale" : [1.000000, 1.000000, 1.000000]
-, "type" : "transform"
-}, {"color" : [1.000000, 0.600000, 0.466667, 1.000000]
-, "directionalAmbient" : 0.000000
-, "intensity" : 50.000000
-, "lighttype" : "point"
-, "range" : 3.000000
-, "shadow" : "none"
-, "spotlightAngle" : 45.000000
-, "type" : "light"
-}]
-, "name" : "Lampie"
-, "uuid" : "e7a15ec6-80e0-4635-acb1-40c3412a50a1"
 }]
 , "components" : [{"position" : [-6.000000, 0.000000, -12.000000]
 , "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
@@ -1940,21 +1535,6 @@
 }]
 , "name" : "/floor_1"
 , "uuid" : "c33d70a1-8c53-4ce9-9d4b-31d165abdd49"
-}, {"components" : [{"position" : [0.000000, 0.388829, 0.000000]
-, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
-, "scale" : [1.000000, 1.000000, 1.000000]
-, "type" : "transform"
-}, {"color" : [1.000000, 0.600000, 0.466667, 1.000000]
-, "directionalAmbient" : 0.000000
-, "intensity" : 50.000000
-, "lighttype" : "point"
-, "range" : 3.000000
-, "shadow" : "none"
-, "spotlightAngle" : 45.000000
-, "type" : "light"
-}]
-, "name" : "Lampie"
-, "uuid" : "a7273e9f-a6fa-4fa6-afb2-fdde58b60cd8"
 }]
 , "components" : [{"position" : [-9.000000, 0.000000, -12.000000]
 , "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
@@ -2018,21 +1598,6 @@
 }]
 , "name" : "/wall_1"
 , "uuid" : "26d0b2ed-1f3e-47e0-9212-4d0bca4fbcd9"
-}, {"components" : [{"position" : [0.000000, 0.388829, 0.000000]
-, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
-, "scale" : [1.000000, 1.000000, 1.000000]
-, "type" : "transform"
-}, {"color" : [1.000000, 0.600000, 0.466667, 1.000000]
-, "directionalAmbient" : 0.000000
-, "intensity" : 50.000000
-, "lighttype" : "point"
-, "range" : 3.000000
-, "shadow" : "none"
-, "spotlightAngle" : 45.000000
-, "type" : "light"
-}]
-, "name" : "Lampie"
-, "uuid" : "3ce05681-967d-46b3-90aa-df536dced4fe"
 }]
 , "components" : [{"position" : [-9.000000, 0.000000, -15.000000]
 , "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
@@ -2096,21 +1661,6 @@
 }]
 , "name" : "/wall_1"
 , "uuid" : "ad7e3934-14bd-4827-abc4-cb81c7086f7e"
-}, {"components" : [{"position" : [0.000000, 0.388829, 0.000000]
-, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
-, "scale" : [1.000000, 1.000000, 1.000000]
-, "type" : "transform"
-}, {"color" : [1.000000, 0.600000, 0.466667, 1.000000]
-, "directionalAmbient" : 0.000000
-, "intensity" : 50.000000
-, "lighttype" : "point"
-, "range" : 3.000000
-, "shadow" : "none"
-, "spotlightAngle" : 45.000000
-, "type" : "light"
-}]
-, "name" : "Lampie"
-, "uuid" : "74345fd1-c786-4b1c-8797-b6df9a79819a"
 }]
 , "components" : [{"position" : [-9.000000, 0.000000, -9.000000]
 , "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
@@ -2163,21 +1713,6 @@
 }]
 , "name" : "/wall_1"
 , "uuid" : "fa800328-7373-487f-bf25-188d56731178"
-}, {"components" : [{"position" : [0.000000, 0.388829, 0.000000]
-, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
-, "scale" : [1.000000, 1.000000, 1.000000]
-, "type" : "transform"
-}, {"color" : [1.000000, 0.600000, 0.466667, 1.000000]
-, "directionalAmbient" : 0.000000
-, "intensity" : 50.000000
-, "lighttype" : "point"
-, "range" : 3.000000
-, "shadow" : "none"
-, "spotlightAngle" : 45.000000
-, "type" : "light"
-}]
-, "name" : "Lampie"
-, "uuid" : "ea60905d-1ac4-4404-9be6-1d0daf0ebd6e"
 }]
 , "components" : [{"position" : [-9.000000, 0.000000, -6.000000]
 , "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
@@ -2241,21 +1776,6 @@
 }]
 , "name" : "/wall_1"
 , "uuid" : "dfb54dea-7e53-4c1d-86d8-694422e412ea"
-}, {"components" : [{"position" : [0.000000, 0.388829, 0.000000]
-, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
-, "scale" : [1.000000, 1.000000, 1.000000]
-, "type" : "transform"
-}, {"color" : [1.000000, 0.600000, 0.466667, 1.000000]
-, "directionalAmbient" : 0.000000
-, "intensity" : 50.000000
-, "lighttype" : "point"
-, "range" : 3.000000
-, "shadow" : "none"
-, "spotlightAngle" : 45.000000
-, "type" : "light"
-}]
-, "name" : "Lampie"
-, "uuid" : "35bae9c6-6013-4099-aebc-4344598d76ce"
 }]
 , "components" : [{"position" : [-9.000000, 0.000000, -3.000000]
 , "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
@@ -2308,21 +1828,6 @@
 }]
 , "name" : "/wall_1"
 , "uuid" : "f2a34df8-3b77-4f96-a65f-6f698862803e"
-}, {"components" : [{"position" : [0.000000, 0.388829, 0.000000]
-, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
-, "scale" : [1.000000, 1.000000, 1.000000]
-, "type" : "transform"
-}, {"color" : [1.000000, 0.600000, 0.466667, 1.000000]
-, "directionalAmbient" : 0.000000
-, "intensity" : 50.000000
-, "lighttype" : "point"
-, "range" : 3.000000
-, "shadow" : "none"
-, "spotlightAngle" : 45.000000
-, "type" : "light"
-}]
-, "name" : "Lampie"
-, "uuid" : "a6545a40-c883-4ae1-b55b-bf4cae318c5d"
 }]
 , "components" : [{"position" : [-12.000000, 0.000000, -12.000000]
 , "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
@@ -2375,21 +1880,6 @@
 }]
 , "name" : "/floor_1"
 , "uuid" : "a59a5bfe-ff8c-4bf5-8236-b5ad0965f976"
-}, {"components" : [{"position" : [0.000000, 0.388829, 0.000000]
-, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
-, "scale" : [1.000000, 1.000000, 1.000000]
-, "type" : "transform"
-}, {"color" : [1.000000, 0.600000, 0.466667, 1.000000]
-, "directionalAmbient" : 0.000000
-, "intensity" : 50.000000
-, "lighttype" : "point"
-, "range" : 3.000000
-, "shadow" : "none"
-, "spotlightAngle" : 45.000000
-, "type" : "light"
-}]
-, "name" : "Lampie"
-, "uuid" : "9ce5352b-ca78-43cf-a473-b94cb4252551"
 }]
 , "components" : [{"position" : [-15.000000, 0.000000, -12.000000]
 , "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
@@ -2453,21 +1943,6 @@
 }]
 , "name" : "/floor_1"
 , "uuid" : "73e95d2a-2568-4878-9981-cfb2f965fc2a"
-}, {"components" : [{"position" : [0.000000, 0.388829, 0.000000]
-, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
-, "scale" : [1.000000, 1.000000, 1.000000]
-, "type" : "transform"
-}, {"color" : [1.000000, 0.600000, 0.466667, 1.000000]
-, "directionalAmbient" : 0.000000
-, "intensity" : 50.000000
-, "lighttype" : "point"
-, "range" : 3.000000
-, "shadow" : "none"
-, "spotlightAngle" : 45.000000
-, "type" : "light"
-}]
-, "name" : "Lampie"
-, "uuid" : "1eb3be94-b88f-4e2d-81fd-2d48bdda3959"
 }]
 , "components" : [{"position" : [3.000000, 0.000000, -3.000000]
 , "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
@@ -2531,21 +2006,6 @@
 }]
 , "name" : "/wall_1"
 , "uuid" : "5433432b-985e-4180-a635-2746c68afc1e"
-}, {"components" : [{"position" : [0.000000, 0.388829, 0.000000]
-, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
-, "scale" : [1.000000, 1.000000, 1.000000]
-, "type" : "transform"
-}, {"color" : [1.000000, 0.600000, 0.466667, 1.000000]
-, "directionalAmbient" : 0.000000
-, "intensity" : 50.000000
-, "lighttype" : "point"
-, "range" : 3.000000
-, "shadow" : "none"
-, "spotlightAngle" : 45.000000
-, "type" : "light"
-}]
-, "name" : "Lampie"
-, "uuid" : "79df6540-f71b-4e4a-add5-d97f180b67db"
 }]
 , "components" : [{"position" : [9.000000, 0.000000, -3.000000]
 , "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
@@ -2598,21 +2058,6 @@
 }]
 , "name" : "/wall_1"
 , "uuid" : "fbad1982-6983-40a9-ba33-8e825286285c"
-}, {"components" : [{"position" : [0.000000, 0.388829, 0.000000]
-, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
-, "scale" : [1.000000, 1.000000, 1.000000]
-, "type" : "transform"
-}, {"color" : [1.000000, 0.600000, 0.466667, 1.000000]
-, "directionalAmbient" : 0.000000
-, "intensity" : 50.000000
-, "lighttype" : "point"
-, "range" : 3.000000
-, "shadow" : "none"
-, "spotlightAngle" : 45.000000
-, "type" : "light"
-}]
-, "name" : "Lampie"
-, "uuid" : "1b0de1c6-0a11-4fd0-9d53-9730c8e109b1"
 }]
 , "components" : [{"position" : [9.000000, 0.000000, -6.000000]
 , "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
@@ -2665,21 +2110,6 @@
 }]
 , "name" : "/wall_1"
 , "uuid" : "e9f73227-f5b9-4721-8305-5be09e95f9e6"
-}, {"components" : [{"position" : [0.000000, 0.388829, 0.000000]
-, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
-, "scale" : [1.000000, 1.000000, 1.000000]
-, "type" : "transform"
-}, {"color" : [1.000000, 0.600000, 0.466667, 1.000000]
-, "directionalAmbient" : 0.000000
-, "intensity" : 50.000000
-, "lighttype" : "point"
-, "range" : 3.000000
-, "shadow" : "none"
-, "spotlightAngle" : 45.000000
-, "type" : "light"
-}]
-, "name" : "Lampie"
-, "uuid" : "f6759aba-9be8-4a51-b09a-bd66d88a1de9"
 }]
 , "components" : [{"position" : [9.000000, 0.000000, -9.000000]
 , "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
@@ -2732,21 +2162,6 @@
 }]
 , "name" : "/wall_1"
 , "uuid" : "fab557d7-b056-4013-8fe3-fcb4f0aa63d5"
-}, {"components" : [{"position" : [0.000000, 0.388829, 0.000000]
-, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
-, "scale" : [1.000000, 1.000000, 1.000000]
-, "type" : "transform"
-}, {"color" : [1.000000, 0.600000, 0.466667, 1.000000]
-, "directionalAmbient" : 0.000000
-, "intensity" : 50.000000
-, "lighttype" : "point"
-, "range" : 3.000000
-, "shadow" : "none"
-, "spotlightAngle" : 45.000000
-, "type" : "light"
-}]
-, "name" : "Lampie"
-, "uuid" : "815071ff-7430-4df8-ac32-33b2cb10d7ff"
 }]
 , "components" : [{"position" : [6.000000, 0.000000, -9.000000]
 , "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
@@ -2810,21 +2225,6 @@
 }]
 , "name" : "/wall_1"
 , "uuid" : "1e9f4894-1a4b-437e-8759-2bae29fc5079"
-}, {"components" : [{"position" : [0.000000, 0.388829, 0.000000]
-, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
-, "scale" : [1.000000, 1.000000, 1.000000]
-, "type" : "transform"
-}, {"color" : [1.000000, 0.600000, 0.466667, 1.000000]
-, "directionalAmbient" : 0.000000
-, "intensity" : 50.000000
-, "lighttype" : "point"
-, "range" : 3.000000
-, "shadow" : "none"
-, "spotlightAngle" : 45.000000
-, "type" : "light"
-}]
-, "name" : "Lampie"
-, "uuid" : "48614267-bff8-4653-8c02-3fab35a8105a"
 }]
 , "components" : [{"position" : [9.000000, 0.000000, -12.000000]
 , "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
@@ -2888,21 +2288,6 @@
 }]
 , "name" : "/wall_1"
 , "uuid" : "57561946-802e-4fd3-9439-687fcc78f9bc"
-}, {"components" : [{"position" : [0.000000, 0.388829, 0.000000]
-, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
-, "scale" : [1.000000, 1.000000, 1.000000]
-, "type" : "transform"
-}, {"color" : [1.000000, 0.600000, 0.466667, 1.000000]
-, "directionalAmbient" : 0.000000
-, "intensity" : 50.000000
-, "lighttype" : "point"
-, "range" : 3.000000
-, "shadow" : "none"
-, "spotlightAngle" : 45.000000
-, "type" : "light"
-}]
-, "name" : "Lampie"
-, "uuid" : "b32b21de-4ce0-41b0-a548-3229999f318a"
 }]
 , "components" : [{"position" : [3.000000, 0.000000, -9.000000]
 , "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
@@ -2977,21 +2362,6 @@
 }]
 , "name" : "/wall_1"
 , "uuid" : "4764d3b3-00d6-4c29-961d-76c63e82a4d4"
-}, {"components" : [{"position" : [0.000000, 0.388829, 0.000000]
-, "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
-, "scale" : [1.000000, 1.000000, 1.000000]
-, "type" : "transform"
-}, {"color" : [1.000000, 0.600000, 0.466667, 1.000000]
-, "directionalAmbient" : 0.000000
-, "intensity" : 50.000000
-, "lighttype" : "point"
-, "range" : 3.000000
-, "shadow" : "none"
-, "spotlightAngle" : 45.000000
-, "type" : "light"
-}]
-, "name" : "Lampie"
-, "uuid" : "3bec0f13-3371-493a-a321-78bc9d3566f7"
 }]
 , "components" : [{"position" : [0.000000, 0.000000, 0.000000]
 , "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
@@ -3012,6 +2382,22 @@
 }]
 , "name" : "Camera"
 , "uuid" : "7195d525-130f-4920-ae07-dfdbcc56a591"
+}, {"components" : [{"position" : [0.000000, 1.000000, 0.000000]
+, "rotation" : [0.000000, -0.000000, -0.707107, 0.707107]
+, "scale" : [1.000000, 1.000000, 1.000000]
+, "type" : "transform"
+}, {"color" : [1.000000, 0.666667, 0.333333, 1.000000]
+, "cutoff" : 0.000000
+, "directionalAmbient" : 0.200000
+, "intensity" : 0.000000
+, "lighttype" : "directional"
+, "range" : 3.000000
+, "shadow" : "none"
+, "spotlightAngle" : 45.000000
+, "type" : "light"
+}]
+, "name" : "Ambient Light"
+, "uuid" : "fa712846-a94a-4109-ad52-17276cfdedd3"
 }]
 , "name" : "Root"
 , "uuid" : "2b913ea6-1366-4b4d-a1c1-d59266931f02"
