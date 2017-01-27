@@ -15,6 +15,7 @@
 #include <fstream>
 #include <glm/gtc/noise.hpp>
 #include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtx/quaternion.hpp>
 
 
 TienDemo::TienDemo(vrlib::PositionalDevice& wand) : Demo("TiEn"), wandDevice(wand)
@@ -76,6 +77,9 @@ void TienDemo::init()
 void TienDemo::start()
 {
 	tien.start();
+
+
+	rotation = 0;
 }
 
 void TienDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
@@ -86,6 +90,45 @@ void TienDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 vrlib::gui::components::Panel * TienDemo::getPanel()
 {
 	return nullptr;
+}
+
+
+glm::quat RotateTowards(glm::quat q1, const glm::quat &q2, float maxAngle) {
+
+	if (maxAngle < 0.001f) {
+		// No rotation allowed. Prevent dividing by 0 later.
+		return q1;
+	}
+
+	float cosTheta = dot(q1, q2);
+
+	// q1 and q2 are already equal.
+	// Force q2 just to be sure
+	if (cosTheta > 0.9999f) {
+		return q2;
+	}
+
+	// Avoid taking the long path around the sphere
+	if (cosTheta < 0) {
+		q1 = (q1*-1.0f);
+		cosTheta *= -1.0f;
+	}
+
+	float angle = glm::acos(cosTheta);
+
+	// If there is only a 2&deg; difference, and we are allowed 5&deg;,
+	// then we arrived.
+	if (angle < maxAngle) {
+		return q2;
+	}
+
+	float fT = maxAngle / angle;
+	angle = maxAngle;
+
+	glm::quat res = (sin((1.0f - fT) * angle) * q1 + sin(fT * angle) * q2) / sin(angle);
+	res = glm::normalize(res);
+	return res;
+
 }
 
 void TienDemo::update(double elapsedTime)
@@ -139,6 +182,16 @@ void TienDemo::update(double elapsedTime)
 
 	}
 	
+	if (rightButton == vrlib::DigitalState::TOGGLE_ON)
+	{
+		rotation += glm::pi<float>() / 2.0f;
+	}
+
+	tien.scene.cameraNode->transform->rotation = RotateTowards(tien.scene.cameraNode->transform->rotation, glm::quat(glm::vec3(0,rotation,0)), elapsedTime / 2000.0f);
+
+
+
+
 	tien.update((float)(elapsedTime / 1000.0f));
 	time += elapsedTime;
 

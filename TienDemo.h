@@ -17,7 +17,7 @@ public:
 	vrlib::tien::Tien tien;
 	vrlib::PositionalDevice& wandDevice;
 	float time = 0;
-
+	float rotation;
 
 	vrlib::tien::Node* lightNode;
 

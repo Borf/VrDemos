@@ -49,13 +49,13 @@ void JohanDemo::init()
 		mPageUpButton.init("buttonRightGrip");
 	}
 	demos.push_back(new TienDemo(mWand));
-	//demos.push_back(new LoLDemo());
-	//demos.push_back(new BodyDemo());
+	demos.push_back(new LoLDemo());
+	demos.push_back(new BodyDemo());
 	demos.push_back(new ParticleModelDemo());
 	//	demos.push_back(new RoDemo());
 	//	demos.push_back(new VolumeDemo());
-	//demos.push_back(new ParticleDemo());
-	//demos.push_back(new TunnelDemo());
+	demos.push_back(new ParticleDemo());
+	demos.push_back(new TunnelDemo());
 
 #ifndef NOKINECT
 	demos.push_back(new KinectDemo());
@@ -148,7 +148,16 @@ void JohanDemo::draw(const glm::mat4 &projectionMatrix, const glm::mat4 &modelvi
 
 //	glLoadIdentity();
 	
-	glColor4f(1,1,1,1);
+
+	glUseProgram(0);
+	basicShader->use();
+	basicShader->setUniformMatrix4("projectionmatrix", projectionMatrix);
+	basicShader->setUniformMatrix4("cameraMatrix", modelviewMatrix);
+	demos[currentDemo]->draw(projectionMatrix, modelviewMatrix);
+
+
+
+	glColor4f(1, 1, 1, 1);
 	glEnable(GL_LIGHTING);
 	glEnable(GL_LIGHT0);
 	glEnable(GL_CULL_FACE);
@@ -158,7 +167,7 @@ void JohanDemo::draw(const glm::mat4 &projectionMatrix, const glm::mat4 &modelvi
 	float spe[] = { 0.8f, 0.8f, 0.8f, 1.0f }; glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, spe);
 	glMaterialf(GL_FRONT_AND_BACK, GL_SHININESS, 0);*/
 	glDisable(GL_TEXTURE_2D);
-	glColor3f(1,1,1);
+	glColor3f(1, 1, 1);
 	float pos[] = { 0.0f, 0.0f, 0.0f, 1.0f }; glLightfv(GL_LIGHT0, GL_POSITION, pos);
 	float ambl[] = { 0.5f, 0.5f, 0.5f, 1.0f }; glLightfv(GL_LIGHT0, GL_AMBIENT, ambl);
 	float difl[] = { 0.5f, 0.5f, 0.5f, 1.0f }; glLightfv(GL_LIGHT0, GL_DIFFUSE, difl);
@@ -167,13 +176,6 @@ void JohanDemo::draw(const glm::mat4 &projectionMatrix, const glm::mat4 &modelvi
 	glEnable(GL_LIGHTING);
 	glEnable(GL_LIGHT0);
 	//glLoadIdentity();
-
-	glUseProgram(0);
-
-	basicShader->use();
-	basicShader->setUniformMatrix4("projectionmatrix", projectionMatrix);
-	basicShader->setUniformMatrix4("cameraMatrix", modelviewMatrix);
-	demos[currentDemo]->draw(projectionMatrix, modelviewMatrix);
 
 
 }
@@ -184,17 +186,24 @@ void JohanDemo::setDemo( int id )
 	demos[id]->basicShader = basicShader;
 	demos[id]->start();
 	demoSelectWindow->getComponent<vrlib::gui::components::Button>("btnChangeDemo")->text = demos[id]->name;
-	glm::vec2 size = demoSelectWindow->getComponent<vrlib::gui::components::Component>("demopanel")->size;
-	glm::vec2 pos = demoSelectWindow->getComponent<vrlib::gui::components::Component>("demopanel")->position;
+	//glm::vec2 size = demoSelectWindow->getComponent<vrlib::gui::components::Component>("demopanel")->size;
+	//glm::vec2 pos = demoSelectWindow->getComponent<vrlib::gui::components::Component>("demopanel")->position;
 
 	vrlib::gui::components::Component* panel = demos[id]->getPanel();
 	if (panel)
-		demoSelectWindow->setComponent("demopanel", panel);
+	{
+		panel->size = glm::vec2(0.95f, 1.45f);
+		panel->position = glm::vec2(0.025f, 0.525f);
+	}
 	else
-		demoSelectWindow->setComponent("demopanel", panel = new vrlib::gui::components::Panel());
-	panel->size = size;
-	panel->position = pos;
+	{
+		panel = new vrlib::gui::components::Panel();
+		panel->size = glm::vec2(0, 0);
+	}
+	demoSelectWindow->setComponent("demopanel", panel);
 	panel->name = "demopanel";
+
+
 }
 
 void JohanDemo::nextDemo()

@@ -135,18 +135,18 @@ void TunnelDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 
 }
 
-void TunnelDemo::update()
+void TunnelDemo::update(double elapsedTime)
 {
 	static float bla = 0;
 
-	bla+=0.01f;
+	bla+=0.01f * elapsedTime / 60.0f;
 	if(wobble)
 		rot = sin(bla) * 0.75f;
 	
 	if(moving)
 	{
-		dist += 0.02f;
-		while(dist > 1.5f)
+		dist += 0.02f * elapsedTime / 60.0f;
+		while(dist >= 1.5f)
 			dist-=1.5f;
 	}
 	if(turning)
