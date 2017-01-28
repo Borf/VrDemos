@@ -607,17 +607,6 @@
 }]
 , "name" : "/floor_1"
 , "uuid" : "f45c8f94-3149-4efa-ab37-5b643efa4de1"
-}, {"components" : [{"position" : [0.000000, 0.000000, -0.500000]
-, "rotation" : [0.000000, 0.707107, 0.000000, 0.707107]
-, "scale" : [1.000000, 1.000000, 1.000000]
-, "type" : "transform"
-}, {"castShadow" : true
-, "cullBackFaces" : true
-, "file" : "./data/models/Dungeon/arch_1.fbx"
-, "type" : "modelrenderer"
-}]
-, "name" : "/arch_1"
-, "uuid" : "b115ff79-e391-4972-a324-9336ad442d09"
 }, {"components" : [{"position" : [0.000000, 1.000000, 0.000000]
 , "rotation" : [0.000000, 0.000000, 0.000000, 1.000000]
 , "scale" : [1.000000, 1.000000, 1.000000]
