@@ -35,13 +35,13 @@ public:
 		rootPanel = new vrlib::gui::components::Panel();
 		rootPanel->setBounds(glm::vec2(0, 0), glm::vec2(3.0, 2.25));
 
-		int cols = sqrt(demo->models.size());
-		int rows = ceil(sqrt(demo->models.size()));
+		int cols = (int)sqrt(demo->models.size());
+		int rows = (int)ceil(sqrt(demo->models.size()));
 		glm::vec2 size(3.0f / glm::max(cols, rows), 2.25f / glm::max(cols, rows));
 		glm::vec2 pos(0, 0);
 		for(size_t i = 0; i < demo->models.size(); i++)
 		{
-			std::string fileName = demo->models[i]["icon"].asString();
+			std::string fileName = demo->models[i]["icon"];
 			fileName = fileName.substr(0, fileName.length()-4) + ".png";
 			vrlib::gui::components::Image* image = new vrlib::gui::components::Image(vrlib::Texture::loadCached("data/models/LoL/icons/" + fileName));
 			image->setBounds(pos, size);
@@ -90,7 +90,7 @@ void LoLDemo::init()
 	walls = vrlib::Model::getModel<vrlib::gl::VertexP3N3T2>("cavewall.1.2.2.shape", vrlib::ModelLoadOptions(3.0f));
 	wallTexture = vrlib::Texture::loadCached("data/CubeMaps/Brick/total.png");
 
-	models = vrlib::json::readJson(std::ifstream("data/models/lol/models.json"));
+	models = json::parse(std::ifstream("data/models/lol/models.json"));
 	champPanel = new ChampPanel(this);
 }
 
@@ -112,9 +112,9 @@ void LoLDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 			delete model;
 		if(texture)
 			vrlib::Texture::unloadCached(texture);
-		printf("Loading %s\n", models[modelIndex]["dir"].asString().c_str());
-		model = vrlib::Model::getModel<vrlib::gl::VertexP3N3T2>("data/models/LoL/" + models[modelIndex]["dir"].asString() + "/" + models[modelIndex]["models"][skinIndex]["model"].asString());
-		texture = vrlib::Texture::loadCached("data/models/LoL/" + models[modelIndex]["dir"].asString() + "/" + models[modelIndex]["models"][skinIndex]["texture"].asString());
+		printf("Loading %s\n", models[modelIndex]["dir"].get<std::string>().c_str());
+		model = vrlib::Model::getModel<vrlib::gl::VertexP3N3T2>("data/models/LoL/" + models[modelIndex]["dir"].get<std::string>() + "/" + models[modelIndex]["models"][skinIndex]["model"].get<std::string>());
+		texture = vrlib::Texture::loadCached("data/models/LoL/" + models[modelIndex]["dir"].get<std::string>() + "/" + models[modelIndex]["models"][skinIndex]["texture"].get<std::string>());
 		reload = false;
 	}
 

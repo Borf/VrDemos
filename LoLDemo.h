@@ -1,6 +1,6 @@
 #pragma once
 #include "demo.h"
-#include <vrlib/json.h>
+#include <vrlib/json.hpp>
 
 namespace vrlib
 {
@@ -23,7 +23,7 @@ public:
 	LoLDemo(void);
 	~LoLDemo(void);
 
-	vrlib::json::Value models;
+	json models;
 
 	vrlib::gui::Window* champPanel;
 	vrlib::gui::components::Slider*	rotationSlider;

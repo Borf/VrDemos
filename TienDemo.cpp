@@ -8,7 +8,7 @@
 #include <VrLib/tien/components/Camera.h>
 #include <VrLib/tien/components/TransformAttach.h>
 #include <VrLib/tien/components/AnimatedModelRenderer.h>
-#include <VrLib/json.h>
+#include <VrLib/json.hpp>
 
 #include <VrLib/math/Ray.h>
 
@@ -27,9 +27,9 @@ void TienDemo::init()
 	tien.init();
 
 
-	vrlib::json::Value saveFile = vrlib::json::readJson(std::ifstream("data/johandemo/scenes/dungeon.json"));
+	json saveFile = json::parse(std::ifstream("data/johandemo/scenes/dungeon.json"));
 	tien.scene.reset();
-	tien.scene.fromJson(saveFile["scene"], saveFile, [this, saveFile](const vrlib::json::Value &json)->vrlib::tien::Component*
+	tien.scene.fromJson(saveFile["scene"], saveFile, [this, saveFile](const json &json)->vrlib::tien::Component*
 	{
 		return nullptr;
 	});

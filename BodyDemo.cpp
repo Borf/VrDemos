@@ -1,5 +1,5 @@
 #include "BodyDemo.h"
-#include <VrLib/json.h>
+#include <VrLib/json.hpp>
 
 #define _USE_MATH_DEFINES
 #include <math.h>
@@ -63,15 +63,17 @@ void decompressIndices( std::wstring &str, int inputStart, int numIndices, std::
 
 BodyDemo::Node* BodyDemo::readModel(std::string dir, std::string jsonfile)
 {
-	vrlib::json::Value newValue = vrlib::json::readJson(std::ifstream(jsonfile.c_str()));
-	//Json::Value::Members members = newValue["urls"].getMemberNames();
+	std::ifstream file(jsonfile.c_str());
+	json newValue;
+	file>>newValue;
+	//json::Members members = newValue["urls"].getMemberNames();
 
 	std::multimap<std::string, Mesh::SubMesh*> subMeshMap;
 
-	for (vrlib::json::Value::Iterator it = newValue["urls"].begin(); it != newValue["urls"].end(); it++)
+	for (json::iterator it = newValue["urls"].begin(); it != newValue["urls"].end(); it++)
 	{
 		std::string fileName = it.key();
-		vrlib::json::Value &val = it.value();
+		json &val = it.value();
 
 		FILE* pFile = NULL;
 		fopen_s(&pFile, (dir + fileName).c_str(), "rb");
@@ -87,15 +89,15 @@ BodyDemo::Node* BodyDemo::readModel(std::string dir, std::string jsonfile)
 
 		for(size_t iii = 0; iii < val.size(); iii++)
 		{
-			vrlib::json::Value config = val[iii];
-			vrlib::json::Value decodeParams = newValue["decodeParams"];
-			vrlib::json::Value decodeOffsets = decodeParams["decodeOffsets"];
+			json config = val[iii];
+			json decodeParams = newValue["decodeParams"];
+			json decodeOffsets = decodeParams["decodeOffsets"];
 
-			int attribStart = config["attribRange"][0u].asInt();
-			int numVerts = config["attribRange"][1u].asInt();
+			int attribStart = config["attribRange"][0u];
+			int numVerts = config["attribRange"][1u];
 
-			int indexStart = config["indexRange"][0u].asInt();
-			int numIndices = 3*config["indexRange"][1u].asInt();
+			int indexStart = config["indexRange"][0u];
+			int numIndices = 3*config["indexRange"][1u];
 
 			int stride = decodeParams["decodeScales"].size();
 
@@ -105,8 +107,8 @@ BodyDemo::Node* BodyDemo::readModel(std::string dir, std::string jsonfile)
 			for(int j = 0; j < stride; j++)
 			{
 				int end = inputOffset + numVerts;
-				float decodeScale = decodeParams["decodeScales"][j].asFloat();
-				decompressAttribsInner( data, inputOffset, end, attribsOut, j, stride, decodeOffsets[j].asInt(), decodeScale );
+				float decodeScale = decodeParams["decodeScales"][j];
+				decompressAttribsInner( data, inputOffset, end, attribsOut, j, stride, decodeOffsets[j], decodeScale );
 				inputOffset = end;
 			}
 
@@ -132,22 +134,24 @@ BodyDemo::Node* BodyDemo::readModel(std::string dir, std::string jsonfile)
 			mesh->color = glm::vec3(1,1,1);
 			mesh->texture = NULL;
 
-			if(newValue["materials"][config["material"].asString()].isMember("map_kd"))
-				mesh->texture = vrlib::Texture::loadCached(dir + newValue["materials"][config["material"].asString()]["map_kd"].asString());
-			if(newValue["materials"][config["material"].asString()].isMember("Kd"))
-				mesh->color = glm::vec3(newValue["materials"][config["material"].asString()]["Kd"][0u].asInt()/255.0f,
-				newValue["materials"][config["material"].asString()]["Kd"][1u].asInt()/255.0f,
-				newValue["materials"][config["material"].asString()]["Kd"][2u].asInt()/255.0f);
+			std::string material = config["material"].get<std::string>();
+
+			if(newValue["materials"][material].find("map_kd") != newValue["materials"][material].end())
+				mesh->texture = vrlib::Texture::loadCached(dir + newValue["materials"][material]["map_kd"].get<std::string>());
+			if(newValue["materials"][material].find("Kd") != newValue["materials"][material].end())
+				mesh->color = glm::vec3(newValue["materials"][material]["Kd"][0u].get<int>()/255.0f,
+				newValue["materials"][material]["Kd"][1u].get<int>()/255.0f,
+				newValue["materials"][material]["Kd"][2u].get<int>() /255.0f);
 
 			int start = 0;
 			for(size_t ii = 0; ii < config["names"].size(); ii++)
 			{
 				Mesh::SubMesh* subMesh = new Mesh::SubMesh();
 				subMesh->mesh = mesh;
-				subMesh->name = config["names"][ii].asString();
+				subMesh->name = config["names"][ii].get<std::string>();
 
 				subMesh->start = start;
-				subMesh->length = config["lengths"][ii].asInt();
+				subMesh->length = config["lengths"][ii];
 				mesh->submeshes.push_back(subMesh);
 				start += subMesh->length;
 				subMeshMap.insert(std::pair<std::string, Mesh::SubMesh*>(subMesh->name, subMesh));
@@ -158,14 +162,16 @@ BodyDemo::Node* BodyDemo::readModel(std::string dir, std::string jsonfile)
 	}
 
 
-	vrlib::json::Value metadata = vrlib::json::readJson(std::ifstream(dir + "entity_metadata.json"));
+	std::ifstream metaFile(dir + "entity_metadata.json");
+	json metadata;
+	metaFile >> metadata;
 
 	std::map<int, Node*> nodes;
 	for(size_t i = 0; i < metadata["leafs"].size(); i++)
 	{
 		Node* node = new Node();
-		node->id = metadata["leafs"][i][0u].asInt();
-		node->name = metadata["leafs"][i][1u].asString();
+		node->id = metadata["leafs"][i][0u];
+		node->name = metadata["leafs"][i][1u].get<std::string>();
 
 		std::pair<std::multimap<std::string, Mesh::SubMesh*>::iterator, std::multimap<std::string, Mesh::SubMesh*>::iterator> ppp = subMeshMap.equal_range(node->name);
 		for (std::multimap<std::string, Mesh::SubMesh*>::iterator it2 = ppp.first; it2 != ppp.second; ++it2)
@@ -177,8 +183,8 @@ BodyDemo::Node* BodyDemo::readModel(std::string dir, std::string jsonfile)
 	for(size_t i = 0; i < metadata["nodes"].size(); i++)
 	{
 		Node* node = new Node();
-		node->id = metadata["nodes"][i][0u].asInt();
-		node->name = metadata["nodes"][i][1u].asString();
+		node->id = metadata["nodes"][i][0u];
+		node->name = metadata["nodes"][i][1u];
 		std::pair<std::multimap<std::string, Mesh::SubMesh*>::iterator, std::multimap<std::string, Mesh::SubMesh*>::iterator> ppp = subMeshMap.equal_range(node->name);
 		for (std::multimap<std::string, Mesh::SubMesh*>::iterator it2 = ppp.first; it2 != ppp.second; ++it2)
 			node->subMeshes.push_back(it2->second);
@@ -189,15 +195,15 @@ BodyDemo::Node* BodyDemo::readModel(std::string dir, std::string jsonfile)
 
 	for(size_t i = 0; i < metadata["dag"].size(); i++)
 	{
-		int id = metadata["dag"][i][0u].asInt();
+		int id = metadata["dag"][i][0u];
 		for(size_t ii = 0; ii < metadata["dag"][i][1u].size(); ii++)
-			nodes[id]->children.push_back(nodes[metadata["dag"][i][1u][ii].asInt()]);
+			nodes[id]->children.push_back(nodes[metadata["dag"][i][1u][ii]]);
 	}
 
 	Node* root = new Node();
 	root->name = "root";
 	for(size_t i = 0; i < metadata["layers"].size(); i++)
-		root->children.push_back(nodes[metadata["layers"][i].asInt()]);
+		root->children.push_back(nodes[metadata["layers"][i]]);
 	return root;
 }
 
