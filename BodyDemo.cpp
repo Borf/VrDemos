@@ -63,9 +63,7 @@ void decompressIndices( std::wstring &str, int inputStart, int numIndices, std::
 
 BodyDemo::Node* BodyDemo::readModel(std::string dir, std::string jsonfile)
 {
-	std::ifstream file(jsonfile.c_str());
-	json newValue;
-	file>>newValue;
+	json newValue = json::parse(std::ifstream(jsonfile.c_str()));
 	//json::Members members = newValue["urls"].getMemberNames();
 
 	std::multimap<std::string, Mesh::SubMesh*> subMeshMap;
@@ -86,7 +84,6 @@ BodyDemo::Node* BodyDemo::readModel(std::string dir, std::string jsonfile)
 
 		std::wstring data = utf8_decode(std::string(buf, len));
 
-
 		for(size_t iii = 0; iii < val.size(); iii++)
 		{
 			json config = val[iii];
@@ -97,7 +94,7 @@ BodyDemo::Node* BodyDemo::readModel(std::string dir, std::string jsonfile)
 			int numVerts = config["attribRange"][1u];
 
 			int indexStart = config["indexRange"][0u];
-			int numIndices = 3*config["indexRange"][1u];
+			int numIndices = 3*config["indexRange"][1].get<int>();
 
 			int stride = decodeParams["decodeScales"].size();
 

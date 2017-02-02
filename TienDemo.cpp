@@ -135,7 +135,7 @@ void TienDemo::update(double elapsedTime)
 {
 	//teleportation
 	if (glm::distance(teleportTargetPosition, tien.scene.cameraNode->transform->position) > 0.1)
-		tien.scene.cameraNode->transform->moveTo(teleportTargetPosition, elapsedTime/100.0f);
+		tien.scene.cameraNode->transform->moveTo(teleportTargetPosition, (float)(elapsedTime/100.0f));
 
 	teleportLight->enabled = teleportTarget->enabled;
 	teleportLight->transform->position = glm::mix(tien.scene.cameraNode->transform->position, teleportTarget->transform->position, 0.9f) + glm::vec3(0,1.5f,0);
@@ -187,13 +187,13 @@ void TienDemo::update(double elapsedTime)
 		rotation += glm::pi<float>() / 2.0f;
 	}
 
-	tien.scene.cameraNode->transform->rotation = RotateTowards(tien.scene.cameraNode->transform->rotation, glm::quat(glm::vec3(0,rotation,0)), elapsedTime / 2000.0f);
+	tien.scene.cameraNode->transform->rotation = RotateTowards(tien.scene.cameraNode->transform->rotation, glm::quat(glm::vec3(0,rotation,0)), (float)(elapsedTime / 2000.0f));
 
 
 
 
 	tien.update((float)(elapsedTime / 1000.0f));
-	time += elapsedTime;
+	time += (float)elapsedTime;
 
 //	lightNode->light->intensity = 1 + 0.25f * sin(time * 0.01);
 	lightNode->transform->globalTransform = glm::translate(lightNode->transform->globalTransform, 0.2f * glm::vec3(

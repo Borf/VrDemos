@@ -603,17 +603,6 @@
         "lengths" :  [11217, 4644, 930, 930, 14904, 3444, 1716, 13068, 14880, 14880]
       }
     ],
-    /*
-    "aa891309.adult_female.utf8": [
-      { "material" :  "outer_eye_sg",
-        "attribRange" :  [0, 1202],
-        "indexRange" :  [9616, 2352],
-        "bboxes" :  16672,
-        "names" :  ["outer_eye"],
-        "lengths" :  [7056]
-      }
-    ],
-     */
     "14ba5ad0.adult_female.utf8": [
       { "material" :  "pupil_sg",
         "attribRange" :  [0, 814],
