@@ -1,17 +1,19 @@
+#include <Windows.h>
+#include <NuiApi.h>
 #ifndef NOKINECT
+#pragma comment(lib, "Kinect10.lib")
 #include "KinectDemo.h"
 
+#include <VrLib/Log.h>
 #include <windows.h>
-#include <gl/GL.h>
-#include <gmtl/Vec.h>
-#include <gmtl/VecOps.h>
-#include <gmtl/Generate.h>
-#include <cavelib/Components/Panel.h>
-#include <cavelib/components/Button.h>
-#include <cavelib/LayoutManagers/TableLayout.h>
+#include <gl/glew.h>
+#include <glm/gtc/type_ptr.hpp>
 
-int resx = XN_VGA_X_RES;
-int resy = XN_VGA_Y_RES;
+
+
+using vrlib::logger;
+using vrlib::Log;
+
 
 KinectDemo::KinectDemo(void) : Demo("Kinect")
 {
@@ -22,71 +24,215 @@ KinectDemo::~KinectDemo(void)
 {
 }
 
-xn::Context context;
-xn::DepthGenerator depth;
-xn::ImageGenerator imageGenerator;
+// Current Kinect
+INuiSensor*             m_pNuiSensor;
+HANDLE                  m_pDepthStreamHandle;
+HANDLE                  m_hNextDepthFrameEvent;
+static const int        cDepthWidth = 640;
+static const int        cDepthHeight = 480;
+
+float*					depthMap = new float[640*480];
+
+
+
+
+/// <summary>
+/// Create the first connected Kinect found 
+/// </summary>
+/// <returns>indicates success or failure</returns>
+HRESULT CreateFirstConnected()
+{
+	INuiSensor * pNuiSensor;
+	HRESULT hr;
+
+	int iSensorCount = 0;
+	hr = NuiGetSensorCount(&iSensorCount);
+	if (FAILED(hr))
+	{
+		return hr;
+	}
+
+	// Look at each Kinect sensor
+	for (int i = 0; i < iSensorCount; ++i)
+	{
+		// Create the sensor so we can check status, if we can't create it, move on to the next
+		hr = NuiCreateSensorByIndex(i, &pNuiSensor);
+		if (FAILED(hr))
+		{
+			continue;
+		}
+
+		// Get the status of the sensor, and if connected, then we can initialize it
+		hr = pNuiSensor->NuiStatus();
+		if (S_OK == hr)
+		{
+			m_pNuiSensor = pNuiSensor;
+			break;
+		}
+
+		// This sensor wasn't OK, so release it since we're not using it
+		pNuiSensor->Release();
+	}
+
+	if (NULL != m_pNuiSensor)
+	{
+		// Initialize the Kinect and specify that we'll be using depth
+		hr = m_pNuiSensor->NuiInitialize(NUI_INITIALIZE_FLAG_USES_DEPTH);
+		if (SUCCEEDED(hr))
+		{
+			// Create an event that will be signaled when depth data is available
+			m_hNextDepthFrameEvent = CreateEvent(NULL, TRUE, FALSE, NULL);
+
+			// Open a depth image stream to receive depth frames
+			hr = m_pNuiSensor->NuiImageStreamOpen(
+				NUI_IMAGE_TYPE_DEPTH,
+				NUI_IMAGE_RESOLUTION_640x480,
+				0,
+				2,
+				m_hNextDepthFrameEvent,
+				&m_pDepthStreamHandle);
+		}
+	}
+
+	if (NULL == m_pNuiSensor || FAILED(hr))
+	{
+		throw("No ready Kinect found!");
+		return E_FAIL;
+	}
+
+	return hr;
+}
+
+
+/// <summary>
+/// Handle new depth data
+/// </summary>
+void ProcessDepth()
+{
+	HRESULT hr;
+	NUI_IMAGE_FRAME imageFrame;
+
+	// Attempt to get the depth frame
+	hr = m_pNuiSensor->NuiImageStreamGetNextFrame(m_pDepthStreamHandle, 0, &imageFrame);
+	if (FAILED(hr))
+	{
+		return;
+	}
+
+	BOOL nearMode;
+	INuiFrameTexture* pTexture;
+
+	// Get the depth image pixel texture
+	hr = m_pNuiSensor->NuiImageFrameGetDepthImagePixelFrameTexture(
+		m_pDepthStreamHandle, &imageFrame, &nearMode, &pTexture);
+	if (FAILED(hr))
+	{
+		goto ReleaseFrame;
+	}
+
+	NUI_LOCKED_RECT LockedRect;
+
+	// Lock the frame data so the Kinect knows not to modify it while we're reading it
+	pTexture->LockRect(0, &LockedRect, NULL, 0);
+
+	// Make sure we've received valid data
+	if (LockedRect.Pitch != 0)
+	{
+		// Get the min and max reliable depth for the current frame
+		int minDepth = (nearMode ? NUI_IMAGE_DEPTH_MINIMUM_NEAR_MODE : NUI_IMAGE_DEPTH_MINIMUM) >> NUI_IMAGE_PLAYER_INDEX_SHIFT;
+		int maxDepth = (nearMode ? NUI_IMAGE_DEPTH_MAXIMUM_NEAR_MODE : NUI_IMAGE_DEPTH_MAXIMUM) >> NUI_IMAGE_PLAYER_INDEX_SHIFT;
+
+		const NUI_DEPTH_IMAGE_PIXEL * pBufferRun = reinterpret_cast<const NUI_DEPTH_IMAGE_PIXEL *>(LockedRect.pBits);
+
+		// end pixel is start + width*height - 1
+		const NUI_DEPTH_IMAGE_PIXEL * pBufferEnd = pBufferRun + (cDepthWidth * cDepthHeight);
+
+		float* depthPointer = depthMap;
+
+		while (pBufferRun < pBufferEnd)
+		{
+			// discard the portion of the depth that contains only the player index
+			USHORT depth = pBufferRun->depth;
+
+			// To convert to a byte, we're discarding the most-significant
+			// rather than least-significant bits.
+			// We're preserving detail, although the intensity will "wrap."
+			// Values outside the reliable depth range are mapped to 0 (black).
+
+			// Note: Using conditionals in this loop could degrade performance.
+			// Consider using a lookup table instead when writing production code.
+			//BYTE intensity = static_cast<BYTE>(depth >= minDepth && depth <= maxDepth ? depth % 256 : 0);
+
+			*(depthPointer++) = depth / 500.0;
+			// Increment our index into the Kinect's depth buffer
+			++pBufferRun;
+		}
+	}
+
+	// We're done with the texture so unlock it
+	pTexture->UnlockRect(0);
+
+	pTexture->Release();
+
+ReleaseFrame:
+	// Release the frame
+	m_pNuiSensor->NuiImageStreamReleaseFrame(m_pDepthStreamHandle, &imageFrame);
+}
+
+
 
 void KinectDemo::init()
 {
-	vpr::GUID new_guid("d6be4359-e8cf-41fc-a72b-a5b4f3f29aa2");
-	data.init(new_guid);
-	data->doCopy = false;
-	data->hasData = false;
-
-	kinectLoaded = false;
+	CreateFirstConnected();
 }
 
 void KinectDemo::start()
 {
-	if(data.isLocal())
-	{
-		if(!kinectLoaded)
-		{
-			kinectLoaded = true;
-			XnStatus nRetVal = XN_STATUS_OK;
-
-			nRetVal = context.Init();
-			nRetVal = depth.Create(context);
-			imageGenerator.Create(context);
-
-			XnMapOutputMode mapMode;
-			mapMode.nXRes = resx;
-			mapMode.nYRes = resy;
-			mapMode.nFPS = 30;
-			nRetVal = depth.SetMapOutputMode(mapMode);
-			nRetVal = imageGenerator.SetMapOutputMode(mapMode);
-
-			nRetVal = context.StartGeneratingAll();
-		}
-
-
-		XnStatus nRetVal = context.WaitAndUpdateAll();
-		if (nRetVal != XN_STATUS_OK)
-		{
-			printf("Failed updating data: %s\n", xnGetStatusString(nRetVal));
-			//	continue;
-		}
-
-		// Take current depth map
-		const XnDepthPixel* pDepthMap = depth.GetDepthMap();
-		const XnUInt8* pImageMap = imageGenerator.GetImageMap();
-
-		memcpy(data->depths, pDepthMap, sizeof(XnDepthPixel) * resx * resy);
-		memcpy(data->colors, pImageMap, sizeof(XnUInt8) * resx * resy * 3);
-		data->doCopy = true;
-		data->hasData = true;
-	}
+	
 }
 
 GLuint displayList = 0;
 
 void KinectDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 {
-	glLoadIdentity();
 	glDisable(GL_CULL_FACE);
 
+	glUseProgram(0);
+	glEnable(GL_LIGHTING);
+	glPointSize(1);
+	glDisable(GL_TEXTURE_2D);
+	glColor4f(1, 1, 1, 1);
 
-	if(data->hasData)
+	glBegin(GL_QUADS);
+	for (int i = 0; i < 640 * 480; i++)
+	{
+		if (depthMap[i] > 0.1 && depthMap[i] < 3 &&
+			depthMap[i+1] > 0.1 && depthMap[i+1] < 3 &&
+			depthMap[i+cDepthWidth] > 0.1 && depthMap[i+cDepthWidth] < 3 &&
+			depthMap[i+1+cDepthWidth] > 0.1 && depthMap[i+1+cDepthWidth] < 3)
+		{
+			glm::vec3 a((i%cDepthWidth) / 320.0f,			2 - (i / cDepthWidth) / 320.0f,			depthMap[i]);
+			glm::vec3 b(((i + 1) % cDepthWidth) / 320.0f,	2 - (i / cDepthWidth) / 320.0f,			depthMap[i + 1]);
+			glm::vec3 c(((i + 1) % cDepthWidth) / 320.0f,	2 - ((i / cDepthWidth) + 1) / 320.0f,	depthMap[i + 1 + cDepthWidth]);
+			glm::vec3 d((i%cDepthWidth) / 320.0f,			2 - ((i / cDepthWidth) + 1) / 320.0f,	depthMap[i + cDepthWidth]);
+
+			glm::vec3 normal = glm::normalize(glm::cross(b - a, b - c));
+
+			glNormal3fv(glm::value_ptr(normal));
+
+			glVertex3fv(glm::value_ptr(a));
+			glVertex3fv(glm::value_ptr(b));
+			glVertex3fv(glm::value_ptr(c));
+			glVertex3fv(glm::value_ptr(d));
+
+
+		}
+	}
+
+	glEnd();
+
+
+/*	if(data->hasData)
 	{
 		if(displayList == 0)
 			displayList = glGenLists(1);
@@ -128,70 +274,24 @@ void KinectDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 	glEnable(GL_LIGHTING);
 	glEnable(GL_LIGHT0);
 	if(displayList != 0)
-		glCallList(displayList);
+		glCallList(displayList);*/
 }
 
 void KinectDemo::update()
 {
-	if(data.isLocal())
-	{
-		XnStatus nRetVal = context.WaitNoneUpdateAll();
-		if (nRetVal != XN_STATUS_OK)
-		{
-			printf("Failed updating data: %s\n", xnGetStatusString(nRetVal));
-			//	continue;
-		}
-	
-	/*	if(!data->hasData)
-		{
-			// Take current depth map
-			const XnDepthPixel* pDepthMap = depth.GetDepthMap();
-			const XnUInt8* pImageMap = imageGenerator.GetImageMap();
 
-			memcpy(data->depths, pDepthMap, sizeof(XnDepthPixel) * resx * resy);
-			memcpy(data->colors, pImageMap, sizeof(XnUInt8) * resx * resy * 3);
-			data->doCopy = true;
-			data->hasData = true;
-		}*/
+	if (NULL == m_pNuiSensor)
+	{
+		return;
+	}
+
+	if (WAIT_OBJECT_0 == WaitForSingleObject(m_hNextDepthFrameEvent, 0))
+	{
+		logger << "Got depth" << Log::newline;
+		ProcessDepth();
 	}
 
 }
 
-class KinectDemoPanel : public Panel
-{
-	KinectDemo* demo;
 
-	class KinectButton : public Button
-	{
-		KinectDemo* demo;
-	public:
-		KinectButton(KinectDemo* demo) : Button("Snapshot")
-		{
-			this->demo = demo;
-		}
-	};
-
-public:
-	KinectDemoPanel(KinectDemo* demo) : Panel(new TableLayoutManager(1))
-	{
-		this->demo = demo;
-		add(new KinectButton(demo));
-	}
-
-	virtual float minWidth() 
-	{
-		return 1.8;
-	}
-
-	virtual float minHeight() 
-	{
-		return 2;
-	}
-
-};
-
-Panel* KinectDemo::getPanel()
-{
-	return new KinectDemoPanel(this);
-}
 #endif

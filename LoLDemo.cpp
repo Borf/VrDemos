@@ -43,7 +43,7 @@ public:
 		{
 			std::string fileName = demo->models[i]["icon"];
 			fileName = fileName.substr(0, fileName.length()-4) + ".png";
-			vrlib::gui::components::Image* image = new vrlib::gui::components::Image(vrlib::Texture::loadCached("data/models/LoL/icons/" + fileName));
+			vrlib::gui::components::Image* image = new vrlib::gui::components::Image(vrlib::Texture::loadCached("data/models/Characters/game/LoL/icons/" + fileName));
 			image->setBounds(pos, size);
 			pos.x += size.x;
 			if (pos.x >= 3)
@@ -90,7 +90,7 @@ void LoLDemo::init()
 	walls = vrlib::Model::getModel<vrlib::gl::VertexP3N3T2>("cavewall.1.2.2.shape", vrlib::ModelLoadOptions(3.0f));
 	wallTexture = vrlib::Texture::loadCached("data/CubeMaps/Brick/total.png");
 
-	models = json::parse(std::ifstream("data/models/lol/models.json"));
+	models = json::parse(std::ifstream("data/models/Characters/game/lol/models.json"));
 	champPanel = new ChampPanel(this);
 }
 
@@ -113,8 +113,8 @@ void LoLDemo::draw(glm::mat4 projectionMatrix, glm::mat4 modelviewMatrix)
 		if(texture)
 			vrlib::Texture::unloadCached(texture);
 		printf("Loading %s\n", models[modelIndex]["dir"].get<std::string>().c_str());
-		model = vrlib::Model::getModel<vrlib::gl::VertexP3N3T2>("data/models/LoL/" + models[modelIndex]["dir"].get<std::string>() + "/" + models[modelIndex]["models"][skinIndex]["model"].get<std::string>());
-		texture = vrlib::Texture::loadCached("data/models/LoL/" + models[modelIndex]["dir"].get<std::string>() + "/" + models[modelIndex]["models"][skinIndex]["texture"].get<std::string>());
+		model = vrlib::Model::getModel<vrlib::gl::VertexP3N3T2>("data/models/Characters/game/LoL/" + models[modelIndex]["dir"].get<std::string>() + "/" + models[modelIndex]["models"][skinIndex]["model"].get<std::string>());
+		texture = vrlib::Texture::loadCached("data/models/Characters/game/LoL/" + models[modelIndex]["dir"].get<std::string>() + "/" + models[modelIndex]["models"][skinIndex]["texture"].get<std::string>());
 		reload = false;
 	}
 

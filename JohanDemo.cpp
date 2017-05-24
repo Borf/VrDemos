@@ -48,10 +48,10 @@ void JohanDemo::init()
 		mPageDownButton.init("buttonLeftGrip");
 		mPageUpButton.init("buttonRightGrip");
 	}
-	demos.push_back(new LoLDemo());
+	/*demos.push_back(new LoLDemo());
 	demos.push_back(new BodyDemo());
 	demos.push_back(new ParticleModelDemo());
-	demos.push_back(new TienDemo(mWand));
+	demos.push_back(new TienDemo(mWand));*/
 	//	demos.push_back(new RoDemo());
 	//	demos.push_back(new VolumeDemo());
 	//demos.push_back(new ParticleDemo());

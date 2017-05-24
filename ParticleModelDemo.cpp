@@ -32,8 +32,8 @@ void ParticleModelDemo::init()
 	sphereTexture = vrlib::Texture::loadCached("data/johandemo/marble.jpg");
 
 	char* files[] = { 
-		"data/models/mier/formica rufa 17384.3ds",
-		"data/models/l2/anakim.obj",
+		"data/models/Characters/Animals/mier/formica rufa 17384.3ds",
+		"data/models/Characters/Game/Lineage 2/anakim.obj",
 		"sphere.8.8.shape",
 		"sphere.16.16.shape",
 		"sphere.20.20.shape",
