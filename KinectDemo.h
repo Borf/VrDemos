@@ -1,4 +1,5 @@
 #pragma once
+#include <NuiApi.h>
 #ifndef NOKINECT
 #include "demo.h"
 

@@ -138,7 +138,7 @@ void TienDemo::update(double elapsedTime)
 		tien.scene.cameraNode->transform->moveTo(teleportTargetPosition, (float)(elapsedTime/100.0f));
 
 	teleportLight->enabled = teleportTarget->enabled;
-	teleportLight->transform->position = glm::mix(tien.scene.cameraNode->transform->position, teleportTarget->transform->position, 0.9f) + glm::vec3(0,1.5f,0);
+	teleportLight->transform->position = glm::mix((glm::vec3)tien.scene.cameraNode->transform->position, teleportTarget->transform->position, 0.9f) + glm::vec3(0,1.5f,0);
 
 	if (leftButton == vrlib::DigitalState::TOGGLE_OFF)
 	{
